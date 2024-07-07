@@ -1,83 +1,36 @@
-"use client";
-
-import WordCardMulti from "./components/WordCardMulti";
-import WordCardTyped from "./components/WordCardTyped";
-import keywordsData from "./data/keywords.json";
-import { useState } from "react";
-
-type AnswerModeType = "multi" | "typed";
+import Link from "next/link";
 
 export default function Home() {
-  const [answerMode, setAnswerMode] = useState<AnswerModeType>("multi");
-
-  const toggleAnswerMode = () => {
-    if (answerMode === "multi") {
-      setAnswerMode("typed");
-    } else {
-      setAnswerMode("multi");
-    }
-  };
-
   return (
-    <main className="px-4 py-10 bg-orange-100">
-      <div className="mb-4">
-        <p className="text-orange-500 font-semibold text-lg text-center mb-2">
-          Answer Mode
-        </p>
-        <div className="flex justify-center items-center gap-4 p-4 bg-white drop-shadow-md">
-          <p
-            className={`
-          ${answerMode === "multi" ? "text-black" : "text-gray-400"}
-          font-medium text-center
-            `}>
-            Mulitiple
-          </p>
-          <button
-            className="bg-black h-6 w-10 rounded-full px-1 relative"
-            onClick={toggleAnswerMode}>
-            <div
-              className={` ${answerMode === "multi" ? "left-1" : "right-1"}
-              absolute h-4 w-4 rounded-full bg-white bottom-1`}></div>
-          </button>
-          <p
-            className={`
-          ${answerMode === "typed" ? "text-black" : "text-gray-400"}
-          font-medium text-center
-            `}>
-            Typed
-          </p>
+    <main className="px-4 py-20 bg-orange-100">
+      <h1 className="text-4xl font-bold text-center mb-2">
+        Practice common spanish
+      </h1>
+      <p className="text-orange-500 text-center">
+        Browser quick quiz style games to imporove you common spanish words
+      </p>
+      <div className="mt-32">
+        <h2 className="text-2xl font-semibold">Most popular games</h2>
+        <hr className="w-full h-[2px] bg-orange-200 mt-2 mb-4" />
+        <div className="flex gap-4">
+          <Link href={"/keywords"}>
+            <button className="bg-white py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
+              <h3 className="font-semibold text-xl mb-6">Keywords</h3>
+              <p className="text-gray-500">
+                Helpful keywords for everyday speaking
+              </p>
+            </button>
+          </Link>
+          <Link href={"/date-time"}>
+            <button className="bg-white py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
+              <h3 className="font-semibold text-xl mb-6">Date/Time</h3>
+              <p className="text-gray-500">
+                Date and time related spanish words
+              </p>
+            </button>
+          </Link>
         </div>
       </div>
-      <ul className="grid grid-cols-1 justify-center items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {answerMode === "multi" &&
-          keywordsData.map((current) => {
-            return (
-              <li
-                key={current.word}
-                className="w-full bg-white py-8 px-4 relative drop-shadow-md">
-                <WordCardMulti
-                  word={current.word}
-                  correctAnswer={current.correctAnswer}
-                  options={current.options}
-                />
-              </li>
-            );
-          })}
-        {answerMode === "typed" &&
-          keywordsData.map((current) => {
-            return (
-              <li
-                key={current.word}
-                className="w-full bg-white py-8 px-4 relative shadow-2xl">
-                <WordCardTyped
-                  word={current.word}
-                  correctAnswer={current.correctAnswer}
-                  options={current.options}
-                />
-              </li>
-            );
-          })}
-      </ul>
     </main>
   );
 }

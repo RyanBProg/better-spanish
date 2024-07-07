@@ -1,0 +1,182 @@
+[
+  {
+    "word": "lunes",
+    "options": ["tuesday", "monday", "sunday"],
+    "correctAnswer": "monday"
+  },
+  {
+    "word": "martes",
+    "options": ["tuesday", "friday", "wednesday"],
+    "correctAnswer": "tuesday"
+  },
+  {
+    "word": "miércoles",
+    "options": ["monday", "wednesday", "friday"],
+    "correctAnswer": "wednesday"
+  },
+  {
+    "word": "jueves",
+    "options": ["thursday", "saturday", "monday"],
+    "correctAnswer": "thursday"
+  },
+  {
+    "word": "viernes",
+    "options": ["sunday", "friday", "thursday"],
+    "correctAnswer": "friday"
+  },
+  {
+    "word": "sábado",
+    "options": ["saturday", "monday", "tuesday"],
+    "correctAnswer": "saturday"
+  },
+  {
+    "word": "domingo",
+    "options": ["friday", "sunday", "tuesday"],
+    "correctAnswer": "sunday"
+  },
+  {
+    "word": "enero",
+    "options": ["march", "january", "february"],
+    "correctAnswer": "january"
+  },
+  {
+    "word": "febrero",
+    "options": ["february", "april", "june"],
+    "correctAnswer": "february"
+  },
+  {
+    "word": "marzo",
+    "options": ["january", "march", "may"],
+    "correctAnswer": "march"
+  },
+  {
+    "word": "abril",
+    "options": ["june", "september", "april"],
+    "correctAnswer": "april"
+  },
+  {
+    "word": "mayo",
+    "options": ["july", "august", "may"],
+    "correctAnswer": "may"
+  },
+  {
+    "word": "junio",
+    "options": ["june", "november", "october"],
+    "correctAnswer": "june"
+  },
+  {
+    "word": "julio",
+    "options": ["august", "july", "december"],
+    "correctAnswer": "july"
+  },
+  {
+    "word": "agosto",
+    "options": ["august", "february", "march"],
+    "correctAnswer": "august"
+  },
+  {
+    "word": "septiembre",
+    "options": ["june", "january", "september"],
+    "correctAnswer": "september"
+  },
+  {
+    "word": "octubre",
+    "options": ["october", "may", "april"],
+    "correctAnswer": "october"
+  },
+  {
+    "word": "noviembre",
+    "options": ["july", "november", "september"],
+    "correctAnswer": "november"
+  },
+  {
+    "word": "diciembre",
+    "options": ["october", "december", "june"],
+    "correctAnswer": "december"
+  },
+  {
+    "word": "hoy",
+    "options": ["yesterday", "tomorrow", "today"],
+    "correctAnswer": "today"
+  },
+  {
+    "word": "mañana",
+    "options": ["today", "tomorrow", "yesterday"],
+    "correctAnswer": "tomorrow"
+  },
+  {
+    "word": "ayer",
+    "options": ["today", "yesterday", "tomorrow"],
+    "correctAnswer": "yesterday"
+  },
+  {
+    "word": "primavera",
+    "options": ["summer", "spring", "winter"],
+    "correctAnswer": "spring"
+  },
+  {
+    "word": "verano",
+    "options": ["summer", "autumn", "spring"],
+    "correctAnswer": "summer"
+  },
+  {
+    "word": "otoño",
+    "options": ["winter", "spring", "autumn"],
+    "correctAnswer": "autumn"
+  },
+  {
+    "word": "invierno",
+    "options": ["summer", "winter", "autumn"],
+    "correctAnswer": "winter"
+  },
+  {
+    "word": "calendario",
+    "options": ["date", "week", "calendar"],
+    "correctAnswer": "calendar"
+  },
+  {
+    "word": "fecha",
+    "options": ["calendar", "date", "day"],
+    "correctAnswer": "date"
+  },
+  {
+    "word": "semana",
+    "options": ["month", "week", "year"],
+    "correctAnswer": "week"
+  },
+  {
+    "word": "mes",
+    "options": ["week", "year", "month"],
+    "correctAnswer": "month"
+  },
+  {
+    "word": "año",
+    "options": ["day", "month", "year"],
+    "correctAnswer": "year"
+  },
+  {
+    "word": "día",
+    "options": ["week", "day", "year"],
+    "correctAnswer": "day"
+  },
+  {
+    "word": "mañana (morning)",
+    "options": ["afternoon", "morning", "night"],
+    "correctAnswer": "morning"
+  },
+  {
+    "word": "tarde",
+    "options": ["morning", "night", "afternoon"],
+    "correctAnswer": "afternoon"
+  },
+  {
+    "word": "noche",
+    "options": ["morning", "afternoon", "night"],
+    "correctAnswer": "night"
+  },
+  {
+    "word": "fin de semana",
+    "options": ["weekend", "weekday", "month"],
+    "correctAnswer": "weekend"
+  }
+]

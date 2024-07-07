@@ -19,7 +19,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link href={"/"} className="hover:opacity-60">
-              Dates
+              Date/Time
             </Link>
           </li>
           <li>

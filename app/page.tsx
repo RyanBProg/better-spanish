@@ -5,43 +5,43 @@ import WordCardTyped from "./components/WordCardTyped";
 import keywordsData from "./data/keywords.json";
 import { useState } from "react";
 
-type QuestionModeType = "multi" | "typed";
+type AnswerModeType = "multi" | "typed";
 
 export default function Home() {
-  const [questionMode, setQuestionMode] = useState<QuestionModeType>("multi");
+  const [answerMode, setAnswerMode] = useState<AnswerModeType>("multi");
 
-  const toggleQuestionMode = () => {
-    if (questionMode === "multi") {
-      setQuestionMode("typed");
+  const toggleAnswerMode = () => {
+    if (answerMode === "multi") {
+      setAnswerMode("typed");
     } else {
-      setQuestionMode("multi");
+      setAnswerMode("multi");
     }
   };
 
   return (
-    <main className="my-8 px-4 bg-teal-50">
-      <div className="mb-10 bg-black -my-8 -mx-4 px-4 pt-8 pb-6">
-        <p className="text-white font-semibold text-lg text-center mb-2">
-          Game Mode
+    <main className="px-4 py-10 bg-orange-100">
+      <div className="mb-4">
+        <p className="text-orange-500 font-semibold text-lg text-center mb-2">
+          Answer Mode
         </p>
-        <div className="flex justify-center items-center gap-4 p-4 bg-white rounded-md">
+        <div className="flex justify-center items-center gap-4 p-4 bg-white drop-shadow-md">
           <p
             className={`
-          ${questionMode === "multi" ? "text-black" : "text-gray-400"}
+          ${answerMode === "multi" ? "text-black" : "text-gray-400"}
           font-medium text-center
             `}>
             Mulitiple
           </p>
           <button
             className="bg-black h-6 w-10 rounded-full px-1 relative"
-            onClick={toggleQuestionMode}>
+            onClick={toggleAnswerMode}>
             <div
-              className={` ${questionMode === "multi" ? "left-1" : "right-1"}
+              className={` ${answerMode === "multi" ? "left-1" : "right-1"}
               absolute h-4 w-4 rounded-full bg-white bottom-1`}></div>
           </button>
           <p
             className={`
-          ${questionMode === "typed" ? "text-black" : "text-gray-400"}
+          ${answerMode === "typed" ? "text-black" : "text-gray-400"}
           font-medium text-center
             `}>
             Typed
@@ -49,12 +49,12 @@ export default function Home() {
         </div>
       </div>
       <ul className="grid grid-cols-1 justify-center items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {questionMode === "multi" &&
+        {answerMode === "multi" &&
           keywordsData.map((current) => {
             return (
               <li
                 key={current.word}
-                className="w-full bg-white py-8 px-4 relative shadow-2xl">
+                className="w-full bg-white py-8 px-4 relative drop-shadow-md">
                 <WordCardMulti
                   word={current.word}
                   correctAnswer={current.correctAnswer}
@@ -63,7 +63,7 @@ export default function Home() {
               </li>
             );
           })}
-        {questionMode === "typed" &&
+        {answerMode === "typed" &&
           keywordsData.map((current) => {
             return (
               <li

@@ -15,6 +15,11 @@ export default function Navbar() {
       <nav className="pr-6">
         <ul className="flex gap-10">
           <li>
+            <Link href={"/learning"} className="hover:opacity-60">
+              Learning
+            </Link>
+          </li>
+          <li>
             <Link href={"/keywords"} className="hover:opacity-60">
               Keywords
             </Link>

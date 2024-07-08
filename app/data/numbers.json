@@ -1,0 +1,154 @@
+[
+  {
+    "number": "1",
+    "correctAnswer": "uno"
+  },
+  {
+    "number": "2",
+    "correctAnswer": "dos"
+  },
+  {
+    "number": "3",
+    "correctAnswer": "tres"
+  },
+  {
+    "number": "4",
+    "correctAnswer": "cuatro"
+  },
+  {
+    "number": "5",
+    "correctAnswer": "cinco"
+  },
+  {
+    "number": "6",
+    "correctAnswer": "seis"
+  },
+  {
+    "number": "7",
+    "correctAnswer": "siete"
+  },
+  {
+    "number": "8",
+    "correctAnswer": "ocho"
+  },
+  {
+    "number": "9",
+    "correctAnswer": "nueve"
+  },
+  {
+    "number": "10",
+    "correctAnswer": "diez"
+  },
+  {
+    "number": "11",
+    "correctAnswer": "once"
+  },
+  {
+    "number": "12",
+    "correctAnswer": "doce"
+  },
+  {
+    "number": "13",
+    "correctAnswer": "trece"
+  },
+  {
+    "number": "14",
+    "correctAnswer": "catorce"
+  },
+  {
+    "number": "15",
+    "correctAnswer": "quince"
+  },
+  {
+    "number": "16",
+    "correctAnswer": "dieciséis"
+  },
+  {
+    "number": "17",
+    "correctAnswer": "diecisiete"
+  },
+  {
+    "number": "18",
+    "correctAnswer": "dieciocho"
+  },
+  {
+    "number": "19",
+    "correctAnswer": "diecinueve"
+  },
+  {
+    "number": "20",
+    "correctAnswer": "veinte"
+  },
+  {
+    "number": "30",
+    "correctAnswer": "treinta"
+  },
+  {
+    "number": "40",
+    "correctAnswer": "cuarenta"
+  },
+  {
+    "number": "50",
+    "correctAnswer": "cincuenta"
+  },
+  {
+    "number": "60",
+    "correctAnswer": "sesenta"
+  },
+  {
+    "number": "70",
+    "correctAnswer": "setenta"
+  },
+  {
+    "number": "80",
+    "correctAnswer": "ochenta"
+  },
+  {
+    "number": "90",
+    "correctAnswer": "noventa"
+  },
+  {
+    "number": "100",
+    "correctAnswer": "cien"
+  },
+  {
+    "number": "101",
+    "correctAnswer": "ciento uno"
+  },
+  {
+    "number": "200",
+    "correctAnswer": "doscientos"
+  },
+  {
+    "number": "300",
+    "correctAnswer": "trescientos"
+  },
+  {
+    "number": "400",
+    "correctAnswer": "cuatrocientos"
+  },
+  {
+    "number": "500",
+    "correctAnswer": "quinientos"
+  },
+  {
+    "number": "600",
+    "correctAnswer": "seiscientos"
+  },
+  {
+    "number": "700",
+    "correctAnswer": "setecientos"
+  },
+  {
+    "number": "800",
+    "correctAnswer": "ochocientos"
+  },
+  {
+    "number": "900",
+    "correctAnswer": "novecientos"
+  },
+  {
+    "number": "1000",
+    "correctAnswer": "mil"
+  }
+]

@@ -2,7 +2,7 @@
 
 import WordCardMulti from "../components/word-cards/WordCardMulti";
 import WordCardTyped from "../components/word-cards/WordCardTyped";
-import keywordsData from "../data/keywords.json";
+import datesData from "../data/dates.json";
 import { useState } from "react";
 
 type AnswerModeType = "multi" | "typed";
@@ -50,7 +50,7 @@ export default function Home() {
       </div>
       <ul className="grid grid-cols-1 justify-center items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {answerMode === "multi" &&
-          keywordsData.map((current) => {
+          datesData.map((current) => {
             return (
               <li
                 key={current.word}
@@ -64,7 +64,7 @@ export default function Home() {
             );
           })}
         {answerMode === "typed" &&
-          keywordsData.map((current) => {
+          datesData.map((current) => {
             return (
               <li
                 key={current.word}

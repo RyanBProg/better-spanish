@@ -20,12 +20,12 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href={"/"} className="hover:opacity-60">
+            <Link href={"/date-time"} className="hover:opacity-60">
               Date/Time
             </Link>
           </li>
           <li>
-            <Link href={"/"} className="hover:opacity-60">
+            <Link href={"/numbers"} className="hover:opacity-60">
               Numbers
             </Link>
           </li>

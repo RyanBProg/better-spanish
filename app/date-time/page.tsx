@@ -50,33 +50,37 @@ export default function Home() {
       </div>
       <ul className="grid grid-cols-1 justify-center items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {answerMode === "multi" &&
-          datesData.map((current) => {
-            return (
-              <li
-                key={current.word}
-                className="w-full bg-white py-8 px-4 relative drop-shadow-md">
-                <WordCardMulti
-                  word={current.word}
-                  correctAnswer={current.correctAnswer}
-                  options={current.options}
-                />
-              </li>
-            );
-          })}
+          datesData
+            .map((current) => {
+              return (
+                <li
+                  key={current.word}
+                  className="w-full bg-white py-8 px-4 relative drop-shadow-md">
+                  <WordCardMulti
+                    word={current.word}
+                    correctAnswer={current.correctAnswer}
+                    options={current.options}
+                  />
+                </li>
+              );
+            })
+            .sort(() => Math.random() - 0.5)}
         {answerMode === "typed" &&
-          datesData.map((current) => {
-            return (
-              <li
-                key={current.word}
-                className="w-full bg-white py-8 px-4 relative shadow-2xl">
-                <WordCardTyped
-                  word={current.word}
-                  correctAnswer={current.correctAnswer}
-                  options={current.options}
-                />
-              </li>
-            );
-          })}
+          datesData
+            .map((current) => {
+              return (
+                <li
+                  key={current.word}
+                  className="w-full bg-white py-8 px-4 relative shadow-2xl">
+                  <WordCardTyped
+                    word={current.word}
+                    correctAnswer={current.correctAnswer}
+                    options={current.options}
+                  />
+                </li>
+              );
+            })
+            .sort(() => Math.random() - 0.5)}
       </ul>
     </main>
   );

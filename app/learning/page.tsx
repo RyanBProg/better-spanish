@@ -1,13 +1,10 @@
-"use client";
-
-import Image from "next/image";
-import arrowIcon from "../../public/images/icon-arrow.svg";
 import colorsImage from "../../public/images/cheat-sheets/colors/spanish-colors-colores.jpg";
-import { useState } from "react";
+import travelImage from "../../public/images/cheat-sheets/travel/phrases-travel.jpg";
+import bodyPartsImage from "../../public/images/cheat-sheets/body/body-parts.jpg";
+import locationImage from "../../public/images/cheat-sheets/direction/location.jpg";
+import Dropdown from "../components/dropdown/Dropdown";
 
 export default function Home() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
   return (
     <main className="px-4 py-10 bg-orange-100">
       <div className="mb-10">
@@ -19,28 +16,10 @@ export default function Home() {
           sheets
         </p>
       </div>
-      <div>
-        <div className="flex justify-between">
-          <h3 className="text-xl font-semibold">Colors</h3>
-          <button onClick={() => setDropdownOpen((prev) => !prev)}>
-            <Image
-              src={arrowIcon}
-              alt="arrow icon"
-              width={20}
-              height={20}
-              className={`${dropdownOpen && "rotate-180"}`}
-            />
-          </button>
-        </div>
-        {dropdownOpen && (
-          <Image
-            src={colorsImage}
-            alt="spanish colors cheat sheet"
-            className="mt-4"
-          />
-        )}
-        <hr className="w-full h-[3px] bg-orange-200 my-3" />
-      </div>
+      <Dropdown image={colorsImage} title={"Colors"} />
+      <Dropdown image={travelImage} title={"Travel phrases"} />
+      <Dropdown image={bodyPartsImage} title={"Body parts"} />
+      <Dropdown image={locationImage} title={"Location words"} />
     </main>
   );
 }

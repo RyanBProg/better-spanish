@@ -2,6 +2,14 @@ import colorsImage from "../../public/images/cheat-sheets/colors/spanish-colors-
 import travelImage from "../../public/images/cheat-sheets/travel/phrases-travel.jpg";
 import bodyPartsImage from "../../public/images/cheat-sheets/body/body-parts.jpg";
 import locationImage from "../../public/images/cheat-sheets/direction/location.jpg";
+import directionsImage from "../../public/images/cheat-sheets/direction/directions.jpg";
+import feelingsImage from "../../public/images/cheat-sheets/conversational/feelings.jpg";
+import greetingsImage from "../../public/images/cheat-sheets/conversational/greetings.jpg";
+import bathroomItemsImage from "../../public/images/cheat-sheets/items/bathroom-items.jpg";
+import clothingItemsImage from "../../public/images/cheat-sheets/items/clothing-items.jpg";
+import householdItemsImage from "../../public/images/cheat-sheets/items/household-items.jpg";
+import kitchenItemsImage from "../../public/images/cheat-sheets/items/kitchen-items.jpg";
+
 import Dropdown from "../components/dropdown/Dropdown";
 
 export default function Home() {
@@ -16,10 +24,26 @@ export default function Home() {
           sheets
         </p>
       </div>
-      <Dropdown image={colorsImage} title={"Colors"} />
-      <Dropdown image={travelImage} title={"Travel phrases"} />
-      <Dropdown image={bodyPartsImage} title={"Body parts"} />
-      <Dropdown image={locationImage} title={"Location words"} />
+      <Dropdown images={[colorsImage]} title={"Colors"} />
+      <Dropdown images={[travelImage]} title={"Travel phrases"} />
+      <Dropdown images={[bodyPartsImage]} title={"Body parts"} />
+      <Dropdown
+        images={[locationImage, directionsImage]}
+        title={"Directional words"}
+      />
+      <Dropdown
+        images={[feelingsImage, greetingsImage]}
+        title={"Conversational phrases"}
+      />
+      <Dropdown
+        images={[
+          bathroomItemsImage,
+          clothingItemsImage,
+          householdItemsImage,
+          kitchenItemsImage,
+        ]}
+        title={"Item words"}
+      />
     </main>
   );
 }

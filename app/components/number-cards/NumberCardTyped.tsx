@@ -5,11 +5,16 @@ import React, { FormEvent, useState } from "react";
 type Props = {
   number: string;
   correctAnswer: string;
+  wordMode: string;
 };
 
 type AnswerStatus = boolean | undefined;
 
-export default function WordCardTyped({ number, correctAnswer }: Props) {
+export default function WordCardTyped({
+  number,
+  correctAnswer,
+  wordMode,
+}: Props) {
   const [isCorrect, setIsCorrect] = useState<AnswerStatus>(undefined);
   const [userAnswer, setUserAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
@@ -17,7 +22,16 @@ export default function WordCardTyped({ number, correctAnswer }: Props) {
   const handleAnswer = (e: FormEvent) => {
     e.preventDefault();
 
-    if (userAnswer.toLocaleLowerCase() === correctAnswer.toLocaleLowerCase()) {
+    if (wordMode === "eng") {
+      if (
+        userAnswer.toLocaleLowerCase() === correctAnswer.toLocaleLowerCase()
+      ) {
+        setIsCorrect(true);
+      } else {
+        setIsCorrect(false);
+      }
+    }
+    if (userAnswer.toLocaleLowerCase() === number.toLocaleLowerCase()) {
       setIsCorrect(true);
     } else {
       setIsCorrect(false);
@@ -28,7 +42,7 @@ export default function WordCardTyped({ number, correctAnswer }: Props) {
     <>
       <div className="relative flex justify-between">
         <h2 className="text-black font-medium text-3xl mb-10 capitalize">
-          {number}
+          {wordMode === "eng" ? number : correctAnswer}
         </h2>
         <button
           className="bg-red-400 w-fit h-fit rounded-md px-2 py-1 text-sm text-white hover:brightness-110"

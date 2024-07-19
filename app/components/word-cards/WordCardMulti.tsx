@@ -1,7 +1,8 @@
 "use client";
 
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSettings } from "@/app/context/SettingsContextProvider";
+import numberData from "../../data/numbers.json";
 
 type Props = {
   engWord: string;
@@ -12,16 +13,15 @@ type AnswerStatus = boolean | undefined;
 
 export default function WordCardMulti({ engWord, espWord }: Props) {
   const [isCorrect, setIsCorrect] = useState<AnswerStatus>(undefined);
-  const [userAnswer, setUserAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
   const [wordSetup, setWordSetup] = useState({
     visibleWord: espWord,
     answerWord: engWord,
   });
+  const [answerOptions, setAnswerOptions] = useState<string[]>([]);
   const { state } = useSettings();
 
   useEffect(() => {
-    setUserAnswer("");
     setShowAnswer(false);
     setIsCorrect(undefined);
   }, [state]);
@@ -32,19 +32,34 @@ export default function WordCardMulti({ engWord, espWord }: Props) {
         visibleWord: engWord,
         answerWord: espWord,
       });
+
+      const options = [];
+      for (let i = 0; i < 2; i++) {
+        options.push(
+          numberData[Math.floor(Math.random() * numberData.length)]
+            .correctAnswer
+        );
+      }
+      setAnswerOptions([...options, espWord].sort(() => Math.random() - 0.5));
     } else {
       setWordSetup({
         visibleWord: espWord,
         answerWord: engWord,
       });
+
+      const options = [];
+      for (let i = 0; i < 2; i++) {
+        options.push(
+          numberData[Math.floor(Math.random() * numberData.length)].number
+        );
+      }
+      setAnswerOptions([...options, engWord].sort(() => Math.random() - 0.5));
     }
   }, [state.languageMode]);
 
-  const handleAnswer = (e: FormEvent) => {
-    e.preventDefault();
+  const handleAnswer = (option: string) => {
     if (
-      userAnswer.toLocaleLowerCase() ===
-      wordSetup.answerWord.toLocaleLowerCase()
+      option.toLocaleLowerCase() === wordSetup.answerWord.toLocaleLowerCase()
     ) {
       setIsCorrect(true);
     } else {
@@ -61,7 +76,7 @@ export default function WordCardMulti({ engWord, espWord }: Props) {
         <button
           className={`${showAnswer && "bg-red-300"} ${
             !showAnswer && "bg-red-400"
-          } w-[105px] h-fit rounded-md px-2 py-1 text-sm text-white hover:brightness-110`}
+          } w-[105px] h-fit rounded-md px-2 py-1 text-sm text-white transition-colors hover:brightness-110`}
           onClick={() => setShowAnswer((prev) => !prev)}>
           {showAnswer ? "Hide Answer" : "Show Answer"}
         </button>
@@ -83,21 +98,20 @@ export default function WordCardMulti({ engWord, espWord }: Props) {
           <span className="ml-1 capitalize">{wordSetup.answerWord}</span>
         </p>
       )}
-      <form className="flex" onSubmit={(e) => handleAnswer(e)}>
-        <input
-          type="text"
-          className="bg-gray-100 text-gray-600 rounded-l-md px-2 py-1 flex-grow min-w-0"
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-        />
-        <button
-          disabled={isCorrect}
-          className={`${isCorrect && "bg-gray-300"} ${
-            !isCorrect && "bg-green-700 hover:brightness-110"
-          } text-white rounded-r-md px-2 py-1`}>
-          Submit
-        </button>
-      </form>
+      <ul className="flex gap-2">
+        {answerOptions.map((option) => (
+          <li>
+            <button
+              disabled={isCorrect}
+              className={`${isCorrect && "bg-gray-300"} ${
+                !isCorrect && "bg-orange-400 hover:brightness-110"
+              } w-fit h-fit rounded-md px-3 py-1 font-semibold text-white transition-colors`}
+              onClick={() => handleAnswer(option)}>
+              {option}
+            </button>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

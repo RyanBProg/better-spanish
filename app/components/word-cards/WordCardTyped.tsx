@@ -61,7 +61,7 @@ export default function WordCardTyped({ engWord, espWord }: Props) {
         <button
           className={`${showAnswer && "bg-red-300"} ${
             !showAnswer && "bg-red-400"
-          } w-[105px] h-fit rounded-md px-2 py-1 text-sm text-white hover:brightness-110`}
+          } w-[105px] h-fit rounded-md px-2 py-1 text-sm text-white transition-colors hover:brightness-110`}
           onClick={() => setShowAnswer((prev) => !prev)}>
           {showAnswer ? "Hide Answer" : "Show Answer"}
         </button>
@@ -94,7 +94,7 @@ export default function WordCardTyped({ engWord, espWord }: Props) {
           disabled={isCorrect}
           className={`${isCorrect && "bg-gray-300"} ${
             !isCorrect && "bg-green-700 hover:brightness-110"
-          } text-white rounded-r-md px-2 py-1`}>
+          } transition-colors text-white rounded-r-md px-2 py-1`}>
           Submit
         </button>
       </form>

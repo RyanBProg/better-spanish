@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { useSettings } from "@/app/context/SettingsContextProvider";
 
 type Props = {
@@ -15,6 +15,11 @@ export default function WordCardTyped({ number, correctAnswer }: Props) {
   const [userAnswer, setUserAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
   const { state } = useSettings();
+
+  useEffect(() => {
+    setUserAnswer("");
+    setShowAnswer(false);
+  }, [state]);
 
   const handleAnswer = (e: FormEvent) => {
     e.preventDefault();

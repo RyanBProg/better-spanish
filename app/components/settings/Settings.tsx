@@ -12,7 +12,11 @@ export default function Settings() {
   return (
     <div className="w-full relative mb-10">
       <button className="block ml-auto" onClick={() => setIsOpen(true)}>
-        <Image src={settingsIcon} alt="settings icon" className="size-5 mr-3" />
+        <Image
+          src={settingsIcon}
+          alt="settings icon"
+          className="size-6 mr-3 hover:motion-safe:animate-spin"
+        />
       </button>
       {isOpen && (
         <div className="absolute bg-white drop-shadow-md p-4 z-10 rounded-md right-0 -top-5 w-96">

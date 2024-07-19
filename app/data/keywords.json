@@ -1,42 +1,34 @@
 [
   {
     "word": "donde",
-    "options": ["who", "what", "where"],
     "correctAnswer": "where"
   },
   {
     "word": "como",
-    "options": ["when", "how", "who"],
     "correctAnswer": "how"
   },
   {
     "word": "cuando",
-    "options": ["how much", "what", "when"],
     "correctAnswer": "when"
   },
   {
     "word": "que",
-    "options": ["who", "what", "which"],
     "correctAnswer": "what"
   },
   {
     "word": "por que",
-    "options": ["why", "what", "where"],
     "correctAnswer": "why"
   },
   {
     "word": "qual",
-    "options": ["who", "which", "where"],
     "correctAnswer": "which"
   },
   {
     "word": "cuanto",
-    "options": ["when", "what", "how much"],
     "correctAnswer": "how much"
   },
   {
     "word": "quien",
-    "options": ["who", "what", "which"],
     "correctAnswer": "who"
   }
 ]

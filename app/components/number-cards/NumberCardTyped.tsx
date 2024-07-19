@@ -27,11 +27,12 @@ export default function WordCardTyped({ number, correctAnswer }: Props) {
       } else {
         setIsCorrect(false);
       }
-    }
-    if (userAnswer.toLocaleLowerCase() === number.toLocaleLowerCase()) {
-      setIsCorrect(true);
     } else {
-      setIsCorrect(false);
+      if (userAnswer.toLocaleLowerCase() === number.toLocaleLowerCase()) {
+        setIsCorrect(true);
+      } else {
+        setIsCorrect(false);
+      }
     }
   };
 

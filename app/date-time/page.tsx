@@ -15,8 +15,12 @@ export default function Home() {
   return (
     <main className="px-4 py-10 bg-orange-100 min-h-screen">
       <SettingsContextProvider>
-        <h2 className="text-2xl">Numbers Quiz</h2>
-        <Settings />
+        <div className="flex justify-between mx-auto max-w-[1100px]">
+          <h2 className="text-2xl text-orange-500 font-medium">
+            Date/Time Quiz
+          </h2>
+          <Settings />
+        </div>
         <WordCardList />
       </SettingsContextProvider>
     </main>

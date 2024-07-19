@@ -10,7 +10,7 @@ export default function Settings() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full relative mb-10">
+    <div className="w-fit relative mb-10">
       <button className="block ml-auto" onClick={() => setIsOpen(true)}>
         <Image
           src={settingsIcon}

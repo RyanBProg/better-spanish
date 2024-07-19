@@ -2,16 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 import { useSettings } from "@/app/context/SettingsContextProvider";
-import numberData from "../../data/numbers.json";
 
 type Props = {
   engWord: string;
   espWord: string;
+  options: numberDataType[];
 };
 
 type AnswerStatus = boolean | undefined;
 
-export default function WordCardMulti({ engWord, espWord }: Props) {
+type numberDataType = {
+  word: string;
+  correctAnswer: string;
+};
+
+export default function WordCardMulti({ engWord, espWord, options }: Props) {
   const [isCorrect, setIsCorrect] = useState<AnswerStatus>(undefined);
   const [showAnswer, setShowAnswer] = useState(false);
   const [wordSetup, setWordSetup] = useState({
@@ -32,28 +37,11 @@ export default function WordCardMulti({ engWord, espWord }: Props) {
         visibleWord: engWord,
         answerWord: espWord,
       });
-
-      const options = [];
-      for (let i = 0; i < 2; i++) {
-        options.push(
-          numberData[Math.floor(Math.random() * numberData.length)]
-            .correctAnswer
-        );
-      }
-      setAnswerOptions([...options, espWord].sort(() => Math.random() - 0.5));
     } else {
       setWordSetup({
         visibleWord: espWord,
         answerWord: engWord,
       });
-
-      const options = [];
-      for (let i = 0; i < 2; i++) {
-        options.push(
-          numberData[Math.floor(Math.random() * numberData.length)].number
-        );
-      }
-      setAnswerOptions([...options, engWord].sort(() => Math.random() - 0.5));
     }
   }, [state.languageMode]);
 
@@ -99,16 +87,27 @@ export default function WordCardMulti({ engWord, espWord }: Props) {
         </p>
       )}
       <ul className="flex gap-2">
-        {answerOptions.map((option) => (
+        {options.map((option) => (
           <li>
-            <button
-              disabled={isCorrect}
-              className={`${isCorrect && "bg-gray-300"} ${
-                !isCorrect && "bg-orange-400 hover:brightness-110"
-              } w-fit h-fit rounded-md px-3 py-1 font-semibold text-white transition-colors`}
-              onClick={() => handleAnswer(option)}>
-              {option}
-            </button>
+            {state.languageMode === "esp" ? (
+              <button
+                disabled={isCorrect}
+                className={`${isCorrect && "bg-gray-300"} ${
+                  !isCorrect && "bg-orange-400 hover:brightness-110"
+                } w-fit h-fit rounded-md px-3 py-1 font-semibold text-white transition-colors`}
+                onClick={() => handleAnswer(option.word)}>
+                {option.word}
+              </button>
+            ) : (
+              <button
+                disabled={isCorrect}
+                className={`${isCorrect && "bg-gray-300"} ${
+                  !isCorrect && "bg-orange-400 hover:brightness-110"
+                } w-fit h-fit rounded-md px-3 py-1 font-semibold text-white transition-colors`}
+                onClick={() => handleAnswer(option.correctAnswer)}>
+                {option.correctAnswer}
+              </button>
+            )}
           </li>
         ))}
       </ul>

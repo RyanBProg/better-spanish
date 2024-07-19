@@ -9,7 +9,7 @@ import WordCardMulti from "../components/word-cards/WordCardMulti";
 import WordCardSkeleton from "../components/word-cards/WordCardSkeleton";
 import { useSettings } from "@/app/context/SettingsContextProvider";
 import { DataType } from "../types/types";
-import { generateOptions } from "../components/utils/generateOptions";
+import { generateOptions } from "../utils/generateOptions";
 
 export default function Home() {
   return (

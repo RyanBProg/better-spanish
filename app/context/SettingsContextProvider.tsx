@@ -6,28 +6,22 @@ import {
   useReducer,
 } from "react";
 
-export type LanguageMode = "esp" | "eng";
-export type QuestionMode = "typed" | "multi";
+type LanguageMode = "esp" | "eng";
+type QuestionMode = "typed" | "multi";
 
 type SettingsContextType = {
   languageMode: LanguageMode;
   questionMode: QuestionMode;
 };
-export type ActionType =
-  | "language_spanish"
-  | "language_english"
-  | "question_typed"
-  | "question_multi";
-type Action = {
-  type: ActionType;
-};
+export type ActionType = "toggle_language" | "toggle_questionMode";
+type Action = { type: ActionType };
 
 const intialSettingsContext: SettingsContextType = {
   languageMode: "esp",
   questionMode: "typed",
 };
 
-export const SettingsContext = createContext<{
+const SettingsContext = createContext<{
   state: SettingsContextType;
   dispatch: Dispatch<Action>;
 }>({
@@ -40,14 +34,18 @@ const settingsReducer = (
   action: Action
 ): SettingsContextType => {
   switch (action.type) {
-    case "language_spanish":
-      return { ...state, languageMode: "esp" };
-    case "language_english":
-      return { ...state, languageMode: "eng" };
-    case "question_typed":
-      return { ...state, questionMode: "typed" };
-    case "question_multi":
-      return { ...state, questionMode: "multi" };
+    case "toggle_language":
+      if (state.languageMode === "esp") {
+        return { ...state, languageMode: "eng" };
+      } else {
+        return { ...state, languageMode: "esp" };
+      }
+    case "toggle_questionMode":
+      if (state.questionMode === "typed") {
+        return { ...state, questionMode: "multi" };
+      } else {
+        return { ...state, questionMode: "typed" };
+      }
     default:
       return state;
   }

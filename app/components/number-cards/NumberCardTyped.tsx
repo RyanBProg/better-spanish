@@ -1,28 +1,25 @@
 "use client";
 
 import React, { FormEvent, useState } from "react";
+import { useSettings } from "@/app/context/SettingsContextProvider";
 
 type Props = {
   number: string;
   correctAnswer: string;
-  wordMode: string;
 };
 
 type AnswerStatus = boolean | undefined;
 
-export default function WordCardTyped({
-  number,
-  correctAnswer,
-  wordMode,
-}: Props) {
+export default function WordCardTyped({ number, correctAnswer }: Props) {
   const [isCorrect, setIsCorrect] = useState<AnswerStatus>(undefined);
   const [userAnswer, setUserAnswer] = useState("");
   const [showAnswer, setShowAnswer] = useState(false);
+  const { state } = useSettings();
 
   const handleAnswer = (e: FormEvent) => {
     e.preventDefault();
 
-    if (wordMode === "eng") {
+    if (state.languageMode === "eng") {
       if (
         userAnswer.toLocaleLowerCase() === correctAnswer.toLocaleLowerCase()
       ) {
@@ -42,7 +39,7 @@ export default function WordCardTyped({
     <>
       <div className="relative flex justify-between">
         <h2 className="text-black font-medium text-3xl mb-10 capitalize">
-          {wordMode === "eng" ? number : correctAnswer}
+          {state.languageMode === "eng" ? number : correctAnswer}
         </h2>
         <button
           className="bg-red-400 w-fit h-fit rounded-md px-2 py-1 text-sm text-white hover:brightness-110"
@@ -51,7 +48,7 @@ export default function WordCardTyped({
         </button>
         {showAnswer && (
           <span className="text-gray-400 capitalize absolute left-0 -top-6">
-            {correctAnswer}
+            {state.languageMode === "eng" ? correctAnswer : number}
           </span>
         )}
       </div>

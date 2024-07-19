@@ -3,14 +3,10 @@
 import React, { useState } from "react";
 import settingsIcon from "../../../public/images/icons/setting.png";
 import Image from "next/image";
-import { WordModeType } from "@/app/numbers/page";
+import { useSettings } from "@/app/context/SettingsContextProvider";
 
-type Props = {
-  wordMode: WordModeType;
-  toggleWordMode: () => void;
-};
-
-export default function Settings({ wordMode, toggleWordMode }: Props) {
+export default function Settings() {
+  const { state, dispatch } = useSettings();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -32,21 +28,23 @@ export default function Settings({ wordMode, toggleWordMode }: Props) {
             <div className="flex items-center gap-4">
               <p
                 className={`
-          ${wordMode === "esp" ? "text-black" : "text-gray-400"}
+          ${state.languageMode === "esp" ? "text-black" : "text-gray-400"}
           font-medium text-center
             `}>
                 Spanish
               </p>
               <button
                 className="bg-black h-6 w-10 rounded-full px-1 relative"
-                onClick={toggleWordMode}>
+                onClick={() => dispatch({ type: "toggle_language" })}>
                 <div
-                  className={` ${wordMode === "esp" ? "left-1" : "right-1"}
+                  className={` ${
+                    state.languageMode === "esp" ? "left-1" : "right-1"
+                  }
               absolute h-4 w-4 rounded-full bg-white bottom-1`}></div>
               </button>
               <p
                 className={`
-          ${wordMode === "eng" ? "text-black" : "text-gray-400"}
+          ${state.languageMode === "eng" ? "text-black" : "text-gray-400"}
           font-medium text-center
             `}>
                 English
@@ -54,6 +52,34 @@ export default function Settings({ wordMode, toggleWordMode }: Props) {
             </div>
           </div>
           <hr className="my-4" />
+          <div>
+            <p className="text-sm mb-2 font-normal">Question Mode</p>
+            <div className="flex items-center gap-4">
+              <p
+                className={`
+          ${state.questionMode === "typed" ? "text-black" : "text-gray-400"}
+          font-medium text-center
+            `}>
+                Typed Input
+              </p>
+              <button
+                className="bg-black h-6 w-10 rounded-full px-1 relative"
+                onClick={() => dispatch({ type: "toggle_questionMode" })}>
+                <div
+                  className={` ${
+                    state.questionMode === "typed" ? "left-1" : "right-1"
+                  }
+              absolute h-4 w-4 rounded-full bg-white bottom-1`}></div>
+              </button>
+              <p
+                className={`
+          ${state.questionMode === "multi" ? "text-black" : "text-gray-400"}
+          font-medium text-center
+            `}>
+                Multiple Choice
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>

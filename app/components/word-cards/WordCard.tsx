@@ -71,9 +71,9 @@ export default function WordCard({ espWord, engWord, options }: Props) {
   };
 
   return (
-    <li className="drop-shadow-lg bg-white">
+    <li className="drop-shadow-lg bg-white rounded-sm">
       <div className="relative flex">
-        <div className="relative w-full flex items-center bg-gradient-to-bl from-orange-300 to-orange-400 py-8 px-4 gap-2">
+        <div className="relative w-full flex items-center bg-gradient-to-bl from-orange-300 to-orange-400 py-8 px-4 gap-2 rounded-t-sm">
           <h2 className="text-white font-bold text-2xl capitalize grow drop-shadow-lg">
             {wordSetup.visibleWord}
           </h2>

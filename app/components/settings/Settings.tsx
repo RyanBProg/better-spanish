@@ -15,7 +15,7 @@ export default function Settings() {
         <Image
           src={settingsIcon}
           alt="settings icon"
-          className="size-6 mr-3 hover:motion-safe:animate-spin"
+          className="size-6 hover:motion-safe:animate-spin"
         />
       </button>
       {isOpen && (
@@ -28,12 +28,12 @@ export default function Settings() {
           </div>
           <hr className="my-4" />
           <div>
-            <p className="text-sm mb-2 font-normal">Word Mode</p>
+            <p className="text-sm mb-2 font-medium">Word Mode</p>
             <div className="flex items-center gap-4">
               <p
                 className={`
           ${state.languageMode === "esp" ? "text-black" : "text-gray-400"}
-          font-medium text-center
+          text-center font-normal
             `}>
                 Spanish
               </p>
@@ -49,7 +49,7 @@ export default function Settings() {
               <p
                 className={`
           ${state.languageMode === "eng" ? "text-black" : "text-gray-400"}
-          font-medium text-center
+          font-normal text-center
             `}>
                 English
               </p>
@@ -57,12 +57,12 @@ export default function Settings() {
           </div>
           <hr className="my-4" />
           <div>
-            <p className="text-sm mb-2 font-normal">Question Mode</p>
+            <p className="text-sm mb-2 font-medium">Question Mode</p>
             <div className="flex items-center gap-4">
               <p
                 className={`
           ${state.questionMode === "typed" ? "text-black" : "text-gray-400"}
-          font-medium text-center
+          font-normal text-center
             `}>
                 Typed Input
               </p>
@@ -78,7 +78,7 @@ export default function Settings() {
               <p
                 className={`
           ${state.questionMode === "multi" ? "text-black" : "text-gray-400"}
-          font-medium text-center
+          font-normal text-center
             `}>
                 Multiple Choice
               </p>

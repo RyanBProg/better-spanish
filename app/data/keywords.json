@@ -1,34 +1,34 @@
 [
   {
-    "word": "donde",
-    "correctAnswer": "where"
+    "word": "where",
+    "correctAnswer": "donde"
   },
   {
-    "word": "como",
-    "correctAnswer": "how"
+    "word": "how",
+    "correctAnswer": "como"
   },
   {
-    "word": "cuando",
-    "correctAnswer": "when"
+    "word": "when",
+    "correctAnswer": "cuando"
   },
   {
-    "word": "que",
-    "correctAnswer": "what"
+    "word": "what",
+    "correctAnswer": "que"
   },
   {
-    "word": "por que",
-    "correctAnswer": "why"
+    "word": "why",
+    "correctAnswer": "por que"
   },
   {
-    "word": "qual",
-    "correctAnswer": "which"
+    "word": "which",
+    "correctAnswer": "qual"
   },
   {
-    "word": "cuanto",
-    "correctAnswer": "how much"
+    "word": "how much",
+    "correctAnswer": "cuanto"
   },
   {
-    "word": "quien",
-    "correctAnswer": "who"
+    "word": "who",
+    "correctAnswer": "quien"
   }
 ]

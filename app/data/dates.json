@@ -1,142 +1,142 @@
 [
   {
-    "word": "lunes",
-    "correctAnswer": "monday"
+    "word": "monday",
+    "correctAnswer": "lunes"
   },
   {
-    "word": "martes",
-    "correctAnswer": "tuesday"
+    "word": "tuesday",
+    "correctAnswer": "martes"
   },
   {
-    "word": "miércoles",
-    "correctAnswer": "wednesday"
+    "word": "wednesday",
+    "correctAnswer": "miércoles"
   },
   {
-    "word": "jueves",
-    "correctAnswer": "thursday"
+    "word": "thursday",
+    "correctAnswer": "jueves"
   },
   {
-    "word": "viernes",
-    "correctAnswer": "friday"
+    "word": "friday",
+    "correctAnswer": "viernes"
   },
   {
-    "word": "sábado",
-    "correctAnswer": "saturday"
+    "word": "saturday",
+    "correctAnswer": "sábado"
   },
   {
-    "word": "domingo",
-    "correctAnswer": "sunday"
+    "word": "sunday",
+    "correctAnswer": "domingo"
   },
   {
-    "word": "enero",
-    "correctAnswer": "january"
+    "word": "january",
+    "correctAnswer": "enero"
   },
   {
-    "word": "febrero",
-    "correctAnswer": "february"
+    "word": "february",
+    "correctAnswer": "febrero"
   },
   {
-    "word": "marzo",
-    "correctAnswer": "march"
+    "word": "march",
+    "correctAnswer": "marzo"
   },
   {
-    "word": "abril",
-    "correctAnswer": "april"
+    "word": "april",
+    "correctAnswer": "abril"
   },
   {
-    "word": "mayo",
-    "correctAnswer": "may"
+    "word": "may",
+    "correctAnswer": "mayo"
   },
   {
-    "word": "junio",
-    "correctAnswer": "june"
+    "word": "june",
+    "correctAnswer": "junio"
   },
   {
-    "word": "julio",
-    "correctAnswer": "july"
+    "word": "july",
+    "correctAnswer": "julio"
   },
   {
-    "word": "agosto",
-    "correctAnswer": "august"
+    "word": "august",
+    "correctAnswer": "agosto"
   },
   {
-    "word": "septiembre",
-    "correctAnswer": "september"
+    "word": "september",
+    "correctAnswer": "septiembre"
   },
   {
-    "word": "octubre",
-    "correctAnswer": "october"
+    "word": "october",
+    "correctAnswer": "octubre"
   },
   {
-    "word": "noviembre",
-    "correctAnswer": "november"
+    "word": "november",
+    "correctAnswer": "noviembre"
   },
   {
-    "word": "diciembre",
-    "correctAnswer": "december"
+    "word": "december",
+    "correctAnswer": "diciembre"
   },
   {
-    "word": "hoy",
-    "correctAnswer": "today"
+    "word": "today",
+    "correctAnswer": "hoy"
   },
   {
-    "word": "mañana",
-    "correctAnswer": "tomorrow"
+    "word": "tomorrow",
+    "correctAnswer": "mañana"
   },
   {
-    "word": "ayer",
-    "correctAnswer": "yesterday"
+    "word": "yesterday",
+    "correctAnswer": "ayer"
   },
   {
-    "word": "primavera",
-    "correctAnswer": "spring"
+    "word": "spring",
+    "correctAnswer": "primavera"
   },
   {
-    "word": "verano",
-    "correctAnswer": "summer"
+    "word": "summer",
+    "correctAnswer": "verano"
   },
   {
-    "word": "otoño",
-    "correctAnswer": "autumn"
+    "word": "autumn",
+    "correctAnswer": "otoño"
   },
   {
-    "word": "invierno",
-    "correctAnswer": "winter"
+    "word": "winter",
+    "correctAnswer": "invierno"
   },
   {
-    "word": "calendario",
-    "correctAnswer": "calendar"
+    "word": "calendar",
+    "correctAnswer": "calendario"
   },
   {
-    "word": "fecha",
-    "correctAnswer": "date"
+    "word": "date",
+    "correctAnswer": "fecha"
   },
   {
-    "word": "semana",
-    "correctAnswer": "week"
+    "word": "week",
+    "correctAnswer": "semana"
   },
   {
-    "word": "mes",
-    "correctAnswer": "month"
+    "word": "month",
+    "correctAnswer": "mes"
   },
   {
-    "word": "año",
-    "correctAnswer": "year"
+    "word": "year",
+    "correctAnswer": "año"
   },
   {
-    "word": "día",
-    "correctAnswer": "day"
+    "word": "day",
+    "correctAnswer": "día"
   },
   {
-    "word": "tarde",
-    "correctAnswer": "afternoon"
+    "word": "afternoon",
+    "correctAnswer": "tarde"
   },
   {
-    "word": "noche",
-    "correctAnswer": "night"
+    "word": "night",
+    "correctAnswer": "noche"
   },
   {
-    "word": "fin de semana",
-    "correctAnswer": "weekend"
+    "word": "weekend",
+    "correctAnswer": "fin de semana"
   }
 ]

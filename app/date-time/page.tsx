@@ -6,7 +6,6 @@ import SettingsContextProvider from "../context/SettingsContextProvider";
 import { useEffect, useState } from "react";
 import WordCard from "../components/word-cards/WordCard";
 import WordCardSkeleton from "../components/word-cards/WordCardSkeleton";
-import { useSettings } from "@/app/context/SettingsContextProvider";
 import { DataType } from "../types/types";
 import { generateOptions } from "../utils/generateOptions";
 
@@ -30,7 +29,6 @@ function WordCardList() {
   const [shuffledNumberData, setShuffledNumberData] = useState<
     DataType[] | undefined
   >(undefined);
-  const { state } = useSettings();
 
   useEffect(() => {
     setShuffledNumberData([...datesData].sort(() => Math.random() - 0.5));

@@ -4,8 +4,7 @@ import datesData from "../data/dates.json";
 import Settings from "../components/settings/Settings";
 import SettingsContextProvider from "../context/SettingsContextProvider";
 import { useEffect, useState } from "react";
-import WordCardTyped from "../components/word-cards/WordCardTyped";
-import WordCardMulti from "../components/word-cards/WordCardMulti";
+import WordCard from "../components/word-cards/WordCard";
 import WordCardSkeleton from "../components/word-cards/WordCardSkeleton";
 import { useSettings } from "@/app/context/SettingsContextProvider";
 import { DataType } from "../types/types";
@@ -48,24 +47,14 @@ function WordCardList() {
   }
 
   return (
-    <ul className="grid grid-cols-1 justify-center items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1100px]">
+    <ul className="grid grid-cols-1 justify-center items-start gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1250px]">
       {shuffledNumberData.map((current) => (
-        <li
+        <WordCard
           key={current.word}
-          className="w-full bg-white py-8 px-4 relative shadow-2xl">
-          {state.questionMode === "typed" ? (
-            <WordCardTyped
-              engWord={current.word}
-              espWord={current.correctAnswer}
-            />
-          ) : (
-            <WordCardMulti
-              engWord={current.word}
-              espWord={current.correctAnswer}
-              options={generateOptions(current, datesData)}
-            />
-          )}
-        </li>
+          engWord={current.word}
+          espWord={current.correctAnswer}
+          options={generateOptions(current, datesData)}
+        />
       ))}
     </ul>
   );

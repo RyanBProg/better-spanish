@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import arrowIcon from "../../../public/images/icon-arrow.svg";
+import arrowIcon from "../../../public/images/icons/icon-arrow.svg";
 
 type Props = {
   images: StaticImageData[];

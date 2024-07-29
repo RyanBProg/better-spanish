@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import settingsIcon from "../../../public/images/icons/setting.png";
 import Image from "next/image";
 import { useSettings } from "@/app/context/SettingsContextProvider";
@@ -8,6 +8,24 @@ import { useSettings } from "@/app/context/SettingsContextProvider";
 export default function Settings() {
   const { state, dispatch } = useSettings();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
 
   return (
     <div className="w-fit relative mb-10">
@@ -19,7 +37,9 @@ export default function Settings() {
         />
       </button>
       {isOpen && (
-        <div className="absolute bg-white drop-shadow-md p-4 z-10 rounded-md right-0 -top-5 w-96">
+        <div
+          className="absolute bg-white drop-shadow-md p-4 z-10 rounded-md right-0 -top-5 w-96"
+          ref={modalRef}>
           <div className="flex justify-between">
             <h3 className="text-orange-500 font-medium">Settings</h3>
             <button className="text-xl" onClick={() => setIsOpen(false)}>

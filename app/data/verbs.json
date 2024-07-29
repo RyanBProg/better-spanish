@@ -1,0 +1,1302 @@
+[
+  {
+    "english": "To be",
+    "spanish": "ser",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "soy",
+          "english": "I am"
+        },
+        "tú": {
+          "spanish": "eres",
+          "english": "you are"
+        },
+        "usted": {
+          "spanish": "es",
+          "english": "you are"
+        },
+        "él": {
+          "spanish": "es",
+          "english": "he is"
+        },
+        "ella": {
+          "spanish": "es",
+          "english": "she is"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "somos",
+          "english": "we are"
+        },
+        "nosotras": {
+          "spanish": "somos",
+          "english": "we are"
+        },
+        "ustedes": {
+          "spanish": "son",
+          "english": "you all are"
+        },
+        "ellos": {
+          "spanish": "son",
+          "english": "they are"
+        },
+        "ellas": {
+          "spanish": "son",
+          "english": "they are"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "fui",
+          "english": "I was"
+        },
+        "tú": {
+          "spanish": "fuiste",
+          "english": "you were"
+        },
+        "usted": {
+          "spanish": "fue",
+          "english": "you were"
+        },
+        "él": {
+          "spanish": "fue",
+          "english": "he was"
+        },
+        "ella": {
+          "spanish": "fue",
+          "english": "she was"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "fuimos",
+          "english": "we were"
+        },
+        "nosotras": {
+          "spanish": "fuimos",
+          "english": "we were"
+        },
+        "ustedes": {
+          "spanish": "fueron",
+          "english": "you all were"
+        },
+        "ellos": {
+          "spanish": "fueron",
+          "english": "they were"
+        },
+        "ellas": {
+          "spanish": "fueron",
+          "english": "they were"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "siendo",
+      "english": "being"
+    }
+  },
+  {
+    "english": "To be",
+    "spanish": "estar",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "estoy",
+          "english": "I am"
+        },
+        "tú": {
+          "spanish": "estás",
+          "english": "you are"
+        },
+        "usted": {
+          "spanish": "está",
+          "english": "you are"
+        },
+        "él": {
+          "spanish": "está",
+          "english": "he is"
+        },
+        "ella": {
+          "spanish": "está",
+          "english": "she is"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "estamos",
+          "english": "we are"
+        },
+        "nosotras": {
+          "spanish": "estamos",
+          "english": "we are"
+        },
+        "ustedes": {
+          "spanish": "están",
+          "english": "you all are"
+        },
+        "ellos": {
+          "spanish": "están",
+          "english": "they are"
+        },
+        "ellas": {
+          "spanish": "están",
+          "english": "they are"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "estuve",
+          "english": "I was"
+        },
+        "tú": {
+          "spanish": "estuviste",
+          "english": "you were"
+        },
+        "usted": {
+          "spanish": "estuvo",
+          "english": "you were"
+        },
+        "él": {
+          "spanish": "estuvo",
+          "english": "he was"
+        },
+        "ella": {
+          "spanish": "estuvo",
+          "english": "she was"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "estuvimos",
+          "english": "we were"
+        },
+        "nosotras": {
+          "spanish": "estuvimos",
+          "english": "we were"
+        },
+        "ustedes": {
+          "spanish": "estuvieron",
+          "english": "you all were"
+        },
+        "ellos": {
+          "spanish": "estuvieron",
+          "english": "they were"
+        },
+        "ellas": {
+          "spanish": "estuvieron",
+          "english": "they were"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "estando",
+      "english": "being"
+    }
+  },
+  {
+    "english": "To have",
+    "spanish": "tener",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "tengo",
+          "english": "I have"
+        },
+        "tú": {
+          "spanish": "tienes",
+          "english": "you have"
+        },
+        "usted": {
+          "spanish": "tiene",
+          "english": "you have"
+        },
+        "él": {
+          "spanish": "tiene",
+          "english": "he has"
+        },
+        "ella": {
+          "spanish": "tiene",
+          "english": "she has"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "tenemos",
+          "english": "we have"
+        },
+        "nosotras": {
+          "spanish": "tenemos",
+          "english": "we have"
+        },
+        "ustedes": {
+          "spanish": "tienen",
+          "english": "you all have"
+        },
+        "ellos": {
+          "spanish": "tienen",
+          "english": "they have"
+        },
+        "ellas": {
+          "spanish": "tienen",
+          "english": "they have"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "tuve",
+          "english": "I had"
+        },
+        "tú": {
+          "spanish": "tuviste",
+          "english": "you had"
+        },
+        "usted": {
+          "spanish": "tuvo",
+          "english": "you had"
+        },
+        "él": {
+          "spanish": "tuvo",
+          "english": "he had"
+        },
+        "ella": {
+          "spanish": "tuvo",
+          "english": "she had"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "tuvimos",
+          "english": "we had"
+        },
+        "nosotras": {
+          "spanish": "tuvimos",
+          "english": "we had"
+        },
+        "ustedes": {
+          "spanish": "tuvieron",
+          "english": "you all had"
+        },
+        "ellos": {
+          "spanish": "tuvieron",
+          "english": "they had"
+        },
+        "ellas": {
+          "spanish": "tuvieron",
+          "english": "they had"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "teniendo",
+      "english": "having"
+    }
+  },
+  {
+    "english": "To do",
+    "spanish": "hacer",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "hago",
+          "english": "I do"
+        },
+        "tú": {
+          "spanish": "haces",
+          "english": "you do"
+        },
+        "usted": {
+          "spanish": "hace",
+          "english": "you do"
+        },
+        "él": {
+          "spanish": "hace",
+          "english": "he does"
+        },
+        "ella": {
+          "spanish": "hace",
+          "english": "she does"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "hacemos",
+          "english": "we do"
+        },
+        "nosotras": {
+          "spanish": "hacemos",
+          "english": "we do"
+        },
+        "ustedes": {
+          "spanish": "hacen",
+          "english": "you all do"
+        },
+        "ellos": {
+          "spanish": "hacen",
+          "english": "they do"
+        },
+        "ellas": {
+          "spanish": "hacen",
+          "english": "they do"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "hice",
+          "english": "I did"
+        },
+        "tú": {
+          "spanish": "hiciste",
+          "english": "you did"
+        },
+        "usted": {
+          "spanish": "hizo",
+          "english": "you did"
+        },
+        "él": {
+          "spanish": "hizo",
+          "english": "he did"
+        },
+        "ella": {
+          "spanish": "hizo",
+          "english": "she did"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "hicimos",
+          "english": "we did"
+        },
+        "nosotras": {
+          "spanish": "hicimos",
+          "english": "we did"
+        },
+        "ustedes": {
+          "spanish": "hicieron",
+          "english": "you all did"
+        },
+        "ellos": {
+          "spanish": "hicieron",
+          "english": "they did"
+        },
+        "ellas": {
+          "spanish": "hicieron",
+          "english": "they did"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "haciendo",
+      "english": "doing"
+    }
+  },
+  {
+    "english": "To be able to",
+    "spanish": "poder",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "puedo",
+          "english": "I can"
+        },
+        "tú": {
+          "spanish": "puedes",
+          "english": "you can"
+        },
+        "usted": {
+          "spanish": "puede",
+          "english": "you can"
+        },
+        "él": {
+          "spanish": "puede",
+          "english": "he can"
+        },
+        "ella": {
+          "spanish": "puede",
+          "english": "she can"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "podemos",
+          "english": "we can"
+        },
+        "nosotras": {
+          "spanish": "podemos",
+          "english": "we can"
+        },
+        "ustedes": {
+          "spanish": "pueden",
+          "english": "you all can"
+        },
+        "ellos": {
+          "spanish": "pueden",
+          "english": "they can"
+        },
+        "ellas": {
+          "spanish": "pueden",
+          "english": "they can"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "pude",
+          "english": "I could"
+        },
+        "tú": {
+          "spanish": "pudiste",
+          "english": "you could"
+        },
+        "usted": {
+          "spanish": "pudo",
+          "english": "you could"
+        },
+        "él": {
+          "spanish": "pudo",
+          "english": "he could"
+        },
+        "ella": {
+          "spanish": "pudo",
+          "english": "she could"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "pudimos",
+          "english": "we could"
+        },
+        "nosotras": {
+          "spanish": "pudimos",
+          "english": "we could"
+        },
+        "ustedes": {
+          "spanish": "pudieron",
+          "english": "you all could"
+        },
+        "ellos": {
+          "spanish": "pudieron",
+          "english": "they could"
+        },
+        "ellas": {
+          "spanish": "pudieron",
+          "english": "they could"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "pudiendo",
+      "english": "being able to"
+    }
+  },
+  {
+    "english": "To say",
+    "spanish": "decir",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "digo",
+          "english": "I say"
+        },
+        "tú": {
+          "spanish": "dices",
+          "english": "you say"
+        },
+        "usted": {
+          "spanish": "dice",
+          "english": "you say"
+        },
+        "él": {
+          "spanish": "dice",
+          "english": "he says"
+        },
+        "ella": {
+          "spanish": "dice",
+          "english": "she says"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "decimos",
+          "english": "we say"
+        },
+        "nosotras": {
+          "spanish": "decimos",
+          "english": "we say"
+        },
+        "ustedes": {
+          "spanish": "dicen",
+          "english": "you all say"
+        },
+        "ellos": {
+          "spanish": "dicen",
+          "english": "they say"
+        },
+        "ellas": {
+          "spanish": "dicen",
+          "english": "they say"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "dije",
+          "english": "I said"
+        },
+        "tú": {
+          "spanish": "dijiste",
+          "english": "you said"
+        },
+        "usted": {
+          "spanish": "dijo",
+          "english": "you said"
+        },
+        "él": {
+          "spanish": "dijo",
+          "english": "he said"
+        },
+        "ella": {
+          "spanish": "dijo",
+          "english": "she said"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "dijimos",
+          "english": "we said"
+        },
+        "nosotras": {
+          "spanish": "dijimos",
+          "english": "we said"
+        },
+        "ustedes": {
+          "spanish": "dijeron",
+          "english": "you all said"
+        },
+        "ellos": {
+          "spanish": "dijeron",
+          "english": "they said"
+        },
+        "ellas": {
+          "spanish": "dijeron",
+          "english": "they said"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "diciendo",
+      "english": "saying"
+    }
+  },
+  {
+    "english": "To go",
+    "spanish": "ir",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "voy",
+          "english": "I go"
+        },
+        "tú": {
+          "spanish": "vas",
+          "english": "you go"
+        },
+        "usted": {
+          "spanish": "va",
+          "english": "you go"
+        },
+        "él": {
+          "spanish": "va",
+          "english": "he goes"
+        },
+        "ella": {
+          "spanish": "va",
+          "english": "she goes"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "vamos",
+          "english": "we go"
+        },
+        "nosotras": {
+          "spanish": "vamos",
+          "english": "we go"
+        },
+        "ustedes": {
+          "spanish": "van",
+          "english": "you all go"
+        },
+        "ellos": {
+          "spanish": "van",
+          "english": "they go"
+        },
+        "ellas": {
+          "spanish": "van",
+          "english": "they go"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "fui",
+          "english": "I went"
+        },
+        "tú": {
+          "spanish": "fuiste",
+          "english": "you went"
+        },
+        "usted": {
+          "spanish": "fue",
+          "english": "you went"
+        },
+        "él": {
+          "spanish": "fue",
+          "english": "he went"
+        },
+        "ella": {
+          "spanish": "fue",
+          "english": "she went"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "fuimos",
+          "english": "we went"
+        },
+        "nosotras": {
+          "spanish": "fuimos",
+          "english": "we went"
+        },
+        "ustedes": {
+          "spanish": "fueron",
+          "english": "you all went"
+        },
+        "ellos": {
+          "spanish": "fueron",
+          "english": "they went"
+        },
+        "ellas": {
+          "spanish": "fueron",
+          "english": "they went"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "yendo",
+      "english": "going"
+    }
+  },
+  {
+    "english": "To see",
+    "spanish": "ver",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "veo",
+          "english": "I see"
+        },
+        "tú": {
+          "spanish": "ves",
+          "english": "you see"
+        },
+        "usted": {
+          "spanish": "ve",
+          "english": "you see"
+        },
+        "él": {
+          "spanish": "ve",
+          "english": "he sees"
+        },
+        "ella": {
+          "spanish": "ve",
+          "english": "she sees"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "vemos",
+          "english": "we see"
+        },
+        "nosotras": {
+          "spanish": "vemos",
+          "english": "we see"
+        },
+        "ustedes": {
+          "spanish": "ven",
+          "english": "you all see"
+        },
+        "ellos": {
+          "spanish": "ven",
+          "english": "they see"
+        },
+        "ellas": {
+          "spanish": "ven",
+          "english": "they see"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "vi",
+          "english": "I saw"
+        },
+        "tú": {
+          "spanish": "viste",
+          "english": "you saw"
+        },
+        "usted": {
+          "spanish": "vio",
+          "english": "you saw"
+        },
+        "él": {
+          "spanish": "vio",
+          "english": "he saw"
+        },
+        "ella": {
+          "spanish": "vio",
+          "english": "she saw"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "vimos",
+          "english": "we saw"
+        },
+        "nosotras": {
+          "spanish": "vimos",
+          "english": "we saw"
+        },
+        "ustedes": {
+          "spanish": "vieron",
+          "english": "you all saw"
+        },
+        "ellos": {
+          "spanish": "vieron",
+          "english": "they saw"
+        },
+        "ellas": {
+          "spanish": "vieron",
+          "english": "they saw"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "viendo",
+      "english": "seeing"
+    }
+  },
+  {
+    "english": "To give",
+    "spanish": "dar",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "doy",
+          "english": "I give"
+        },
+        "tú": {
+          "spanish": "das",
+          "english": "you give"
+        },
+        "usted": {
+          "spanish": "da",
+          "english": "you give"
+        },
+        "él": {
+          "spanish": "da",
+          "english": "he gives"
+        },
+        "ella": {
+          "spanish": "da",
+          "english": "she gives"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "damos",
+          "english": "we give"
+        },
+        "nosotras": {
+          "spanish": "damos",
+          "english": "we give"
+        },
+        "ustedes": {
+          "spanish": "dan",
+          "english": "you all give"
+        },
+        "ellos": {
+          "spanish": "dan",
+          "english": "they give"
+        },
+        "ellas": {
+          "spanish": "dan",
+          "english": "they give"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "di",
+          "english": "I gave"
+        },
+        "tú": {
+          "spanish": "diste",
+          "english": "you gave"
+        },
+        "usted": {
+          "spanish": "dio",
+          "english": "you gave"
+        },
+        "él": {
+          "spanish": "dio",
+          "english": "he gave"
+        },
+        "ella": {
+          "spanish": "dio",
+          "english": "she gave"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "dimos",
+          "english": "we gave"
+        },
+        "nosotras": {
+          "spanish": "dimos",
+          "english": "we gave"
+        },
+        "ustedes": {
+          "spanish": "dieron",
+          "english": "you all gave"
+        },
+        "ellos": {
+          "spanish": "dieron",
+          "english": "they gave"
+        },
+        "ellas": {
+          "spanish": "dieron",
+          "english": "they gave"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "dando",
+      "english": "giving"
+    }
+  },
+  {
+    "english": "To know",
+    "spanish": "saber",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "sé",
+          "english": "I know"
+        },
+        "tú": {
+          "spanish": "sabes",
+          "english": "you know"
+        },
+        "usted": {
+          "spanish": "sabe",
+          "english": "you know"
+        },
+        "él": {
+          "spanish": "sabe",
+          "english": "he knows"
+        },
+        "ella": {
+          "spanish": "sabe",
+          "english": "she knows"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "sabemos",
+          "english": "we know"
+        },
+        "nosotras": {
+          "spanish": "sabemos",
+          "english": "we know"
+        },
+        "ustedes": {
+          "spanish": "saben",
+          "english": "you all know"
+        },
+        "ellos": {
+          "spanish": "saben",
+          "english": "they know"
+        },
+        "ellas": {
+          "spanish": "saben",
+          "english": "they know"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "supe",
+          "english": "I knew"
+        },
+        "tú": {
+          "spanish": "supiste",
+          "english": "you knew"
+        },
+        "usted": {
+          "spanish": "supo",
+          "english": "you knew"
+        },
+        "él": {
+          "spanish": "supo",
+          "english": "he knew"
+        },
+        "ella": {
+          "spanish": "supo",
+          "english": "she knew"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "supimos",
+          "english": "we knew"
+        },
+        "nosotras": {
+          "spanish": "supimos",
+          "english": "we knew"
+        },
+        "ustedes": {
+          "spanish": "supieron",
+          "english": "you all knew"
+        },
+        "ellos": {
+          "spanish": "supieron",
+          "english": "they knew"
+        },
+        "ellas": {
+          "spanish": "supieron",
+          "english": "they knew"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "sabiendo",
+      "english": "knowing"
+    }
+  },
+  {
+    "english": "To want",
+    "spanish": "querer",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "quiero",
+          "english": "I want"
+        },
+        "tú": {
+          "spanish": "quieres",
+          "english": "you want"
+        },
+        "usted": {
+          "spanish": "quiere",
+          "english": "you want"
+        },
+        "él": {
+          "spanish": "quiere",
+          "english": "he wants"
+        },
+        "ella": {
+          "spanish": "quiere",
+          "english": "she wants"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "queremos",
+          "english": "we want"
+        },
+        "nosotras": {
+          "spanish": "queremos",
+          "english": "we want"
+        },
+        "ustedes": {
+          "spanish": "quieren",
+          "english": "you all want"
+        },
+        "ellos": {
+          "spanish": "quieren",
+          "english": "they want"
+        },
+        "ellas": {
+          "spanish": "quieren",
+          "english": "they want"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "quise",
+          "english": "I wanted"
+        },
+        "tú": {
+          "spanish": "quisiste",
+          "english": "you wanted"
+        },
+        "usted": {
+          "spanish": "quiso",
+          "english": "you wanted"
+        },
+        "él": {
+          "spanish": "quiso",
+          "english": "he wanted"
+        },
+        "ella": {
+          "spanish": "quiso",
+          "english": "she wanted"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "quisimos",
+          "english": "we wanted"
+        },
+        "nosotras": {
+          "spanish": "quisimos",
+          "english": "we wanted"
+        },
+        "ustedes": {
+          "spanish": "quisieron",
+          "english": "you all wanted"
+        },
+        "ellos": {
+          "spanish": "quisieron",
+          "english": "they wanted"
+        },
+        "ellas": {
+          "spanish": "quisieron",
+          "english": "they wanted"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "queriendo",
+      "english": "wanting"
+    }
+  },
+  {
+    "english": "To arrive",
+    "spanish": "llegar",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "llego",
+          "english": "I arrive"
+        },
+        "tú": {
+          "spanish": "llegas",
+          "english": "you arrive"
+        },
+        "usted": {
+          "spanish": "llega",
+          "english": "you arrive"
+        },
+        "él": {
+          "spanish": "llega",
+          "english": "he arrives"
+        },
+        "ella": {
+          "spanish": "llega",
+          "english": "she arrives"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "llegamos",
+          "english": "we arrive"
+        },
+        "nosotras": {
+          "spanish": "llegamos",
+          "english": "we arrive"
+        },
+        "ustedes": {
+          "spanish": "llegan",
+          "english": "you all arrive"
+        },
+        "ellos": {
+          "spanish": "llegan",
+          "english": "they arrive"
+        },
+        "ellas": {
+          "spanish": "llegan",
+          "english": "they arrive"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "llegué",
+          "english": "I arrived"
+        },
+        "tú": {
+          "spanish": "llegaste",
+          "english": "you arrived"
+        },
+        "usted": {
+          "spanish": "llegó",
+          "english": "you arrived"
+        },
+        "él": {
+          "spanish": "llegó",
+          "english": "he arrived"
+        },
+        "ella": {
+          "spanish": "llegó",
+          "english": "she arrived"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "llegamos",
+          "english": "we arrived"
+        },
+        "nosotras": {
+          "spanish": "llegamos",
+          "english": "we arrived"
+        },
+        "ustedes": {
+          "spanish": "llegaron",
+          "english": "you all arrived"
+        },
+        "ellos": {
+          "spanish": "llegaron",
+          "english": "they arrived"
+        },
+        "ellas": {
+          "spanish": "llegaron",
+          "english": "they arrived"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "llegando",
+      "english": "arriving"
+    }
+  },
+  {
+    "english": "To have",
+    "spanish": "tener",
+    "present": {
+      "individual": {
+        "yo": {
+          "spanish": "tengo",
+          "english": "I have"
+        },
+        "tú": {
+          "spanish": "tienes",
+          "english": "you have"
+        },
+        "usted": {
+          "spanish": "tiene",
+          "english": "you have"
+        },
+        "él": {
+          "spanish": "tiene",
+          "english": "he has"
+        },
+        "ella": {
+          "spanish": "tiene",
+          "english": "she has"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "tenemos",
+          "english": "we have"
+        },
+        "nosotras": {
+          "spanish": "tenemos",
+          "english": "we have"
+        },
+        "ustedes": {
+          "spanish": "tienen",
+          "english": "you all have"
+        },
+        "ellos": {
+          "spanish": "tienen",
+          "english": "they have"
+        },
+        "ellas": {
+          "spanish": "tienen",
+          "english": "they have"
+        }
+      }
+    },
+    "past": {
+      "individual": {
+        "yo": {
+          "spanish": "tuve",
+          "english": "I had"
+        },
+        "tú": {
+          "spanish": "tuviste",
+          "english": "you had"
+        },
+        "usted": {
+          "spanish": "tuvo",
+          "english": "you had"
+        },
+        "él": {
+          "spanish": "tuvo",
+          "english": "he had"
+        },
+        "ella": {
+          "spanish": "tuvo",
+          "english": "she had"
+        }
+      },
+      "plural": {
+        "nosotros": {
+          "spanish": "tuvimos",
+          "english": "we had"
+        },
+        "nosotras": {
+          "spanish": "tuvimos",
+          "english": "we had"
+        },
+        "ustedes": {
+          "spanish": "tuvieron",
+          "english": "you all had"
+        },
+        "ellos": {
+          "spanish": "tuvieron",
+          "english": "they had"
+        },
+        "ellas": {
+          "spanish": "tuvieron",
+          "english": "they had"
+        }
+      }
+    },
+    "gerund": {
+      "spanish": "teniendo",
+      "english": "having"
+    }
+  }
+]

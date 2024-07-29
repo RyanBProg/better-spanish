@@ -55,6 +55,7 @@ export default function WordCard({ espWord, engWord, options }: Props) {
       wordSetup.answerWord.toLocaleLowerCase()
     ) {
       setIsCorrect(true);
+      setShowAnswer(false);
     } else {
       setIsCorrect(false);
     }

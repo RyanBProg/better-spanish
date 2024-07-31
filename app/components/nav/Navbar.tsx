@@ -57,6 +57,9 @@ export default function Navbar() {
           <li className="border-t-[1px] border-orange-300 w-full font-medium text-center py-4 sm:border-none sm:py-0 hover:opacity-60">
             <Link href={"/date-time"}>Date/Time</Link>
           </li>
+          <li className="border-t-[1px] border-orange-300 w-full font-medium text-center py-4 sm:border-none sm:py-0 hover:opacity-60">
+            <Link href={"/verbs"}>Verbs</Link>
+          </li>
           <li className="w-full text-center py-4 mt-2 sm:mt-0 sm:py-0">
             <button className="bg-white sm:bg-orange-400 rounded-md drop-shadow-lg w-full py-2 font-medium text-gray-800 sm:text-white sm:shadow-sm sm:px-6 sm:py-1 hover:brightness-110">
               Login

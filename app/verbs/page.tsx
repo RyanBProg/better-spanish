@@ -1,6 +1,24 @@
-import Settings from "../components/settings/Settings";
-import SettingsContextProvider from "../context/SettingsContextProvider";
 import VerbConj from "../components/verb-conj/VerbConj";
+
+const intialFormState = {
+  present: {
+    yo: "",
+    tu: "",
+    el: "",
+    nosotros: "",
+    vosotros: "",
+    ellos: "",
+  },
+  past: {
+    yo: "",
+    tu: "",
+    el: "",
+    nosotros: "",
+    vosotros: "",
+    ellos: "",
+  },
+  gerund: "",
+};
 
 export default function Home() {
   return (

@@ -30,7 +30,8 @@ export default function VerbInputCard({ classes, title, answer }: TVerbCard) {
   return (
     <form
       className={`grid grid-cols-[min-content_1fr] grid-rows-[min-content_1fr] gap-x-4 border-white ${classes}`}
-      onSubmit={(e) => handleSubmit(e)}>
+      onSubmit={(e) => handleSubmit(e)}
+      autoComplete="off">
       <label
         htmlFor="yo"
         className="font-medium text-wrap table-caption w-min [word-spacing:999rem] row-span-2">

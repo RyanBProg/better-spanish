@@ -2,98 +2,82 @@
   {
     "english": "To be",
     "spanish": "ser",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "soy",
-          "english": "I am"
-        },
-        "tú": {
-          "spanish": "eres",
-          "english": "you are"
-        },
-        "usted": {
-          "spanish": "es",
-          "english": "you are"
-        },
-        "él": {
-          "spanish": "es",
-          "english": "he is"
-        },
-        "ella": {
-          "spanish": "es",
-          "english": "she is"
-        }
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "soy",
+        "english": "I am",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "somos",
-          "english": "we are"
-        },
-        "nosotras": {
-          "spanish": "somos",
-          "english": "we are"
-        },
-        "ustedes": {
-          "spanish": "son",
-          "english": "you all are"
-        },
-        "ellos": {
-          "spanish": "son",
-          "english": "they are"
-        },
-        "ellas": {
-          "spanish": "son",
-          "english": "they are"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "fui",
-          "english": "I was"
-        },
-        "tú": {
-          "spanish": "fuiste",
-          "english": "you were"
-        },
-        "usted": {
-          "spanish": "fue",
-          "english": "you were"
-        },
-        "él": {
-          "spanish": "fue",
-          "english": "he was"
-        },
-        "ella": {
-          "spanish": "fue",
-          "english": "she was"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "eres",
+        "english": "you are",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "fuimos",
-          "english": "we were"
-        },
-        "nosotras": {
-          "spanish": "fuimos",
-          "english": "we were"
-        },
-        "ustedes": {
-          "spanish": "fueron",
-          "english": "you all were"
-        },
-        "ellos": {
-          "spanish": "fueron",
-          "english": "they were"
-        },
-        "ellas": {
-          "spanish": "fueron",
-          "english": "they were"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "es",
+        "english": "he/she is - you are",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "somos",
+        "english": "we are",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "sois",
+        "english": "you are",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "son",
+        "english": "you all are - they are",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "fui",
+        "english": "I was",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "fuiste",
+        "english": "you were",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "fue",
+        "english": "he/she was - you were",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "fuimos",
+        "english": "we were",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "fuisteis",
+        "english": "you were",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "fueron",
+        "english": "you all were - they were",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
       "spanish": "siendo",
       "english": "being"
@@ -102,98 +86,82 @@
   {
     "english": "To be",
     "spanish": "estar",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "estoy",
-          "english": "I am"
-        },
-        "tú": {
-          "spanish": "estás",
-          "english": "you are"
-        },
-        "usted": {
-          "spanish": "está",
-          "english": "you are"
-        },
-        "él": {
-          "spanish": "está",
-          "english": "he is"
-        },
-        "ella": {
-          "spanish": "está",
-          "english": "she is"
-        }
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "estoy",
+        "english": "I am",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "estamos",
-          "english": "we are"
-        },
-        "nosotras": {
-          "spanish": "estamos",
-          "english": "we are"
-        },
-        "ustedes": {
-          "spanish": "están",
-          "english": "you all are"
-        },
-        "ellos": {
-          "spanish": "están",
-          "english": "they are"
-        },
-        "ellas": {
-          "spanish": "están",
-          "english": "they are"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "estuve",
-          "english": "I was"
-        },
-        "tú": {
-          "spanish": "estuviste",
-          "english": "you were"
-        },
-        "usted": {
-          "spanish": "estuvo",
-          "english": "you were"
-        },
-        "él": {
-          "spanish": "estuvo",
-          "english": "he was"
-        },
-        "ella": {
-          "spanish": "estuvo",
-          "english": "she was"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "estás",
+        "english": "you are",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "estuvimos",
-          "english": "we were"
-        },
-        "nosotras": {
-          "spanish": "estuvimos",
-          "english": "we were"
-        },
-        "ustedes": {
-          "spanish": "estuvieron",
-          "english": "you all were"
-        },
-        "ellos": {
-          "spanish": "estuvieron",
-          "english": "they were"
-        },
-        "ellas": {
-          "spanish": "estuvieron",
-          "english": "they were"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "está",
+        "english": "he/she is - you are",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "estamos",
+        "english": "we are",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "estáis",
+        "english": "you are",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "están",
+        "english": "you all are - they are",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "estuve",
+        "english": "I was",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "estuviste",
+        "english": "you were",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "estuvo",
+        "english": "he/she was - you were",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "estuvimos",
+        "english": "we were",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "estuvisteis",
+        "english": "you were",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "estuvieron",
+        "english": "you all were - they were",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
       "spanish": "estando",
       "english": "being"
@@ -202,98 +170,82 @@
   {
     "english": "To have",
     "spanish": "tener",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "tengo",
-          "english": "I have"
-        },
-        "tú": {
-          "spanish": "tienes",
-          "english": "you have"
-        },
-        "usted": {
-          "spanish": "tiene",
-          "english": "you have"
-        },
-        "él": {
-          "spanish": "tiene",
-          "english": "he has"
-        },
-        "ella": {
-          "spanish": "tiene",
-          "english": "she has"
-        }
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "tengo",
+        "english": "I have",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "tenemos",
-          "english": "we have"
-        },
-        "nosotras": {
-          "spanish": "tenemos",
-          "english": "we have"
-        },
-        "ustedes": {
-          "spanish": "tienen",
-          "english": "you all have"
-        },
-        "ellos": {
-          "spanish": "tienen",
-          "english": "they have"
-        },
-        "ellas": {
-          "spanish": "tienen",
-          "english": "they have"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "tuve",
-          "english": "I had"
-        },
-        "tú": {
-          "spanish": "tuviste",
-          "english": "you had"
-        },
-        "usted": {
-          "spanish": "tuvo",
-          "english": "you had"
-        },
-        "él": {
-          "spanish": "tuvo",
-          "english": "he had"
-        },
-        "ella": {
-          "spanish": "tuvo",
-          "english": "she had"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "tienes",
+        "english": "you have",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "tuvimos",
-          "english": "we had"
-        },
-        "nosotras": {
-          "spanish": "tuvimos",
-          "english": "we had"
-        },
-        "ustedes": {
-          "spanish": "tuvieron",
-          "english": "you all had"
-        },
-        "ellos": {
-          "spanish": "tuvieron",
-          "english": "they had"
-        },
-        "ellas": {
-          "spanish": "tuvieron",
-          "english": "they had"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "tiene",
+        "english": "he/she has - you have",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "tenemos",
+        "english": "we have",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "tenéis",
+        "english": "you have",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "tienen",
+        "english": "you all have - they have",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "tuve",
+        "english": "I had",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "tuviste",
+        "english": "you had",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "tuvo",
+        "english": "he/she had - you had",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "tuvimos",
+        "english": "we had",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "tuvisteis",
+        "english": "you had",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "tuvieron",
+        "english": "you all had - they had",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
       "spanish": "teniendo",
       "english": "having"
@@ -302,1001 +254,757 @@
   {
     "english": "To do",
     "spanish": "hacer",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "hago",
-          "english": "I do"
-        },
-        "tú": {
-          "spanish": "haces",
-          "english": "you do"
-        },
-        "usted": {
-          "spanish": "hace",
-          "english": "you do"
-        },
-        "él": {
-          "spanish": "hace",
-          "english": "he does"
-        },
-        "ella": {
-          "spanish": "hace",
-          "english": "she does"
-        }
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "hago",
+        "english": "I do",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "hacemos",
-          "english": "we do"
-        },
-        "nosotras": {
-          "spanish": "hacemos",
-          "english": "we do"
-        },
-        "ustedes": {
-          "spanish": "hacen",
-          "english": "you all do"
-        },
-        "ellos": {
-          "spanish": "hacen",
-          "english": "they do"
-        },
-        "ellas": {
-          "spanish": "hacen",
-          "english": "they do"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "hice",
-          "english": "I did"
-        },
-        "tú": {
-          "spanish": "hiciste",
-          "english": "you did"
-        },
-        "usted": {
-          "spanish": "hizo",
-          "english": "you did"
-        },
-        "él": {
-          "spanish": "hizo",
-          "english": "he did"
-        },
-        "ella": {
-          "spanish": "hizo",
-          "english": "she did"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "haces",
+        "english": "you do",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "hicimos",
-          "english": "we did"
-        },
-        "nosotras": {
-          "spanish": "hicimos",
-          "english": "we did"
-        },
-        "ustedes": {
-          "spanish": "hicieron",
-          "english": "you all did"
-        },
-        "ellos": {
-          "spanish": "hicieron",
-          "english": "they did"
-        },
-        "ellas": {
-          "spanish": "hicieron",
-          "english": "they did"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "hace",
+        "english": "he/she does - you do",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "hacemos",
+        "english": "we do",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "hacéis",
+        "english": "you do",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "hacen",
+        "english": "you all do - they do",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "hice",
+        "english": "I did",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "hiciste",
+        "english": "you did",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "hizo",
+        "english": "he/she did - you did",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "hicimos",
+        "english": "we did",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "hicisteis",
+        "english": "you did",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "hicieron",
+        "english": "you all did - they did",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
       "spanish": "haciendo",
       "english": "doing"
     }
   },
   {
-    "english": "To be able to",
-    "spanish": "poder",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "puedo",
-          "english": "I can"
-        },
-        "tú": {
-          "spanish": "puedes",
-          "english": "you can"
-        },
-        "usted": {
-          "spanish": "puede",
-          "english": "you can"
-        },
-        "él": {
-          "spanish": "puede",
-          "english": "he can"
-        },
-        "ella": {
-          "spanish": "puede",
-          "english": "she can"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "podemos",
-          "english": "we can"
-        },
-        "nosotras": {
-          "spanish": "podemos",
-          "english": "we can"
-        },
-        "ustedes": {
-          "spanish": "pueden",
-          "english": "you all can"
-        },
-        "ellos": {
-          "spanish": "pueden",
-          "english": "they can"
-        },
-        "ellas": {
-          "spanish": "pueden",
-          "english": "they can"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "pude",
-          "english": "I could"
-        },
-        "tú": {
-          "spanish": "pudiste",
-          "english": "you could"
-        },
-        "usted": {
-          "spanish": "pudo",
-          "english": "you could"
-        },
-        "él": {
-          "spanish": "pudo",
-          "english": "he could"
-        },
-        "ella": {
-          "spanish": "pudo",
-          "english": "she could"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "pudimos",
-          "english": "we could"
-        },
-        "nosotras": {
-          "spanish": "pudimos",
-          "english": "we could"
-        },
-        "ustedes": {
-          "spanish": "pudieron",
-          "english": "you all could"
-        },
-        "ellos": {
-          "spanish": "pudieron",
-          "english": "they could"
-        },
-        "ellas": {
-          "spanish": "pudieron",
-          "english": "they could"
-        }
-      }
-    },
-    "gerund": {
-      "spanish": "pudiendo",
-      "english": "being able to"
-    }
-  },
-  {
-    "english": "To say",
-    "spanish": "decir",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "digo",
-          "english": "I say"
-        },
-        "tú": {
-          "spanish": "dices",
-          "english": "you say"
-        },
-        "usted": {
-          "spanish": "dice",
-          "english": "you say"
-        },
-        "él": {
-          "spanish": "dice",
-          "english": "he says"
-        },
-        "ella": {
-          "spanish": "dice",
-          "english": "she says"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "decimos",
-          "english": "we say"
-        },
-        "nosotras": {
-          "spanish": "decimos",
-          "english": "we say"
-        },
-        "ustedes": {
-          "spanish": "dicen",
-          "english": "you all say"
-        },
-        "ellos": {
-          "spanish": "dicen",
-          "english": "they say"
-        },
-        "ellas": {
-          "spanish": "dicen",
-          "english": "they say"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "dije",
-          "english": "I said"
-        },
-        "tú": {
-          "spanish": "dijiste",
-          "english": "you said"
-        },
-        "usted": {
-          "spanish": "dijo",
-          "english": "you said"
-        },
-        "él": {
-          "spanish": "dijo",
-          "english": "he said"
-        },
-        "ella": {
-          "spanish": "dijo",
-          "english": "she said"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "dijimos",
-          "english": "we said"
-        },
-        "nosotras": {
-          "spanish": "dijimos",
-          "english": "we said"
-        },
-        "ustedes": {
-          "spanish": "dijeron",
-          "english": "you all said"
-        },
-        "ellos": {
-          "spanish": "dijeron",
-          "english": "they said"
-        },
-        "ellas": {
-          "spanish": "dijeron",
-          "english": "they said"
-        }
-      }
-    },
-    "gerund": {
-      "spanish": "diciendo",
-      "english": "saying"
-    }
-  },
-  {
     "english": "To go",
     "spanish": "ir",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "voy",
-          "english": "I go"
-        },
-        "tú": {
-          "spanish": "vas",
-          "english": "you go"
-        },
-        "usted": {
-          "spanish": "va",
-          "english": "you go"
-        },
-        "él": {
-          "spanish": "va",
-          "english": "he goes"
-        },
-        "ella": {
-          "spanish": "va",
-          "english": "she goes"
-        }
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "voy",
+        "english": "I go",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "vamos",
-          "english": "we go"
-        },
-        "nosotras": {
-          "spanish": "vamos",
-          "english": "we go"
-        },
-        "ustedes": {
-          "spanish": "van",
-          "english": "you all go"
-        },
-        "ellos": {
-          "spanish": "van",
-          "english": "they go"
-        },
-        "ellas": {
-          "spanish": "van",
-          "english": "they go"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "fui",
-          "english": "I went"
-        },
-        "tú": {
-          "spanish": "fuiste",
-          "english": "you went"
-        },
-        "usted": {
-          "spanish": "fue",
-          "english": "you went"
-        },
-        "él": {
-          "spanish": "fue",
-          "english": "he went"
-        },
-        "ella": {
-          "spanish": "fue",
-          "english": "she went"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "vas",
+        "english": "you go",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "fuimos",
-          "english": "we went"
-        },
-        "nosotras": {
-          "spanish": "fuimos",
-          "english": "we went"
-        },
-        "ustedes": {
-          "spanish": "fueron",
-          "english": "you all went"
-        },
-        "ellos": {
-          "spanish": "fueron",
-          "english": "they went"
-        },
-        "ellas": {
-          "spanish": "fueron",
-          "english": "they went"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "va",
+        "english": "he/she goes - you go",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "vamos",
+        "english": "we go",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "vais",
+        "english": "you go",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "van",
+        "english": "you all go - they go",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "fui",
+        "english": "I went",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "fuiste",
+        "english": "you went",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "fue",
+        "english": "he/she went - you went",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "fuimos",
+        "english": "we went",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "fuisteis",
+        "english": "you went",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "fueron",
+        "english": "you all went - they went",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
       "spanish": "yendo",
       "english": "going"
     }
   },
   {
+    "english": "To say",
+    "spanish": "decir",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "digo",
+        "english": "I say",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "dices",
+        "english": "you say",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "dice",
+        "english": "he/she says - you say",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "decimos",
+        "english": "we say",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "decís",
+        "english": "you say",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "dicen",
+        "english": "you all say - they say",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "dije",
+        "english": "I said",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "dijiste",
+        "english": "you said",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "dijo",
+        "english": "he/she said - you said",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "dijimos",
+        "english": "we said",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "dijisteis",
+        "english": "you said",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "dijeron",
+        "english": "you all said - they said",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": {
+      "spanish": "diciendo",
+      "english": "saying"
+    }
+  },
+  {
     "english": "To see",
     "spanish": "ver",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "veo",
-          "english": "I see"
-        },
-        "tú": {
-          "spanish": "ves",
-          "english": "you see"
-        },
-        "usted": {
-          "spanish": "ve",
-          "english": "you see"
-        },
-        "él": {
-          "spanish": "ve",
-          "english": "he sees"
-        },
-        "ella": {
-          "spanish": "ve",
-          "english": "she sees"
-        }
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "veo",
+        "english": "I see",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "vemos",
-          "english": "we see"
-        },
-        "nosotras": {
-          "spanish": "vemos",
-          "english": "we see"
-        },
-        "ustedes": {
-          "spanish": "ven",
-          "english": "you all see"
-        },
-        "ellos": {
-          "spanish": "ven",
-          "english": "they see"
-        },
-        "ellas": {
-          "spanish": "ven",
-          "english": "they see"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "vi",
-          "english": "I saw"
-        },
-        "tú": {
-          "spanish": "viste",
-          "english": "you saw"
-        },
-        "usted": {
-          "spanish": "vio",
-          "english": "you saw"
-        },
-        "él": {
-          "spanish": "vio",
-          "english": "he saw"
-        },
-        "ella": {
-          "spanish": "vio",
-          "english": "she saw"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "ves",
+        "english": "you see",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "vimos",
-          "english": "we saw"
-        },
-        "nosotras": {
-          "spanish": "vimos",
-          "english": "we saw"
-        },
-        "ustedes": {
-          "spanish": "vieron",
-          "english": "you all saw"
-        },
-        "ellos": {
-          "spanish": "vieron",
-          "english": "they saw"
-        },
-        "ellas": {
-          "spanish": "vieron",
-          "english": "they saw"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "ve",
+        "english": "he/she sees - you see",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "vemos",
+        "english": "we see",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "veis",
+        "english": "you see",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "ven",
+        "english": "you all see - they see",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "vi",
+        "english": "I saw",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "viste",
+        "english": "you saw",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "vio",
+        "english": "he/she saw - you saw",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "vimos",
+        "english": "we saw",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "visteis",
+        "english": "you saw",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "vieron",
+        "english": "you all saw - they saw",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
       "spanish": "viendo",
       "english": "seeing"
     }
   },
   {
-    "english": "To give",
-    "spanish": "dar",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "doy",
-          "english": "I give"
-        },
-        "tú": {
-          "spanish": "das",
-          "english": "you give"
-        },
-        "usted": {
-          "spanish": "da",
-          "english": "you give"
-        },
-        "él": {
-          "spanish": "da",
-          "english": "he gives"
-        },
-        "ella": {
-          "spanish": "da",
-          "english": "she gives"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "damos",
-          "english": "we give"
-        },
-        "nosotras": {
-          "spanish": "damos",
-          "english": "we give"
-        },
-        "ustedes": {
-          "spanish": "dan",
-          "english": "you all give"
-        },
-        "ellos": {
-          "spanish": "dan",
-          "english": "they give"
-        },
-        "ellas": {
-          "spanish": "dan",
-          "english": "they give"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "di",
-          "english": "I gave"
-        },
-        "tú": {
-          "spanish": "diste",
-          "english": "you gave"
-        },
-        "usted": {
-          "spanish": "dio",
-          "english": "you gave"
-        },
-        "él": {
-          "spanish": "dio",
-          "english": "he gave"
-        },
-        "ella": {
-          "spanish": "dio",
-          "english": "she gave"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "dimos",
-          "english": "we gave"
-        },
-        "nosotras": {
-          "spanish": "dimos",
-          "english": "we gave"
-        },
-        "ustedes": {
-          "spanish": "dieron",
-          "english": "you all gave"
-        },
-        "ellos": {
-          "spanish": "dieron",
-          "english": "they gave"
-        },
-        "ellas": {
-          "spanish": "dieron",
-          "english": "they gave"
-        }
-      }
-    },
-    "gerund": {
-      "spanish": "dando",
-      "english": "giving"
-    }
-  },
-  {
-    "english": "To know",
-    "spanish": "saber",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "sé",
-          "english": "I know"
-        },
-        "tú": {
-          "spanish": "sabes",
-          "english": "you know"
-        },
-        "usted": {
-          "spanish": "sabe",
-          "english": "you know"
-        },
-        "él": {
-          "spanish": "sabe",
-          "english": "he knows"
-        },
-        "ella": {
-          "spanish": "sabe",
-          "english": "she knows"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "sabemos",
-          "english": "we know"
-        },
-        "nosotras": {
-          "spanish": "sabemos",
-          "english": "we know"
-        },
-        "ustedes": {
-          "spanish": "saben",
-          "english": "you all know"
-        },
-        "ellos": {
-          "spanish": "saben",
-          "english": "they know"
-        },
-        "ellas": {
-          "spanish": "saben",
-          "english": "they know"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "supe",
-          "english": "I knew"
-        },
-        "tú": {
-          "spanish": "supiste",
-          "english": "you knew"
-        },
-        "usted": {
-          "spanish": "supo",
-          "english": "you knew"
-        },
-        "él": {
-          "spanish": "supo",
-          "english": "he knew"
-        },
-        "ella": {
-          "spanish": "supo",
-          "english": "she knew"
-        }
-      },
-      "plural": {
-        "nosotros": {
-          "spanish": "supimos",
-          "english": "we knew"
-        },
-        "nosotras": {
-          "spanish": "supimos",
-          "english": "we knew"
-        },
-        "ustedes": {
-          "spanish": "supieron",
-          "english": "you all knew"
-        },
-        "ellos": {
-          "spanish": "supieron",
-          "english": "they knew"
-        },
-        "ellas": {
-          "spanish": "supieron",
-          "english": "they knew"
-        }
-      }
-    },
-    "gerund": {
-      "spanish": "sabiendo",
-      "english": "knowing"
-    }
-  },
-  {
     "english": "To want",
     "spanish": "querer",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "quiero",
-          "english": "I want"
-        },
-        "tú": {
-          "spanish": "quieres",
-          "english": "you want"
-        },
-        "usted": {
-          "spanish": "quiere",
-          "english": "you want"
-        },
-        "él": {
-          "spanish": "quiere",
-          "english": "he wants"
-        },
-        "ella": {
-          "spanish": "quiere",
-          "english": "she wants"
-        }
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "quiero",
+        "english": "I want",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "queremos",
-          "english": "we want"
-        },
-        "nosotras": {
-          "spanish": "queremos",
-          "english": "we want"
-        },
-        "ustedes": {
-          "spanish": "quieren",
-          "english": "you all want"
-        },
-        "ellos": {
-          "spanish": "quieren",
-          "english": "they want"
-        },
-        "ellas": {
-          "spanish": "quieren",
-          "english": "they want"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "quise",
-          "english": "I wanted"
-        },
-        "tú": {
-          "spanish": "quisiste",
-          "english": "you wanted"
-        },
-        "usted": {
-          "spanish": "quiso",
-          "english": "you wanted"
-        },
-        "él": {
-          "spanish": "quiso",
-          "english": "he wanted"
-        },
-        "ella": {
-          "spanish": "quiso",
-          "english": "she wanted"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "quieres",
+        "english": "you want",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "quisimos",
-          "english": "we wanted"
-        },
-        "nosotras": {
-          "spanish": "quisimos",
-          "english": "we wanted"
-        },
-        "ustedes": {
-          "spanish": "quisieron",
-          "english": "you all wanted"
-        },
-        "ellos": {
-          "spanish": "quisieron",
-          "english": "they wanted"
-        },
-        "ellas": {
-          "spanish": "quisieron",
-          "english": "they wanted"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "quiere",
+        "english": "he/she wants - you want",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "queremos",
+        "english": "we want",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "queréis",
+        "english": "you want",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "quieren",
+        "english": "you all want - they want",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "quise",
+        "english": "I wanted",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "quisiste",
+        "english": "you wanted",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "quiso",
+        "english": "he/she wanted - you wanted",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "quisimos",
+        "english": "we wanted",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "quisisteis",
+        "english": "you wanted",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "quisieron",
+        "english": "you all wanted - they wanted",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
       "spanish": "queriendo",
       "english": "wanting"
     }
   },
   {
-    "english": "To arrive",
-    "spanish": "llegar",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "llego",
-          "english": "I arrive"
-        },
-        "tú": {
-          "spanish": "llegas",
-          "english": "you arrive"
-        },
-        "usted": {
-          "spanish": "llega",
-          "english": "you arrive"
-        },
-        "él": {
-          "spanish": "llega",
-          "english": "he arrives"
-        },
-        "ella": {
-          "spanish": "llega",
-          "english": "she arrives"
-        }
+    "english": "To come",
+    "spanish": "venir",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "vengo",
+        "english": "I come",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "llegamos",
-          "english": "we arrive"
-        },
-        "nosotras": {
-          "spanish": "llegamos",
-          "english": "we arrive"
-        },
-        "ustedes": {
-          "spanish": "llegan",
-          "english": "you all arrive"
-        },
-        "ellos": {
-          "spanish": "llegan",
-          "english": "they arrive"
-        },
-        "ellas": {
-          "spanish": "llegan",
-          "english": "they arrive"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "llegué",
-          "english": "I arrived"
-        },
-        "tú": {
-          "spanish": "llegaste",
-          "english": "you arrived"
-        },
-        "usted": {
-          "spanish": "llegó",
-          "english": "you arrived"
-        },
-        "él": {
-          "spanish": "llegó",
-          "english": "he arrived"
-        },
-        "ella": {
-          "spanish": "llegó",
-          "english": "she arrived"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "vienes",
+        "english": "you come",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "llegamos",
-          "english": "we arrived"
-        },
-        "nosotras": {
-          "spanish": "llegamos",
-          "english": "we arrived"
-        },
-        "ustedes": {
-          "spanish": "llegaron",
-          "english": "you all arrived"
-        },
-        "ellos": {
-          "spanish": "llegaron",
-          "english": "they arrived"
-        },
-        "ellas": {
-          "spanish": "llegaron",
-          "english": "they arrived"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "viene",
+        "english": "he/she comes - you come",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "venimos",
+        "english": "we come",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "venís",
+        "english": "you come",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "vienen",
+        "english": "you all come - they come",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "vine",
+        "english": "I came",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "viniste",
+        "english": "you came",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "vino",
+        "english": "he/she came - you came",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "vinimos",
+        "english": "we came",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "vinisteis",
+        "english": "you came",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "vinieron",
+        "english": "you all came - they came",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
-      "spanish": "llegando",
-      "english": "arriving"
+      "spanish": "viniendo",
+      "english": "coming"
     }
   },
   {
-    "english": "To have",
-    "spanish": "tener",
-    "present": {
-      "individual": {
-        "yo": {
-          "spanish": "tengo",
-          "english": "I have"
-        },
-        "tú": {
-          "spanish": "tienes",
-          "english": "you have"
-        },
-        "usted": {
-          "spanish": "tiene",
-          "english": "you have"
-        },
-        "él": {
-          "spanish": "tiene",
-          "english": "he has"
-        },
-        "ella": {
-          "spanish": "tiene",
-          "english": "she has"
-        }
+    "english": "To think",
+    "spanish": "pensar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "pienso",
+        "english": "I think",
+        "type": "first-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "tenemos",
-          "english": "we have"
-        },
-        "nosotras": {
-          "spanish": "tenemos",
-          "english": "we have"
-        },
-        "ustedes": {
-          "spanish": "tienen",
-          "english": "you all have"
-        },
-        "ellos": {
-          "spanish": "tienen",
-          "english": "they have"
-        },
-        "ellas": {
-          "spanish": "tienen",
-          "english": "they have"
-        }
-      }
-    },
-    "past": {
-      "individual": {
-        "yo": {
-          "spanish": "tuve",
-          "english": "I had"
-        },
-        "tú": {
-          "spanish": "tuviste",
-          "english": "you had"
-        },
-        "usted": {
-          "spanish": "tuvo",
-          "english": "you had"
-        },
-        "él": {
-          "spanish": "tuvo",
-          "english": "he had"
-        },
-        "ella": {
-          "spanish": "tuvo",
-          "english": "she had"
-        }
+      {
+        "prefix": "tú",
+        "spanish": "piensas",
+        "english": "you think",
+        "type": "second-person singular"
       },
-      "plural": {
-        "nosotros": {
-          "spanish": "tuvimos",
-          "english": "we had"
-        },
-        "nosotras": {
-          "spanish": "tuvimos",
-          "english": "we had"
-        },
-        "ustedes": {
-          "spanish": "tuvieron",
-          "english": "you all had"
-        },
-        "ellos": {
-          "spanish": "tuvieron",
-          "english": "they had"
-        },
-        "ellas": {
-          "spanish": "tuvieron",
-          "english": "they had"
-        }
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "piensa",
+        "english": "he/she thinks - you think",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "pensamos",
+        "english": "we think",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "pensáis",
+        "english": "you think",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "piensan",
+        "english": "you all think - they think",
+        "type": "third-person plural"
       }
-    },
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "pensé",
+        "english": "I thought",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "pensaste",
+        "english": "you thought",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "pensó",
+        "english": "he/she thought - you thought",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "pensamos",
+        "english": "we thought",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "pensasteis",
+        "english": "you thought",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "pensaron",
+        "english": "you all thought - they thought",
+        "type": "third-person plural"
+      }
+    ],
     "gerund": {
-      "spanish": "teniendo",
-      "english": "having"
+      "spanish": "pensando",
+      "english": "thinking"
+    }
+  },
+  {
+    "english": "To know",
+    "spanish": "saber",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "sé",
+        "english": "I know",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "sabes",
+        "english": "you know",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "sabe",
+        "english": "he/she knows - you know",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "sabemos",
+        "english": "we know",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "sabéis",
+        "english": "you know",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "saben",
+        "english": "you all know - they know",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "supe",
+        "english": "I knew",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "supiste",
+        "english": "you knew",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "supo",
+        "english": "he/she knew - you knew",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "supimos",
+        "english": "we knew",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "supisteis",
+        "english": "you knew",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "supieron",
+        "english": "you all knew - they knew",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": {
+      "spanish": "sabiendo",
+      "english": "knowing"
+    }
+  },
+  {
+    "english": "To put",
+    "spanish": "poner",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "pongo",
+        "english": "I put",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "pones",
+        "english": "you put",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "pone",
+        "english": "he/she puts - you put",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "ponemos",
+        "english": "we put",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "ponéis",
+        "english": "you put",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "ponen",
+        "english": "you all put - they put",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "puse",
+        "english": "I put",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "pusiste",
+        "english": "you put",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "puso",
+        "english": "he/she put - you put",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "pusimos",
+        "english": "we put",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "pusisteis",
+        "english": "you put",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "pusieron",
+        "english": "you all put - they put",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": {
+      "spanish": "poniendo",
+      "english": "putting"
     }
   }
 ]

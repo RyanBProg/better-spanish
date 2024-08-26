@@ -1,0 +1,87 @@
+[
+  {
+    "esp": "Buenos días",
+    "esp-missing": "Buenos ...",
+    "eng": "Good morning"
+  },
+  {
+    "esp": "Buenas tardes",
+    "esp-missing": "Buenas ...",
+    "eng": "Good afternoon"
+  },
+  {
+    "esp": "Buenas noches",
+    "esp-missing": "Buenas ...",
+    "eng": "Good evening / Good night"
+  },
+  {
+    "esp": "¿Cómo estás?",
+    "esp-missing": "¿Cómo ...?",
+    "eng": "How are you?"
+  },
+  {
+    "esp": "Estoy bien, gracias",
+    "esp-missing": "Estoy ..., gracias",
+    "eng": "I'm fine, thank you"
+  },
+  {
+    "esp": "¿Qué tal?",
+    "esp-missing": "¿Qué ...?",
+    "eng": "What's up?"
+  },
+  {
+    "esp": "Por favor",
+    "esp-missing": "Por ...",
+    "eng": "Please"
+  },
+  {
+    "esp": "De nada",
+    "esp-missing": "De ...",
+    "eng": "You're welcome"
+  },
+  {
+    "esp": "Lo siento",
+    "esp-missing": "Lo ...",
+    "eng": "I'm sorry"
+  },
+  {
+    "esp": "¿Cómo te llamas?",
+    "esp-missing": "¿Cómo te ...?",
+    "eng": "What's your name?"
+  },
+  {
+    "esp": "Me llamo",
+    "esp-missing": "Me ...",
+    "eng": "My name is"
+  },
+  {
+    "esp": "Mucho gusto",
+    "esp-missing": "Mucho ...",
+    "eng": "Nice to meet you"
+  },
+  {
+    "esp": "¿Dónde está el baño?",
+    "esp-missing": "¿Dónde está el ...?",
+    "eng": "Where is the bathroom?"
+  },
+  {
+    "esp": "¿Cuánto cuesta?",
+    "esp-missing": "¿Cuánto ...?",
+    "eng": "How much does it cost?"
+  },
+  {
+    "esp": "No entiendo",
+    "esp-missing": "No ...",
+    "eng": "I don't understand"
+  },
+  {
+    "esp": "Habla despacio, por favor",
+    "esp-missing": "Habla ..., por favor",
+    "eng": "Speak slowly, please"
+  },
+  {
+    "esp": "¿Puedes ayudarme?",
+    "esp-missing": "¿Puedes ...?",
+    "eng": "Can you help me?"
+  }
+]

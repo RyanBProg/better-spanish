@@ -1,27 +1,25 @@
 "use client";
 
-import datesData from "../data/dates.json";
-import Settings from "../components/settings/Settings";
-import SettingsContextProvider from "../context/SettingsContextProvider";
+import numberData from "../../data/numbers.json";
+import Settings from "../../components/settings/Settings";
+import SettingsContextProvider from "../../context/SettingsContextProvider";
 import { useEffect, useState } from "react";
-import WordCard from "../components/word-cards/WordCard";
-import WordCardSkeleton from "../components/word-cards/WordCardSkeleton";
-import { DataType } from "../types/types";
-import { generateOptions } from "../utils/generateOptions";
+import WordCardSkeleton from "../../components/word-cards/WordCardSkeleton";
+import WordCard from "../../components/word-cards/WordCard";
+import { DataType } from "../../types/types";
+import { generateOptions } from "../../utils/generateOptions";
 
 export default function Home() {
   return (
-    <main className="px-4 py-10 bg-orange-100 min-h-screen">
+    <>
       <SettingsContextProvider>
         <div className="flex justify-between mx-auto max-w-[1250px]">
-          <h2 className="text-2xl text-orange-500 font-medium">
-            Date/Time Quiz
-          </h2>
+          <h2 className="text-2xl text-orange-500 font-bold">Numbers Quiz</h2>
           <Settings />
         </div>
         <WordCardList />
       </SettingsContextProvider>
-    </main>
+    </>
   );
 }
 
@@ -31,12 +29,12 @@ function WordCardList() {
   >(undefined);
 
   useEffect(() => {
-    setShuffledNumberData([...datesData].sort(() => Math.random() - 0.5));
+    setShuffledNumberData([...numberData].sort(() => Math.random() - 0.5));
   }, []);
 
   if (!shuffledNumberData) {
     return (
-      <ul className="grid grid-cols-1 justify-center items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1100px]">
+      <ul className="grid grid-cols-1 justify-center items-center gap-4 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-[1250px]">
         {[...Array(4)].map((_, index) => (
           <WordCardSkeleton key={index} />
         ))}
@@ -51,7 +49,7 @@ function WordCardList() {
           key={current.word}
           engWord={current.word}
           espWord={current.correctAnswer}
-          options={generateOptions(current, datesData)}
+          options={generateOptions(current, numberData)}
         />
       ))}
     </ul>

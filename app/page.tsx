@@ -5,7 +5,7 @@ import boltIcon from "../public/icons/bolt.svg";
 export default function Home() {
   return (
     <>
-      <span className="flex gap-4 items-center">
+      <span className="flex gap-4 items-center mt-10">
         <Image src={boltIcon} alt="" className="size-40" />
         <h1 className="text-3xl font-semibold max-w-[600px]">
           Reach Fluency Faster by Mastering High-Frequency Words

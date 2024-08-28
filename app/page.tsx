@@ -31,6 +31,12 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      <div className="bg-white h-[400px] flex justify-center items-center mt-10">
+        <h2>Learning Banner Area</h2>
+      </div>
+      <div className="bg-white h-[400px] flex justify-center items-center mt-10">
+        <h2>Learning Banner Area</h2>
+      </div>
     </main>
   );
 }

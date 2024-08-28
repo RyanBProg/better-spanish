@@ -10,6 +10,7 @@ export default function VerbGrid() {
     register,
     handleSubmit,
     reset,
+    clearErrors,
     formState: { errors },
   } = useForm();
 
@@ -18,31 +19,26 @@ export default function VerbGrid() {
     Math.floor(Math.random() * verbData.length)
   );
 
-  const buildGame = () => {
-    const state = {};
-    ["present", "past", "future"].map(() => {});
+  const handleGameSetup = (verbData: any, verbIndex: number) => {
+    const tenses = ["present", "past", "future"];
+    let state: Record<string, { answer: string; correctAnswer: string }> = {};
+
+    tenses.forEach((tense, tenseIndex) => {
+      for (let i = 0; i < 6; i++) {
+        const key = `v${tenseIndex * 6 + i + 1}`;
+        state[key] = {
+          answer: "",
+          correctAnswer: verbData[verbIndex][tense][i].spanish,
+        };
+      }
+    });
+
+    return state;
   };
 
-  const [gameState, setGameState] = useState({
-    v1: { answer: "", correctAnswer: "" },
-    v2: { answer: "", correctAnswer: "" },
-    v3: { answer: "", correctAnswer: "" },
-    v4: { answer: "", correctAnswer: "" },
-    v5: { answer: "", correctAnswer: "" },
-    v6: { answer: "", correctAnswer: "" },
-    v7: { answer: "", correctAnswer: "" },
-    v8: { answer: "", correctAnswer: "" },
-    v9: { answer: "", correctAnswer: "" },
-    v10: { answer: "", correctAnswer: "" },
-    v11: { answer: "", correctAnswer: "" },
-    v12: { answer: "", correctAnswer: "" },
-    v13: { answer: "", correctAnswer: "" },
-    v14: { answer: "", correctAnswer: "" },
-    v15: { answer: "", correctAnswer: "" },
-    v16: { answer: "", correctAnswer: "" },
-    v17: { answer: "", correctAnswer: "" },
-    v18: { answer: "", correctAnswer: "" },
-  });
+  const [gameState, setGameState] = useState(
+    handleGameSetup(verbData, verbIndex)
+  );
 
   const handleAnswer = (verbNo: string, answer: string) => {
     setGameState((prev) => {
@@ -55,6 +51,7 @@ export default function VerbGrid() {
   const onSubmit = handleSubmit((data) => {
     console.log(data);
     setIsSubmitted(true);
+    alert("You Answered All Correct!");
   });
 
   const handleNewVerb = () => {
@@ -92,6 +89,7 @@ export default function VerbGrid() {
           <span className="uppercase text-center text-gray-600">Present</span>
           <span className="uppercase text-center text-gray-600">Past</span>
           <span className="uppercase text-center text-gray-600">Future</span>
+
           {/* Row Labels */}
           <span className="font-semibold text-gray-800 flex items-center row-start-2 overflow-x-hidden">
             Yo
@@ -111,133 +109,47 @@ export default function VerbGrid() {
           <span className="font-semibold text-gray-800 flex items-center row-start-7 overflow-x-hidden">
             Ellos/Ellas/Ustedes
           </span>
+
           {/* Input fields */}
-          <VerbInput
-            id={"v1"}
-            verb={verbData[verbIndex].present[0]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v2"}
-            verb={verbData[verbIndex].past[0]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v3"}
-            verb={verbData[verbIndex].future[0]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v4"}
-            verb={verbData[verbIndex].present[1]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v5"}
-            verb={verbData[verbIndex].past[1]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v6"}
-            verb={verbData[verbIndex].future[1]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v7"}
-            verb={verbData[verbIndex].present[2]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v8"}
-            verb={verbData[verbIndex].past[2]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v9"}
-            verb={verbData[verbIndex].future[2]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v10"}
-            verb={verbData[verbIndex].present[3]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v11"}
-            verb={verbData[verbIndex].past[3]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v12"}
-            verb={verbData[verbIndex].future[3]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v13"}
-            verb={verbData[verbIndex].present[4]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v14"}
-            verb={verbData[verbIndex].past[4]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v15"}
-            verb={verbData[verbIndex].future[4]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v16"}
-            verb={verbData[verbIndex].present[5]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v17"}
-            verb={verbData[verbIndex].past[5]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
-          <VerbInput
-            id={"v18"}
-            verb={verbData[verbIndex].future[5]}
-            register={register}
-            errors={errors}
-            isSubmitted={isSubmitted}
-          />
+          {verbData[verbIndex].present.map((verb, index) => {
+            return (
+              <VerbInput
+                id={`v${index + 1}`}
+                className={`col-start-2 col-span1 row-start-${index + 2}`}
+                verb={verb}
+                register={register}
+                errors={errors}
+                clearErrors={clearErrors}
+                isSubmitted={isSubmitted}
+              />
+            );
+          })}
+          {verbData[verbIndex].past.map((verb, index) => {
+            return (
+              <VerbInput
+                id={`v${index + 7}`}
+                className={`col-start-3 col-span1 row-start-${index + 2}`}
+                verb={verb}
+                register={register}
+                errors={errors}
+                clearErrors={clearErrors}
+                isSubmitted={isSubmitted}
+              />
+            );
+          })}
+          {verbData[verbIndex].future.map((verb, index) => {
+            return (
+              <VerbInput
+                id={`v${index + 13}`}
+                className={`col-start-4 col-span1 row-start-${index + 2}`}
+                verb={verb}
+                register={register}
+                errors={errors}
+                clearErrors={clearErrors}
+                isSubmitted={isSubmitted}
+              />
+            );
+          })}
         </div>
         <div className="flex gap-4 mt-10">
           <span className="font-semibold text-gray-800 flex items-center row-start-8 overflow-x-hidden">
@@ -249,9 +161,11 @@ export default function VerbGrid() {
             verb={verbData[verbIndex].gerund}
             register={register}
             errors={errors}
+            clearErrors={clearErrors}
             isSubmitted={isSubmitted}
           />
         </div>
+
         {/* Submit button */}
         <div className="col-span-4 flex justify-center mt-6 gap-4">
           {isSubmitted ? (

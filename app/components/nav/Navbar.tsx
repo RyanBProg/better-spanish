@@ -14,12 +14,7 @@ export default function Navbar() {
   return (
     <header className="z-10 relative flex justify-between py-4 px-4 drop-shadow-lg sm:items-center">
       <Link href={"/"}>
-        <p className="font-bold text-2xl">
-          <span className="text-orange-400 block -mb-3">
-            <span className="text-4xl">B</span>etter
-          </span>
-          <span className="text-4xl">S</span>panish
-        </p>
+        <span className="font-bold text-2xl">HF Learning</span>
       </Link>
       <button className="z-10 sm:hidden">
         {menuOpen ? (

@@ -23,7 +23,7 @@ export default function Home() {
         </div>
         <hr className="w-full h-[2px] bg-orange-200 mt-2 mb-4" />
         <div className="flex gap-4">
-          <Link href={"/keywords"}>
+          <Link href={"/games/keywords"}>
             <button className="bg-orange-200 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
               <h3 className="font-semibold text-xl mb-6">Keywords</h3>
               <p className="text-gray-500">
@@ -31,7 +31,7 @@ export default function Home() {
               </p>
             </button>
           </Link>
-          <Link href={"/date-time"}>
+          <Link href={"/games/date-time"}>
             <button className="bg-orange-100 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
               <h3 className="font-semibold text-xl mb-6">Date/Time</h3>
               <p className="text-gray-500">
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
         <hr className="w-full h-[2px] bg-orange-200 mt-2 mb-4" />
         <div className="flex gap-4">
-          <Link href={"/keywords"}>
+          <Link href={"/games/keywords"}>
             <button className="bg-orange-200 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
               <h3 className="font-semibold text-xl mb-6">Keywords</h3>
               <p className="text-gray-500">
@@ -61,7 +61,7 @@ export default function Home() {
               </p>
             </button>
           </Link>
-          <Link href={"/date-time"}>
+          <Link href={"/games/date-time"}>
             <button className="bg-orange-100 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
               <h3 className="font-semibold text-xl mb-6">Date/Time</h3>
               <p className="text-gray-500">

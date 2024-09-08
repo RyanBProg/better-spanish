@@ -69,10 +69,23 @@ export default function VerbGrid() {
     <>
       <div className="mb-5">
         <h1 className="font-semibold">Verb Conjugations</h1>
-        <p className="mb-10">
+        <p className="mb-5">
           Answer all 6 verb conjugations for all 3 tenses and the gerund
           conjugation correctly to move onto the next verb.
         </p>
+        <form onSubmit={(e) => console.log(e)}>
+          <select className="mb-10 mr-4 rounded-md shadow-sm p-2 border">
+            <option value="">Select a new verb</option>
+            {verbData.map((verb) => {
+              return <option value={verb.spanish}>{verb.spanish}</option>;
+            })}
+          </select>
+          <button
+            type="submit"
+            className="bg-green-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-green-600 transition duration-200">
+            Change Verb
+          </button>
+        </form>
         <h2 className="text-4xl font-semibold capitalize">
           {verbData[verbIndex].spanish}
           <span className="text-base ml-2">
@@ -172,12 +185,6 @@ export default function VerbGrid() {
             <>
               <button
                 type="button"
-                onClick={handleNewVerb}
-                className="bg-orange-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-orange-600 transition duration-200">
-                New Verb
-              </button>
-              <button
-                type="button"
                 onClick={resetVerb}
                 className="bg-red-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-red-600 transition duration-200">
                 Restart
@@ -190,6 +197,12 @@ export default function VerbGrid() {
               Submit
             </button>
           )}
+          <button
+            type="button"
+            onClick={handleNewVerb}
+            className="bg-orange-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-orange-600 transition duration-200">
+            New Random Verb
+          </button>
         </div>
       </form>
     </>

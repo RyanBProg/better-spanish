@@ -48,7 +48,7 @@ export default function Home() {
   );
 }
 
-export function FilterBar() {
+function FilterBar() {
   return (
     <div className="flex gap-2 overflow-x-scroll">
       <button className="bg-slate-100 rounded-full py-1 px-3 transition-[filter] hover:brightness-95">

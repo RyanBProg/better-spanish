@@ -1,6 +1,12 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import {
+  FieldErrors,
+  FieldValues,
+  useForm,
+  UseFormClearErrors,
+  UseFormRegister,
+} from "react-hook-form";
 import verbData from "../../data/verbs.json";
 import VerbInput from "./VerbInput";
 import { useState } from "react";
@@ -13,6 +19,8 @@ export default function VerbGrid() {
     clearErrors,
     formState: { errors },
   } = useForm();
+
+  const [showAnswers, setShowAnswers] = useState(false);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [verbIndex, setVerbIndex] = useState(
@@ -67,144 +75,150 @@ export default function VerbGrid() {
 
   return (
     <>
-      <div className="mb-5">
-        <h1 className="font-semibold">Verb Conjugations</h1>
-        <p className="mb-5">
-          Answer all 6 verb conjugations for all 3 tenses and the gerund
-          conjugation correctly to move onto the next verb.
-        </p>
-        <form onSubmit={(e) => console.log(e)}>
-          <select className="mb-10 mr-4 rounded-md shadow-sm p-2 border">
-            <option value="">Select a new verb</option>
-            {verbData.map((verb) => {
-              return <option value={verb.spanish}>{verb.spanish}</option>;
-            })}
-          </select>
-          <button
-            type="submit"
-            className="bg-green-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-green-600 transition duration-200">
-            Change Verb
-          </button>
-        </form>
-        <h2 className="text-4xl font-semibold capitalize">
-          {verbData[verbIndex].spanish}
-          <span className="text-base ml-2">
-            {" "}
-            - {verbData[verbIndex].english}
-          </span>
-        </h2>
-      </div>
-
-      <form noValidate autoComplete="off" onSubmit={onSubmit}>
-        <div className="conj-grid">
-          {/* Headers */}
-          <span></span>
-          <span className="uppercase text-center text-gray-600">Present</span>
-          <span className="uppercase text-center text-gray-600">Past</span>
-          <span className="uppercase text-center text-gray-600">Future</span>
-
-          {/* Row Labels */}
-          <span className="font-semibold text-gray-800 flex items-center row-start-2 overflow-x-hidden">
-            Yo
-          </span>
-          <span className="font-semibold text-gray-800 flex items-center row-start-3 overflow-x-hidden">
-            Tú
-          </span>
-          <span className="font-semibold text-gray-800 flex items-center row-start-4 overflow-x-hidden">
-            Él/Ella/Usted
-          </span>
-          <span className="font-semibold text-gray-800 flex items-center row-start-5 overflow-x-hidden">
-            Nosotros/Nosotras
-          </span>
-          <span className="font-semibold text-gray-800 flex items-center row-start-6 overflow-x-hidden">
-            Vosotros/Vosotras
-          </span>
-          <span className="font-semibold text-gray-800 flex items-center row-start-7 overflow-x-hidden">
-            Ellos/Ellas/Ustedes
-          </span>
-
-          {/* Input fields */}
-          {verbData[verbIndex].present.map((verb, index) => {
-            return (
-              <VerbInput
-                id={`v${index + 1}`}
-                className={`col-start-2 col-span1 row-start-${index + 2}`}
-                verb={verb}
-                register={register}
-                errors={errors}
-                clearErrors={clearErrors}
-                isSubmitted={isSubmitted}
-              />
-            );
-          })}
-          {verbData[verbIndex].past.map((verb, index) => {
-            return (
-              <VerbInput
-                id={`v${index + 7}`}
-                className={`col-start-3 col-span1 row-start-${index + 2}`}
-                verb={verb}
-                register={register}
-                errors={errors}
-                clearErrors={clearErrors}
-                isSubmitted={isSubmitted}
-              />
-            );
-          })}
-          {verbData[verbIndex].future.map((verb, index) => {
-            return (
-              <VerbInput
-                id={`v${index + 13}`}
-                className={`col-start-4 col-span1 row-start-${index + 2}`}
-                verb={verb}
-                register={register}
-                errors={errors}
-                clearErrors={clearErrors}
-                isSubmitted={isSubmitted}
-              />
-            );
-          })}
+      <div className="flex flex-col h-full">
+        <div className="overflow-y-scroll flex-1">
+          <div className="mb-5">
+            <h1 className="font-semibold">Verb Conjugations</h1>
+            <p className="mb-10">
+              Answer all 6 verb conjugations for all 3 tenses and the gerund
+              conjugation correctly to move onto the next verb.
+            </p>
+            <h2 className="text-4xl font-semibold capitalize">
+              {verbData[verbIndex].spanish}
+              <span className="text-base ml-2">
+                {" "}
+                - {verbData[verbIndex].english}
+              </span>
+            </h2>
+          </div>
+          <form
+            noValidate
+            autoComplete="off"
+            onSubmit={onSubmit}
+            className="my-10 flex flex-col gap-4">
+            <InnerGrid
+              verbTense={verbData[verbIndex].present}
+              title="present"
+              register={register}
+              errors={errors}
+              clearErrors={clearErrors}
+              showAnswers={showAnswers}
+            />
+            <InnerGrid
+              verbTense={verbData[verbIndex].past}
+              title="past"
+              register={register}
+              errors={errors}
+              clearErrors={clearErrors}
+              showAnswers={showAnswers}
+            />
+            <InnerGrid
+              verbTense={verbData[verbIndex].future}
+              title="future"
+              register={register}
+              errors={errors}
+              clearErrors={clearErrors}
+              showAnswers={showAnswers}
+            />
+            {/* Submit button */}
+            <button
+              type="submit"
+              className="bg-green-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-green-600 transition-colors duration-200">
+              Submit Answers
+            </button>
+          </form>
         </div>
-        <div className="flex gap-4 mt-10">
-          <span className="font-semibold text-gray-800 flex items-center row-start-8 overflow-x-hidden">
-            Gerund
-          </span>
+
+        <Controls />
+      </div>
+    </>
+  );
+}
+
+type InnerGridProps = {
+  verbTense: any; // change this!
+  title: string;
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+  clearErrors: UseFormClearErrors<FieldValues>;
+  showAnswers: boolean;
+};
+
+function InnerGrid({
+  verbTense,
+  title,
+  register,
+  errors,
+  clearErrors,
+  showAnswers,
+}: InnerGridProps) {
+  return (
+    <div className="verb-inner-grid">
+      {/* heading row */}
+      <span></span>
+      <span className="uppercase text-center text-gray-600">{title}</span>
+
+      {/* Row Labels */}
+      <span className="font-semibold text-gray-800 flex items-center col-start-1 row-start-2 text-xs sm:text-base">
+        Yo
+      </span>
+      <span className="font-semibold text-gray-800 flex items-center col-start-1 row-start-3 text-xs sm:text-base">
+        Tú
+      </span>
+      <span className="font-semibold text-gray-800 flex items-center col-start-1 row-start-4 text-xs sm:text-base">
+        Él/Ella/ Usted
+      </span>
+      <span className="font-semibold text-gray-800 flex items-center col-start-1 row-start-5 text-wrap sm:text-nowrap text-xs sm:text-base">
+        Nosotros/ Nosotras
+      </span>
+      <span className="font-semibold text-gray-800 flex items-center col-start-1 row-start-6 text-wrap sm:text-nowrap text-xs sm:text-base">
+        Vosotros/ Vosotras
+      </span>
+      <span className="font-semibold text-gray-800 flex items-center col-start-1 row-start-7 text-wrap sm:text-nowrap text-xs sm:text-base">
+        Ellos/Ellas/ Ustedes
+      </span>
+
+      {/* Input fields */}
+      {verbTense.map((verb, index) => {
+        return (
           <VerbInput
-            id={"v19"}
-            className={""}
-            verb={verbData[verbIndex].gerund}
+            id={`${verb.spanish}${index}`}
+            className={`col-start-2 row-start-${index + 2}`}
+            verb={verb}
             register={register}
             errors={errors}
             clearErrors={clearErrors}
-            isSubmitted={isSubmitted}
+            showAnswers={showAnswers}
           />
-        </div>
+        );
+      })}
+    </div>
+  );
+}
 
-        {/* Submit button */}
-        <div className="col-span-4 flex justify-center mt-6 gap-4">
-          {isSubmitted ? (
-            <>
-              <button
-                type="button"
-                onClick={resetVerb}
-                className="bg-red-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-red-600 transition duration-200">
-                Restart
-              </button>
-            </>
-          ) : (
-            <button
-              type="submit"
-              className="bg-green-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-green-600 transition duration-200">
-              Submit
-            </button>
-          )}
-          <button
-            type="button"
-            onClick={handleNewVerb}
-            className="bg-orange-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-orange-600 transition duration-200">
-            New Random Verb
-          </button>
-        </div>
-      </form>
-    </>
+function Controls() {
+  return (
+    <div className="flex gap-2 pt-2 sm:pt-3 md:pt-4 border-t-2">
+      <div className="flex flex-col lg:flex-row gap-2 flex-1">
+        <button className="bg-neutral-700 w-full text-white py-2 rounded-md shadow-lg hover:brightness-150 transition-[filter] duration-200">
+          Show Answers
+        </button>
+        <button
+          type="button"
+          className="bg-neutral-700 w-full text-white py-2 rounded-md shadow-lg row-start-2 col-start-1 lg:row-start-1 lg:col-start-2 hover:brightness-150 transition-[filter] duration-200">
+          Random Verb
+        </button>
+      </div>
+      <div className="flex flex-col lg:flex-row gap-2 flex-1">
+        <select className="rounded-md w-full shadow-sm p-2 border">
+          <option value="">Select a new verb</option>
+        </select>
+        <button
+          type="submit"
+          className="border-2 w-full text-black py-2 rounded-md shadow-lg hover:bg-neutral-200 transition-colors duration-200">
+          Change Verb
+        </button>
+      </div>
+    </div>
   );
 }

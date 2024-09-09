@@ -28,6 +28,13 @@
     grid-template-columns: 100px 1fr 1fr 1fr;
     grid-template-rows: 30px 1fr 1fr 1fr 1fr 1fr 1fr;
   }
+
+  .verb-inner-grid {
+    @apply grid gap-x-4;
+
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(7, 1fr);
+  }
 }
 
 @keyframes scroll {

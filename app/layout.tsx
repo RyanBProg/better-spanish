@@ -14,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col-reverse md:flex-row h-screen p-2 sm:p-3 md:p-4">
+      <body className="flex flex-col-reverse md:flex-row h-[100dvh] p-2 sm:p-3 md:p-4">
         <Navbar />
-        <main className="flex-grow pt-2 sm:pt-3 md:pt-4 overflow-y-scroll">
+        <main className="flex-grow pt-2 sm:pt-3 md:pt-4 overflow-y-scroll relative">
           {children}
         </main>
       </body>

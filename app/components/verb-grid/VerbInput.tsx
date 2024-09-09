@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   FieldErrors,
   FieldValues,
@@ -20,7 +19,7 @@ type Props = {
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
   clearErrors: UseFormClearErrors<FieldValues>;
-  isSubmitted: boolean;
+  showAnswers: boolean;
 };
 
 export default function VerbInput({
@@ -30,17 +29,10 @@ export default function VerbInput({
   register,
   errors,
   clearErrors,
-  isSubmitted,
+  showAnswers,
 }: Props) {
-  const [showAnswer, setShowAnswer] = useState(false);
-
-  // resets ui after submission
-  useEffect(() => {
-    setShowAnswer(false);
-  }, [isSubmitted]);
-
   return (
-    <div className={`${className} relative m-2`}>
+    <div className={`${className} relative m-1`}>
       <input
         type="text"
         {...register(id, {
@@ -58,18 +50,10 @@ export default function VerbInput({
           errors[`${id}`] ? "border-red-500 bg-red-200" : "border-gray-300"
         }`}
       />
-      <button
-        type="button"
-        tabIndex={-1}
-        disabled={isSubmitted}
-        onClick={() => setShowAnswer((prev) => !prev)}
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-orange-500 text-white size-5 text-xs hover:bg-orange-600 transition-colors">
-        ?
-      </button>
       <span
         className={`${
-          showAnswer ? "inline" : "hidden"
-        } absolute right-[35px] top-1/2 -translate-y-1/2`}>
+          showAnswers ? "inline" : "hidden"
+        } absolute right-2 top-1/2 -translate-y-1/2`}>
         {verb.spanish}
       </span>
       {errors[`${id}`] && (

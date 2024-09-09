@@ -8,7 +8,7 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 import verbData from "../../data/verbs.json";
-import VerbInput from "./VerbInput";
+import VerbInput, { TVerb } from "./VerbInput";
 import { useState } from "react";
 
 export default function VerbGrid() {
@@ -136,7 +136,7 @@ export default function VerbGrid() {
 }
 
 type InnerGridProps = {
-  verbTense: any; // change this!
+  verbTense: Array<TVerb>;
   title: string;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors<FieldValues>;

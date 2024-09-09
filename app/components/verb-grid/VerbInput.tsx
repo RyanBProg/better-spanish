@@ -5,7 +5,7 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 
-type TVerb = {
+export type TVerb = {
   prefix?: string | string[];
   spanish: string;
   english: string;

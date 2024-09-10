@@ -22,7 +22,6 @@ export default function VerbGrid() {
 
   const [showAnswers, setShowAnswers] = useState(false);
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [verbIndex, setVerbIndex] = useState(
     Math.floor(Math.random() * verbData.length)
   );
@@ -58,18 +57,15 @@ export default function VerbGrid() {
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
-    setIsSubmitted(true);
     alert("You Answered All Correct!");
   });
 
-  const handleNewVerb = () => {
+  const getNewRandomVerb = () => {
     setVerbIndex(Math.floor(Math.random() * verbData.length));
-    setIsSubmitted(false);
     reset();
   };
 
   const resetVerb = () => {
-    setIsSubmitted(false);
     reset();
   };
 
@@ -120,6 +116,23 @@ export default function VerbGrid() {
               clearErrors={clearErrors}
               showAnswers={showAnswers}
             />
+
+            {/* Gerund */}
+            <div className="grid grid-cols-[min-content_1fr] gap-x-4 my-10">
+              <span className="font-semibold text-gray-800 flex items-center sm:text-nowrap text-xs sm:text-base">
+                Gerund
+              </span>
+              <VerbInput
+                id={`${verbData[verbIndex].gerund}`}
+                className={""}
+                verb={verbData[verbIndex].gerund}
+                register={register}
+                errors={errors}
+                clearErrors={clearErrors}
+                showAnswers={showAnswers}
+              />
+            </div>
+
             {/* Submit button */}
             <button
               type="submit"
@@ -156,7 +169,9 @@ function InnerGrid({
     <div className="verb-inner-grid">
       {/* heading row */}
       <span></span>
-      <span className="uppercase text-center text-gray-600">{title}</span>
+      <span className="uppercase text-center h-min text-gray-600 self-center">
+        {title}
+      </span>
 
       {/* Row Labels */}
       <span className="font-semibold text-gray-800 flex items-center col-start-1 row-start-2 text-xs sm:text-base">
@@ -182,6 +197,7 @@ function InnerGrid({
       {verbTense.map((verb, index) => {
         return (
           <VerbInput
+            key={verb.spanish}
             id={`${verb.spanish}${index}`}
             className={`col-start-2 row-start-${index + 2}`}
             verb={verb}
@@ -198,27 +214,18 @@ function InnerGrid({
 
 function Controls() {
   return (
-    <div className="flex gap-2 pt-2 sm:pt-3 md:pt-4 border-t-2">
-      <div className="flex flex-col lg:flex-row gap-2 flex-1">
-        <button className="bg-neutral-700 w-full text-white py-2 rounded-md shadow-lg hover:brightness-150 transition-[filter] duration-200">
-          Show Answers
-        </button>
-        <button
-          type="button"
-          className="bg-neutral-700 w-full text-white py-2 rounded-md shadow-lg row-start-2 col-start-1 lg:row-start-1 lg:col-start-2 hover:brightness-150 transition-[filter] duration-200">
-          Random Verb
-        </button>
-      </div>
-      <div className="flex flex-col lg:flex-row gap-2 flex-1">
-        <select className="rounded-md w-full shadow-sm p-2 border">
-          <option value="">Select a new verb</option>
-        </select>
-        <button
-          type="submit"
-          className="border-2 w-full text-black py-2 rounded-md shadow-lg hover:bg-neutral-200 transition-colors duration-200">
-          Change Verb
-        </button>
-      </div>
+    <div className="bg-white grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 gap-2 pt-2 sm:pt-3 md:pt-4 border-t-2">
+      <select className="col-span-2 md:col-span-1 rounded-md w-full shadow-sm p-2 border">
+        <option value="">Select a new verb</option>
+      </select>
+      <button className="bg-neutral-700 w-full text-white py-2 rounded-md hover:brightness-150 transition-[filter] duration-200">
+        Show Answers
+      </button>
+      <button
+        type="button"
+        className="bg-neutral-700 w-full text-white py-2 rounded-md hover:brightness-150 transition-[filter] duration-200">
+        Random Verb
+      </button>
     </div>
   );
 }

@@ -18,7 +18,10 @@ export default function VerbGrid() {
     reset,
     clearErrors,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
+  });
 
   const [showAnswers, setShowAnswers] = useState(false);
   const [verbIndex, setVerbIndex] = useState(0);

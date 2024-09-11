@@ -42,9 +42,7 @@ export default function VerbInput({
               value.toLocaleLowerCase() === verb.spanish.toLocaleLowerCase() ||
               "Incorrect",
           },
-          onChange: (e) => {
-            clearErrors(id); // Clear errors on user input
-          },
+          onChange: () => errors[`${id}`] && clearErrors(id),
         })}
         className={`w-full p-2 border rounded-md shadow-sm focus:ring-2 focus:ring-orange-400 focus:outline-none ${
           errors[`${id}`] ? "border-red-500 bg-red-200" : "border-gray-300"

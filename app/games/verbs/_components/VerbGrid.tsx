@@ -93,7 +93,7 @@ export default function VerbGrid() {
                 Gerund
               </span>
               <VerbInput
-                id={`${verbData[verbIndex].gerund}`}
+                id={`${verbData[verbIndex].gerund.spanish}`}
                 className={""}
                 verb={verbData[verbIndex].gerund}
                 register={register}

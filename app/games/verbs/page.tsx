@@ -1,4 +1,4 @@
-import VerbGrid from "../../components/verb-grid/VerbGrid";
+import VerbGrid from "./_components/VerbGrid";
 
 export default function Home() {
   return (

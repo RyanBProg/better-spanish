@@ -1,16 +1,10 @@
+import { TVerb } from "@/app/types/types";
 import {
   FieldErrors,
   FieldValues,
   UseFormClearErrors,
   UseFormRegister,
 } from "react-hook-form";
-
-export type TVerb = {
-  prefix?: string | string[];
-  spanish: string;
-  english: string;
-  type?: string;
-};
 
 type Props = {
   id: string;

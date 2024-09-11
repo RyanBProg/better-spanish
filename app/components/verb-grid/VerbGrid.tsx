@@ -21,39 +21,7 @@ export default function VerbGrid() {
   } = useForm();
 
   const [showAnswers, setShowAnswers] = useState(false);
-
-  const [verbIndex, setVerbIndex] = useState(
-    Math.floor(Math.random() * verbData.length)
-  );
-
-  const handleGameSetup = (verbData: any, verbIndex: number) => {
-    const tenses = ["present", "past", "future"];
-    let state: Record<string, { answer: string; correctAnswer: string }> = {};
-
-    tenses.forEach((tense, tenseIndex) => {
-      for (let i = 0; i < 6; i++) {
-        const key = `v${tenseIndex * 6 + i + 1}`;
-        state[key] = {
-          answer: "",
-          correctAnswer: verbData[verbIndex][tense][i].spanish,
-        };
-      }
-    });
-
-    return state;
-  };
-
-  const [gameState, setGameState] = useState(
-    handleGameSetup(verbData, verbIndex)
-  );
-
-  const handleAnswer = (verbNo: string, answer: string) => {
-    setGameState((prev) => {
-      const newState = { ...prev };
-      newState[verbNo] = { ...newState[verbNo], answer: answer };
-      return newState;
-    });
-  };
+  const [verbIndex, setVerbIndex] = useState(0);
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
@@ -66,8 +34,10 @@ export default function VerbGrid() {
     reset();
   };
 
-  const handleResetVerb = () => {
+  const handleVerbChange = (verb: string) => {
+    setShowAnswers(false);
     reset();
+    setVerbIndex(verbData.findIndex((item) => item.spanish === verb));
   };
 
   return (
@@ -148,6 +118,8 @@ export default function VerbGrid() {
           showAnswers={showAnswers}
           getNewRandomVerb={getNewRandomVerb}
           verbList={verbData.map((verb) => verb.spanish)}
+          currentVerb={verbData[verbIndex].spanish}
+          handleVerbChange={handleVerbChange}
         />
       </div>
     </>
@@ -223,6 +195,8 @@ type ControlProps = {
   showAnswers: boolean;
   getNewRandomVerb: () => void;
   verbList: string[];
+  currentVerb: string;
+  handleVerbChange: (e: string) => void;
 };
 
 function Controls({
@@ -230,12 +204,19 @@ function Controls({
   showAnswers,
   getNewRandomVerb,
   verbList,
+  currentVerb,
+  handleVerbChange,
 }: ControlProps) {
   return (
     <div className="bg-white grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 gap-2 pt-2 sm:pt-3 md:pt-4 border-t-2">
-      <select className="col-span-2 md:col-span-1 rounded-md w-full shadow-sm p-2 border">
+      <select
+        value={currentVerb}
+        onChange={(e) => handleVerbChange(e.currentTarget.value)}
+        className="col-span-2 md:col-span-1 rounded-md w-full shadow-sm p-2 border capitalize">
         {verbList.map((verb) => (
-          <option value={verb}>{verb}</option>
+          <option key={verb} value={verb}>
+            {verb}
+          </option>
         ))}
       </select>
       <button

@@ -4,7 +4,7 @@ import Navbar from "./components/nav-bar/Navbar";
 
 export const metadata: Metadata = {
   title: "Better Spanish",
-  description: "Learn Spanish The Better Way",
+  description: "Learn Spanish The Faster Way",
 };
 
 export default function RootLayout({

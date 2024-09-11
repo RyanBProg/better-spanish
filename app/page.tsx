@@ -39,6 +39,15 @@ export default function Home() {
               </p>
             </button>
           </Link>
+
+          <Link href={"/games/verbs"}>
+            <button className="bg-orange-200 py-6 px-4 text-left rounded-md w-full sm:w-[250px] drop-shadow-sm transition-transform hover:scale-[1.02]">
+              <h3 className="font-semibold text-xl mb-6">Verbs</h3>
+              <p className="text-gray-500">
+                Helpful keywords for everyday speaking
+              </p>
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -53,19 +62,11 @@ export default function Home() {
         </div>
         <hr className="w-full h-[2px] bg-orange-200 mt-2 mb-4" />
         <div className="flex gap-4">
-          <Link href={"/games/keywords"}>
+          <Link href={"/learning"}>
             <button className="bg-orange-200 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-              <h3 className="font-semibold text-xl mb-6">Keywords</h3>
+              <h3 className="font-semibold text-xl mb-6">Learning</h3>
               <p className="text-gray-500">
-                Helpful keywords for everyday speaking
-              </p>
-            </button>
-          </Link>
-          <Link href={"/games/date-time"}>
-            <button className="bg-orange-100 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-              <h3 className="font-semibold text-xl mb-6">Date/Time</h3>
-              <p className="text-gray-500">
-                Date and time related spanish words
+                Get to grips with new words with helpful infographics
               </p>
             </button>
           </Link>

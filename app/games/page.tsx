@@ -69,18 +69,22 @@ export default function Home() {
           .map((game) => (
             <Link href={game.link} key={game.name} className="max-w-[800px]">
               <div className="bg-orange-200 py-10 px-6 text-left rounded-lg drop-shadow-sm transition-transform hover:-translate-y-1">
-                <div className="flex items-center gap-2 mb-4">
+                <div className="flex flex-col sm:flex-row items-center gap-2 mb-4">
                   <Image src={controllerIcon} alt="" className="size-6" />
                   <h3 className="font-semibold text-2xl capitalize flex-1">
                     {game.name}
                   </h3>
-                  {game.filters.map((filter) => (
-                    <span className="bg-slate-100 rounded-full py-1 px-3 ml-2">
-                      {filter}
-                    </span>
-                  ))}
+                  <div className="flex gap-2">
+                    {game.filters.map((filter) => (
+                      <span className="bg-slate-100 rounded-full py-1 px-3">
+                        {filter}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-neutral-700">{game.description}</p>
+                <p className="text-neutral-700 text-center sm:text-left">
+                  {game.description}
+                </p>
               </div>
             </Link>
           ))}
@@ -101,7 +105,7 @@ function FilterBar({
   handleResetFilters,
 }: FilterProps) {
   return (
-    <div className="flex gap-2 overflow-x-scroll">
+    <div className="flex gap-2 flex-wrap">
       {filterList.map((filter) => {
         return (
           <div className="flex items-center">

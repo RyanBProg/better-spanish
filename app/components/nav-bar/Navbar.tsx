@@ -3,8 +3,8 @@ import Link from "next/link";
 import homeIcon from "../../../public/icons/home.svg";
 import bookIcon from "../../../public/icons/book.svg";
 import boltIcon from "../../../public/icons/bolt.svg";
-import joystickIcon from "../../../public/icons/joystick.svg";
 import accountIcon from "../../../public/icons/user.svg";
+import controllerIcon from "../../../public/icons/console-controller.svg";
 
 export default function Navbar() {
   return (
@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex gap-2 sm:gap-4 md:flex-col">
           <NavButton name="Home" alt="" href="/" icon={homeIcon} />
           <NavButton name="Learning" alt="" href="/learning" icon={bookIcon} />
-          <NavButton name="Games" alt="" href="/games" icon={joystickIcon} />
+          <NavButton name="Games" alt="" href="/games" icon={controllerIcon} />
         </div>
         <NavButton
           name="Account"

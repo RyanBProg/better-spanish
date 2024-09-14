@@ -6,6 +6,8 @@ import VerbInput from "./VerbInput";
 import { useState } from "react";
 import GameControls from "./GameControls";
 import VerbInnerGrid from "./VerbInnerGrid";
+import Confetti from "react-confetti";
+import useWindowDimensions from "@/app/utils/useWindowSize";
 
 export default function VerbGrid() {
   const {
@@ -21,27 +23,31 @@ export default function VerbGrid() {
 
   const [showAnswers, setShowAnswers] = useState(false);
   const [verbIndex, setVerbIndex] = useState(0);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { width, height } = useWindowDimensions();
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
-    alert("You Answered All Correct!");
+    setIsSubmitted(true);
   });
 
   const getNewRandomVerb = () => {
     setVerbIndex(Math.floor(Math.random() * verbData.length));
     setShowAnswers(false);
     reset();
+    setIsSubmitted(false);
   };
 
   const handleVerbChange = (verb: string) => {
     setShowAnswers(false);
     reset();
+    setIsSubmitted(false);
     setVerbIndex(verbData.findIndex((item) => item.spanish === verb));
   };
 
   return (
     <>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col h-full relative">
         <div className="overflow-y-scroll flex-1">
           <div className="mb-5">
             <h1 className="font-semibold">Verb Conjugations</h1>
@@ -111,6 +117,20 @@ export default function VerbGrid() {
             </button>
           </form>
         </div>
+
+        {isSubmitted && (
+          <div className="bg-orange-100/50 text-center rounded-lg backdrop-blur-sm drop-shadow-lg w-max px-5 sm:px-10 py-10 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+            <h2 className="font-bold text-4xl">Good Job!!!</h2>
+            <p>You answered everything correctly</p>
+            <button
+              onClick={getNewRandomVerb}
+              className="bg-orange-500 w-full mt-4 text-white py-2 rounded-md hover:brightness-150 transition-[filter] duration-200">
+              New Random Verb
+            </button>
+          </div>
+        )}
+
+        {isSubmitted && <Confetti width={width} height={height} />}
 
         <GameControls
           setShowAnswers={setShowAnswers}

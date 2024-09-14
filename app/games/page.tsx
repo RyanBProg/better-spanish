@@ -1,65 +1,129 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import controllerIcon from "../../public/icons/console-controller.svg";
+
+const gameFilters = ["multi-choice", "verbs", "spelling", "flashcards"];
+
+const games = [
+  {
+    name: "keywords",
+    description: "Helpful keywords for everyday speaking",
+    filters: ["multi-choice", "spelling"],
+    link: "/games/keywords",
+  },
+  {
+    name: "verbs",
+    description: "Helpful keywords for everyday speaking",
+    filters: ["verbs", "spelling"],
+    link: "/games/verbs",
+  },
+  {
+    name: "flashcards",
+    description: "Helpful keywords for everyday speaking",
+    filters: ["flashcards"],
+    link: "/games/flashcards",
+  },
+  {
+    name: "date/time",
+    description: "Helpful keywords for everyday speaking",
+    filters: ["multi-choice", "spelling"],
+    link: "/games/date-time",
+  },
+  {
+    name: "numbers",
+    description: "Helpful keywords for everyday speaking",
+    filters: ["multi-choice", "spelling"],
+    link: "/games/numbers",
+  },
+];
 
 export default function Home() {
+  const [filterList, setFilterList] = useState<string[]>(gameFilters);
+
+  const handleFilter = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const target = e.target as HTMLButtonElement;
+    setFilterList([target.value]);
+  };
+
+  const handleResetFilters = () => {
+    setFilterList(gameFilters);
+  };
+
   return (
     <div className="">
       <h1 className="text-4xl font-semibold">Games</h1>
       <hr className="w-full h-[2px] bg-orange-200 mt-2 mb-4" />
-      <FilterBar />
-      <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-4">
-        <Link href={"/games/keywords"}>
-          <div className="bg-orange-200 py-6 px-4 text-left rounded-md w-full sm:w-[250px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-            <h3 className="font-semibold text-xl mb-6">Keywords</h3>
-            <p className="text-gray-500">
-              Helpful keywords for everyday speaking
-            </p>
-          </div>
-        </Link>
-        <Link href={"/games/date-time"}>
-          <button className="bg-orange-100 py-6 px-4 text-left rounded-md w-full sm:w-[250px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-            <h3 className="font-semibold text-xl mb-6">Date/Time</h3>
-            <p className="text-gray-500">Date and time related spanish words</p>
-          </button>
-        </Link>
-        <Link href={"/games/verbs"}>
-          <button className="bg-orange-200 py-6 px-4 text-left rounded-md w-full sm:w-[250px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-            <h3 className="font-semibold text-xl mb-6">Verbs</h3>
-            <p className="text-gray-500">
-              Helpful keywords for everyday speaking
-            </p>
-          </button>
-        </Link>
-        <Link href={"/games/numbers"}>
-          <button className="bg-orange-100 py-6 px-4 text-left rounded-md w-full sm:w-[250px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-            <h3 className="font-semibold text-xl mb-6">Numbers</h3>
-            <p className="text-gray-500">Date and time related spanish words</p>
-          </button>
-        </Link>
-        <Link href={"/games/verbs"}>
-          <button className="bg-orange-200 py-6 px-4 text-left rounded-md w-full sm:w-[250px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-            <h3 className="font-semibold text-xl mb-6">Flashcards</h3>
-            <p className="text-gray-500">
-              Helpful keywords for everyday speaking
-            </p>
-          </button>
-        </Link>
+      <FilterBar
+        filterList={filterList}
+        handleFilter={handleFilter}
+        handleResetFilters={handleResetFilters}
+      />
+      <div className="grid gap-4 mt-4">
+        {games
+          .filter((game) =>
+            filterList.some((filter) => game.filters.includes(filter))
+          )
+          .map((game) => (
+            <Link href={game.link} key={game.name} className="max-w-[800px]">
+              <div className="bg-orange-200 py-10 px-6 text-left rounded-lg drop-shadow-sm transition-transform hover:-translate-y-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <Image src={controllerIcon} alt="" className="size-6" />
+                  <h3 className="font-semibold text-2xl capitalize flex-1">
+                    {game.name}
+                  </h3>
+                  {game.filters.map((filter) => (
+                    <span className="bg-slate-100 rounded-full py-1 px-3 ml-2">
+                      {filter}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-neutral-700">{game.description}</p>
+              </div>
+            </Link>
+          ))}
       </div>
     </div>
   );
 }
 
-function FilterBar() {
+type FilterProps = {
+  filterList: string[];
+  handleFilter: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleResetFilters: () => void;
+};
+
+function FilterBar({
+  filterList,
+  handleFilter,
+  handleResetFilters,
+}: FilterProps) {
   return (
     <div className="flex gap-2 overflow-x-scroll">
-      <button className="bg-slate-100 rounded-full py-1 px-3 transition-[filter] hover:brightness-95">
-        Multi-choice
-      </button>
-      <button className="bg-slate-100 rounded-full py-1 px-3 transition-[filter] hover:brightness-95">
-        Verbs
-      </button>
-      <button className="bg-slate-100 rounded-full py-1 px-3 transition-[filter] hover:brightness-95">
-        Spelling
-      </button>
+      {filterList.map((filter) => {
+        return (
+          <div className="flex items-center">
+            <button
+              value={filter}
+              onClick={handleFilter}
+              disabled={filterList.length === 1}
+              className={`${
+                filterList.length === 1 ? "rounded-l-full" : "rounded-full"
+              } bg-slate-200 py-1 px-3 transition-[filter] hover:brightness-95`}>
+              {filter}
+            </button>
+            {filterList.length === 1 && (
+              <button
+                onClick={handleResetFilters}
+                className="bg-black text-white rounded-r-full h-[32px] w-fit pl-2 pr-3 text-sm">
+                X
+              </button>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

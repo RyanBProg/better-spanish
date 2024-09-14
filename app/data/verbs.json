@@ -1069,5 +1069,2385 @@
       }
     ],
     "gerund": { "spanish": "dando", "english": "giving" }
+  },
+  {
+    "english": "To know (facts)",
+    "spanish": "saber",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "sé",
+        "english": "I know",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "sabes",
+        "english": "you know",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "sabe",
+        "english": "he/she knows - you know",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "sabemos",
+        "english": "we know",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "sabéis",
+        "english": "you all know",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "saben",
+        "english": "you all know - they know",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "supe",
+        "english": "I knew",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "supiste",
+        "english": "you knew",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "supo",
+        "english": "he/she knew - you knew",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "supimos",
+        "english": "we knew",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "supisteis",
+        "english": "you all knew",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "supieron",
+        "english": "you all knew - they knew",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "sabré",
+        "english": "I will know",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "sabrás",
+        "english": "you will know",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "sabrá",
+        "english": "he/she will know - you will know",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "sabremos",
+        "english": "we will know",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "sabréis",
+        "english": "you all will know",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "sabrán",
+        "english": "you all will know - they will know",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "sabiendo", "english": "knowing" }
+  },
+  {
+    "english": "To know (people/places)",
+    "spanish": "conocer",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "conozco",
+        "english": "I know",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "conoces",
+        "english": "you know",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "conoce",
+        "english": "he/she knows - you know",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "conocemos",
+        "english": "we know",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "conocéis",
+        "english": "you all know",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "conocen",
+        "english": "you all know - they know",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "conocí",
+        "english": "I knew",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "conociste",
+        "english": "you knew",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "conoció",
+        "english": "he/she knew - you knew",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "conocimos",
+        "english": "we knew",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "conocisteis",
+        "english": "you all knew",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "conocieron",
+        "english": "you all knew - they knew",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "conoceré",
+        "english": "I will know",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "conocerás",
+        "english": "you will know",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "conocerá",
+        "english": "he/she will know - you will know",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "conoceremos",
+        "english": "we will know",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "conoceréis",
+        "english": "you all will know",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "conocerán",
+        "english": "you all will know - they will know",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "conociendo", "english": "knowing" }
+  },
+  {
+    "english": "To want",
+    "spanish": "querer",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "quiero",
+        "english": "I want",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "quieres",
+        "english": "you want",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "quiere",
+        "english": "he/she wants - you want",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "queremos",
+        "english": "we want",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "queréis",
+        "english": "you all want",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "quieren",
+        "english": "you all want - they want",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "quise",
+        "english": "I wanted",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "quisiste",
+        "english": "you wanted",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "quiso",
+        "english": "he/she wanted - you wanted",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "quisimos",
+        "english": "we wanted",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "quisisteis",
+        "english": "you all wanted",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "quisieron",
+        "english": "you all wanted - they wanted",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "querré",
+        "english": "I will want",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "querrás",
+        "english": "you will want",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "querrá",
+        "english": "he/she will want - you will want",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "querremos",
+        "english": "we will want",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "querréis",
+        "english": "you all will want",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "querrán",
+        "english": "you all will want - they will want",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "queriendo", "english": "wanting" }
+  },
+  {
+    "english": "To believe",
+    "spanish": "creer",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "creo",
+        "english": "I believe",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "crees",
+        "english": "you believe",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "cree",
+        "english": "he/she believes - you believe",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "creemos",
+        "english": "we believe",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "creéis",
+        "english": "you all believe",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "creen",
+        "english": "you all believe - they believe",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "creí",
+        "english": "I believed",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "creíste",
+        "english": "you believed",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "creyó",
+        "english": "he/she believed - you believed",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "creímos",
+        "english": "we believed",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "creísteis",
+        "english": "you all believed",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "creyeron",
+        "english": "you all believed - they believed",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "creeré",
+        "english": "I will believe",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "creerás",
+        "english": "you will believe",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "creerá",
+        "english": "he/she will believe - you will believe",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "creeremos",
+        "english": "we will believe",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "creeréis",
+        "english": "you all will believe",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "creerán",
+        "english": "you all will believe - they will believe",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "creyendo", "english": "believing" }
+  },
+  {
+    "english": "To speak",
+    "spanish": "hablar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "hablo",
+        "english": "I speak",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "hablas",
+        "english": "you speak",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "habla",
+        "english": "he/she speaks - you speak",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "hablamos",
+        "english": "we speak",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "habláis",
+        "english": "you all speak",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "hablan",
+        "english": "you all speak - they speak",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "hablé",
+        "english": "I spoke",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "hablaste",
+        "english": "you spoke",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "habló",
+        "english": "he/she spoke - you spoke",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "hablamos",
+        "english": "we spoke",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "hablasteis",
+        "english": "you all spoke",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "hablaron",
+        "english": "you all spoke - they spoke",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "hablaré",
+        "english": "I will speak",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "hablarás",
+        "english": "you will speak",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "hablará",
+        "english": "he/she will speak - you will speak",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "hablaremos",
+        "english": "we will speak",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "hablaréis",
+        "english": "you all will speak",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "hablarán",
+        "english": "you all will speak - they will speak",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "hablando", "english": "speaking" }
+  },
+  {
+    "english": "To carry/wear",
+    "spanish": "llevar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "llevo",
+        "english": "I carry/wear",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "llevas",
+        "english": "you carry/wear",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "lleva",
+        "english": "he/she carries/wears - you carry/wear",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "llevamos",
+        "english": "we carry/wear",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "lleváis",
+        "english": "you all carry/wear",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "llevan",
+        "english": "you all carry/wear - they carry/wear",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "llevé",
+        "english": "I carried/wore",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "llevaste",
+        "english": "you carried/wore",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "llevó",
+        "english": "he/she carried/wore - you carried/wore",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "llevamos",
+        "english": "we carried/wore",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "llevasteis",
+        "english": "you all carried/wore",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "llevaron",
+        "english": "you all carried/wore - they carried/wore",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "llevaré",
+        "english": "I will carry/wear",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "llevarás",
+        "english": "you will carry/wear",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "llevará",
+        "english": "he/she will carry/wear - you will carry/wear",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "llevaremos",
+        "english": "we will carry/wear",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "llevaréis",
+        "english": "you all will carry/wear",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "llevarán",
+        "english": "you all will carry/wear - they will carry/wear",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "llevando", "english": "carrying/wearing" }
+  },
+  {
+    "english": "To find",
+    "spanish": "encontrar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "encuentro",
+        "english": "I find",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "encuentras",
+        "english": "you find",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "encuentra",
+        "english": "he/she finds - you find",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "encontramos",
+        "english": "we find",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "encontráis",
+        "english": "you all find",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "encuentran",
+        "english": "you all find - they find",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "encontré",
+        "english": "I found",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "encontraste",
+        "english": "you found",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "encontró",
+        "english": "he/she found - you found",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "encontramos",
+        "english": "we found",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "encontrasteis",
+        "english": "you all found",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "encontraron",
+        "english": "you all found - they found",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "encontraré",
+        "english": "I will find",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "encontrarás",
+        "english": "you will find",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "encontrará",
+        "english": "he/she will find - you will find",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "encontraremos",
+        "english": "we will find",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "encontraréis",
+        "english": "you all will find",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "encontrarán",
+        "english": "you all will find - they will find",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "encontrando", "english": "finding" }
+  },
+  {
+    "english": "To like",
+    "spanish": "gustar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "me gusta",
+        "english": "I like",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "te gusta",
+        "english": "you like",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "le gusta",
+        "english": "he/she likes - you like",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "nos gusta",
+        "english": "we like",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "os gusta",
+        "english": "you all like",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "les gusta",
+        "english": "you all like - they like",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "me gustó",
+        "english": "I liked",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "te gustó",
+        "english": "you liked",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "le gustó",
+        "english": "he/she liked - you liked",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "nos gustó",
+        "english": "we liked",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "os gustó",
+        "english": "you all liked",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "les gustó",
+        "english": "you all liked - they liked",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "me gustará",
+        "english": "I will like",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "te gustará",
+        "english": "you will like",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "le gustará",
+        "english": "he/she will like - you will like",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "nos gustará",
+        "english": "we will like",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "os gustará",
+        "english": "you all will like",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "les gustará",
+        "english": "you all will like - they will like",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "gustando", "english": "liking" }
+  },
+  {
+    "english": "To say",
+    "spanish": "decir",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "digo",
+        "english": "I say",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "dices",
+        "english": "you say",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "dice",
+        "english": "he/she says - you say",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "decimos",
+        "english": "we say",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "decís",
+        "english": "you all say",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "dicen",
+        "english": "you all say - they say",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "dije",
+        "english": "I said",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "dijiste",
+        "english": "you said",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "dijo",
+        "english": "he/she said - you said",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "dijimos",
+        "english": "we said",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "dijisteis",
+        "english": "you all said",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "dijeron",
+        "english": "you all said - they said",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "diré",
+        "english": "I will say",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "dirás",
+        "english": "you will say",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "dirá",
+        "english": "he/she will say - you will say",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "diremos",
+        "english": "we will say",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "diréis",
+        "english": "you all will say",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "dirán",
+        "english": "you all will say - they will say",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "diciendo", "english": "saying" }
+  },
+  {
+    "english": "To come",
+    "spanish": "venir",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "vengo",
+        "english": "I come",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "vienes",
+        "english": "you come",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "viene",
+        "english": "he/she comes - you come",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "venimos",
+        "english": "we come",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "venís",
+        "english": "you all come",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "vienen",
+        "english": "you all come - they come",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "vine",
+        "english": "I came",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "viniste",
+        "english": "you came",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "vino",
+        "english": "he/she came - you came",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "vinimos",
+        "english": "we came",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "vinisteis",
+        "english": "you all came",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "vinieron",
+        "english": "you all came - they came",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "vendré",
+        "english": "I will come",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "vendrás",
+        "english": "you will come",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "vendrá",
+        "english": "he/she will come - you will come",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "vendremos",
+        "english": "we will come",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "vendréis",
+        "english": "you all will come",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "vendrán",
+        "english": "you all will come - they will come",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "viniendo", "english": "coming" }
+  },
+  {
+    "english": "To think",
+    "spanish": "pensar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "pienso",
+        "english": "I think",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "piensas",
+        "english": "you think",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "piensa",
+        "english": "he/she thinks - you think",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "pensamos",
+        "english": "we think",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "pensáis",
+        "english": "you all think",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "piensan",
+        "english": "you all think - they think",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "pensé",
+        "english": "I thought",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "pensaste",
+        "english": "you thought",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "pensó",
+        "english": "he/she thought - you thought",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "pensamos",
+        "english": "we thought",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "pensasteis",
+        "english": "you all thought",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "pensaron",
+        "english": "you all thought - they thought",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "pensaré",
+        "english": "I will think",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "pensarás",
+        "english": "you will think",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "pensará",
+        "english": "he/she will think - you will think",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "pensaremos",
+        "english": "we will think",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "pensaréis",
+        "english": "you all will think",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "pensarán",
+        "english": "you all will think - they will think",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "pensando", "english": "thinking" }
+  },
+  {
+    "english": "To understand",
+    "spanish": "entender",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "entiendo",
+        "english": "I understand",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "entiendes",
+        "english": "you understand",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "entiende",
+        "english": "he/she understands - you understand",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "entendemos",
+        "english": "we understand",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "entendéis",
+        "english": "you all understand",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "entienden",
+        "english": "you all understand - they understand",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "entendí",
+        "english": "I understood",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "entendiste",
+        "english": "you understood",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "entendió",
+        "english": "he/she understood - you understood",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "entendimos",
+        "english": "we understood",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "entendisteis",
+        "english": "you all understood",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "entendieron",
+        "english": "you all understood - they understood",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "entenderé",
+        "english": "I will understand",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "entenderás",
+        "english": "you will understand",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "entenderá",
+        "english": "he/she will understand - you will understand",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "entenderemos",
+        "english": "we will understand",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "entenderéis",
+        "english": "you all will understand",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "entenderán",
+        "english": "you all will understand - they will understand",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "entendiendo", "english": "understanding" }
+  },
+  {
+    "english": "To read",
+    "spanish": "leer",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "leo",
+        "english": "I read",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "lees",
+        "english": "you read",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "lee",
+        "english": "he/she reads - you read",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "leemos",
+        "english": "we read",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "leéis",
+        "english": "you all read",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "leen",
+        "english": "you all read - they read",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "leí",
+        "english": "I read (past)",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "leíste",
+        "english": "you read (past)",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "leyó",
+        "english": "he/she read - you read (past)",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "leímos",
+        "english": "we read (past)",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "leísteis",
+        "english": "you all read (past)",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "leyeron",
+        "english": "you all read - they read (past)",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "leeré",
+        "english": "I will read",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "leerás",
+        "english": "you will read",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "leerá",
+        "english": "he/she will read - you will read",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "leeremos",
+        "english": "we will read",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "leeréis",
+        "english": "you all will read",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "leerán",
+        "english": "you all will read - they will read",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "leyendo", "english": "reading" }
+  },
+  {
+    "english": "To eat",
+    "spanish": "comer",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "como",
+        "english": "I eat",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "comes",
+        "english": "you eat",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "come",
+        "english": "he/she eats - you eat",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "comemos",
+        "english": "we eat",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "coméis",
+        "english": "you all eat",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "comen",
+        "english": "you all eat - they eat",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "comí",
+        "english": "I ate",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "comiste",
+        "english": "you ate",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "comió",
+        "english": "he/she ate - you ate",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "comimos",
+        "english": "we ate",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "comisteis",
+        "english": "you all ate",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "comieron",
+        "english": "you all ate - they ate",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "comeré",
+        "english": "I will eat",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "comerás",
+        "english": "you will eat",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "comerá",
+        "english": "he/she will eat - you will eat",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "comeremos",
+        "english": "we will eat",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "comeréis",
+        "english": "you all will eat",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "comerán",
+        "english": "you all will eat - they will eat",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "comiendo", "english": "eating" }
+  },
+  {
+    "english": "To drink",
+    "spanish": "beber",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "bebo",
+        "english": "I drink",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "bebes",
+        "english": "you drink",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "bebe",
+        "english": "he/she drinks - you drink",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "bebemos",
+        "english": "we drink",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "bebéis",
+        "english": "you all drink",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "beben",
+        "english": "you all drink - they drink",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "bebí",
+        "english": "I drank",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "bebiste",
+        "english": "you drank",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "bebió",
+        "english": "he/she drank - you drank",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "bebimos",
+        "english": "we drank",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "bebisteis",
+        "english": "you all drank",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "bebieron",
+        "english": "you all drank - they drank",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "beberé",
+        "english": "I will drink",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "beberás",
+        "english": "you will drink",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "beberá",
+        "english": "he/she will drink - you will drink",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "beberemos",
+        "english": "we will drink",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "beberéis",
+        "english": "you all will drink",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "beberán",
+        "english": "you all will drink - they will drink",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "bebiendo", "english": "drinking" }
+  },
+  {
+    "english": "To work",
+    "spanish": "trabajar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "trabajo",
+        "english": "I work",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "trabajas",
+        "english": "you work",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "trabaja",
+        "english": "he/she works - you work",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "trabajamos",
+        "english": "we work",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "trabajáis",
+        "english": "you all work",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "trabajan",
+        "english": "you all work - they work",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "trabajé",
+        "english": "I worked",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "trabajaste",
+        "english": "you worked",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "trabajó",
+        "english": "he/she worked - you worked",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "trabajamos",
+        "english": "we worked",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "trabajasteis",
+        "english": "you all worked",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "trabajaron",
+        "english": "you all worked - they worked",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "trabajaré",
+        "english": "I will work",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "trabajarás",
+        "english": "you will work",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "trabajará",
+        "english": "he/she will work - you will work",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "trabajaremos",
+        "english": "we will work",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "trabajaréis",
+        "english": "you all will work",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "trabajarán",
+        "english": "you all will work - they will work",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "trabajando", "english": "working" }
+  },
+  {
+    "english": "To use",
+    "spanish": "usar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "uso",
+        "english": "I use",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "usas",
+        "english": "you use",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "usa",
+        "english": "he/she uses - you use",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "usamos",
+        "english": "we use",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "usáis",
+        "english": "you all use",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "usan",
+        "english": "you all use - they use",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "usé",
+        "english": "I used",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "usaste",
+        "english": "you used",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "usó",
+        "english": "he/she used - you used",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "usamos",
+        "english": "we used",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "usasteis",
+        "english": "you all used",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "usaron",
+        "english": "you all used - they used",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "usaré",
+        "english": "I will use",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "usarás",
+        "english": "you will use",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "usará",
+        "english": "he/she will use - you will use",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "usaremos",
+        "english": "we will use",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "usaréis",
+        "english": "you all will use",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "usarán",
+        "english": "you all will use - they will use",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "usando", "english": "using" }
+  },
+  {
+    "english": "To play",
+    "spanish": "jugar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "juego",
+        "english": "I play",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "juegas",
+        "english": "you play",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "juega",
+        "english": "he/she plays - you play",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "jugamos",
+        "english": "we play",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "jugáis",
+        "english": "you all play",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "juegan",
+        "english": "you all play - they play",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "jugué",
+        "english": "I played",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "jugaste",
+        "english": "you played",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "jugó",
+        "english": "he/she played - you played",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "jugamos",
+        "english": "we played",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "jugasteis",
+        "english": "you all played",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "jugaron",
+        "english": "you all played - they played",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "jugaré",
+        "english": "I will play",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "jugarás",
+        "english": "you will play",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "jugará",
+        "english": "he/she will play - you will play",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "jugaremos",
+        "english": "we will play",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "jugaréis",
+        "english": "you all will play",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "jugarán",
+        "english": "you all will play - they will play",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "jugando", "english": "playing" }
+  },
+  {
+    "english": "To buy",
+    "spanish": "comprar",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "compro",
+        "english": "I buy",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "compras",
+        "english": "you buy",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "compra",
+        "english": "he/she buys - you buy",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "compramos",
+        "english": "we buy",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "compráis",
+        "english": "you all buy",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "compran",
+        "english": "you all buy - they buy",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "compré",
+        "english": "I bought",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "compraste",
+        "english": "you bought",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "compró",
+        "english": "he/she bought - you bought",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "compramos",
+        "english": "we bought",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "comprasteis",
+        "english": "you all bought",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "compraron",
+        "english": "you all bought - they bought",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "compraré",
+        "english": "I will buy",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "comprarás",
+        "english": "you will buy",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "comprará",
+        "english": "he/she will buy - you will buy",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "compraremos",
+        "english": "we will buy",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "compraréis",
+        "english": "you all will buy",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "comprarán",
+        "english": "you all will buy - they will buy",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "comprando", "english": "buying" }
+  },
+  {
+    "english": "To sleep",
+    "spanish": "dormir",
+    "present": [
+      {
+        "prefix": "yo",
+        "spanish": "duermo",
+        "english": "I sleep",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "duermes",
+        "english": "you sleep",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "duerme",
+        "english": "he/she sleeps - you sleep",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "dormimos",
+        "english": "we sleep",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "dormís",
+        "english": "you all sleep",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "duermen",
+        "english": "you all sleep - they sleep",
+        "type": "third-person plural"
+      }
+    ],
+    "past": [
+      {
+        "prefix": "yo",
+        "spanish": "dormí",
+        "english": "I slept",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "dormiste",
+        "english": "you slept",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "durmió",
+        "english": "he/she slept - you slept",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "dormimos",
+        "english": "we slept",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "dormisteis",
+        "english": "you all slept",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "durmieron",
+        "english": "you all slept - they slept",
+        "type": "third-person plural"
+      }
+    ],
+    "future": [
+      {
+        "prefix": "yo",
+        "spanish": "dormiré",
+        "english": "I will sleep",
+        "type": "first-person singular"
+      },
+      {
+        "prefix": "tú",
+        "spanish": "dormirás",
+        "english": "you will sleep",
+        "type": "second-person singular"
+      },
+      {
+        "prefix": ["él", "ella", "usted"],
+        "spanish": "dormirá",
+        "english": "he/she will sleep - you will sleep",
+        "type": "third-person singular"
+      },
+      {
+        "prefix": ["nosotros", "nosotras"],
+        "spanish": "dormiremos",
+        "english": "we will sleep",
+        "type": "first-person plural"
+      },
+      {
+        "prefix": ["vosotros", "vosotras"],
+        "spanish": "dormiréis",
+        "english": "you all will sleep",
+        "type": "second-person plural"
+      },
+      {
+        "prefix": ["ustedes", "ellos", "ellas"],
+        "spanish": "dormirán",
+        "english": "you all will sleep - they will sleep",
+        "type": "third-person plural"
+      }
+    ],
+    "gerund": { "spanish": "durmiendo", "english": "sleeping" }
   }
 ]

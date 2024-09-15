@@ -9,13 +9,13 @@ const gameFilters = ["multi-choice", "verbs", "spelling", "flashcards"];
 
 const games = [
   {
-    name: "keywords",
+    name: "question words",
     description: "Helpful keywords for everyday speaking",
     filters: ["multi-choice", "spelling"],
     link: "/games/keywords",
   },
   {
-    name: "verbs",
+    name: "verbs conjugations",
     description: "Helpful keywords for everyday speaking",
     filters: ["verbs", "spelling"],
     link: "/games/verbs",
@@ -27,7 +27,7 @@ const games = [
     link: "/games/flashcards",
   },
   {
-    name: "date/time",
+    name: "date/time words",
     description: "Helpful keywords for everyday speaking",
     filters: ["multi-choice", "spelling"],
     link: "/games/date-time",

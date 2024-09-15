@@ -7,7 +7,7 @@ import { useState } from "react";
 import GameControls from "./GameControls";
 import VerbInnerGrid from "./VerbInnerGrid";
 import Confetti from "react-confetti";
-import useWindowDimensions from "@/app/utils/useWindowSize";
+import useWindowSize from "@/app/utils/useWindowSize";
 
 export default function VerbGrid() {
   const {
@@ -24,7 +24,7 @@ export default function VerbGrid() {
   const [showAnswers, setShowAnswers] = useState(false);
   const [verbIndex, setVerbIndex] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { width, height } = useWindowDimensions();
+  const { width, height } = useWindowSize();
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);

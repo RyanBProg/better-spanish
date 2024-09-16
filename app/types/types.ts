@@ -9,3 +9,12 @@ export type TVerb = {
   english: string;
   type?: string;
 };
+
+export type Verb = {
+  english: string;
+  spanish: string;
+  present: TVerb[];
+  past: TVerb[];
+  future: TVerb[];
+  gerund: TVerb;
+};

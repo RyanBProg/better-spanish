@@ -1,77 +1,264 @@
 import Link from "next/link";
-import Image from "next/image";
-import boltIcon from "../../public/icons/bolt.svg";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
+import {
+  ArrowUpNarrowWide,
+  Brain,
+  Gamepad2,
+  GraduationCap,
+  Swords,
+  TrendingUp,
+} from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
-export default function Home() {
+export default async function Home() {
+  const { isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+
+  !isUserAuthenticated && redirect("/api/auth/login");
+
   return (
-    <>
-      <span className="flex gap-4 items-center mt-10">
-        <Image src={boltIcon} alt="" className="size-40" />
-        <h1 className="text-3xl font-semibold max-w-[600px]">
-          Reach Fluency Faster by Mastering High-Frequency Words
+    <div className="width-container mb-36">
+      <div className="width-inner py-20">
+        <Brain
+          size={500}
+          strokeWidth={0.75}
+          color="#fdceaf"
+          className="absolute -z-10 -top-20 -right-[100px]"
+        />
+        <h1 className="text-5xl sm:text-6xl tracking-tight font-semibold max-w-[700px]">
+          Master High-Frequency Words
         </h1>
-      </span>
+      </div>
 
-      {/* games container */}
+      {/* stats */}
 
-      <div className="mt-32">
-        <div className="flex gap-6 items-center">
+      <div className="width-inner flex gap-2 sm:gap-4">
+        <Card className="w-[350px] p-2 sm:p-4 flex flex-col gap-1">
+          <span className="flex justify-between">
+            <span className="text-sm sm:text-base">
+              <span className="hidden sm:inline">Weekly </span>Score
+            </span>
+            <ArrowUpNarrowWide
+              size={22}
+              strokeWidth={1}
+              className="hidden sm:block"
+            />
+          </span>
+          <span className="text-3xl sm:text-5xl font-semibold">203</span>
+          <span className="text-sm font-light mt-auto hidden sm:block">
+            +12.5% from last week
+          </span>
+        </Card>
+        <Card className="w-[350px] p-2 sm:p-4 flex flex-col gap-1">
+          <span className="flex justify-between">
+            <span className="text-sm sm:text-base">
+              <span className="hidden sm:inline">Daily </span>Streak
+            </span>
+            <TrendingUp size={22} strokeWidth={1} className="hidden sm:block" />
+          </span>
+          <span className="text-3xl sm:text-5xl font-semibold">4</span>
+          <span className="text-sm font-light mt-auto hidden sm:block">
+            Days
+          </span>
+        </Card>
+        <Card className="w-[350px] p-2 sm:p-4 flex flex-col gap-1">
+          <span className="flex justify-between">
+            <span className="text-sm sm:text-base">Finished</span>
+            <Swords size={22} strokeWidth={1} className="hidden sm:block" />
+          </span>
+          <span className="text-3xl sm:text-5xl font-semibold">88</span>
+          <span className="text-sm font-light mt-auto hidden sm:block">
+            Games
+          </span>
+        </Card>
+      </div>
+
+      {/* games */}
+
+      <div className="width-inner my-20 sm:my-32">
+        <div className="mb-5 flex gap-4">
           <h2 className="text-2xl font-semibold">Games</h2>
-          <Link href="/games" className="underline text-sm">
-            See All
-          </Link>
+          <Badge variant="outline" className="text-green-600">
+            New Games Added
+          </Badge>
         </div>
-        <hr className="w-full h-[2px] bg-orange-200 mt-2 mb-4" />
-        <div className="flex gap-4">
-          <Link href={"/games/keywords"}>
-            <button className="bg-orange-200 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-              <h3 className="font-semibold text-xl mb-6">Keywords</h3>
-              <p className="text-gray-500">
-                Helpful keywords for everyday speaking
-              </p>
-            </button>
-          </Link>
-          <Link href={"/games/date-time"}>
-            <button className="bg-orange-100 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-              <h3 className="font-semibold text-xl mb-6">Date/Time</h3>
-              <p className="text-gray-500">
-                Date and time related spanish words
-              </p>
-            </button>
-          </Link>
 
-          <Link href={"/games/verbs"}>
-            <button className="bg-orange-200 py-6 px-4 text-left rounded-md w-full sm:w-[250px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-              <h3 className="font-semibold text-xl mb-6">Verbs</h3>
-              <p className="text-gray-500">
-                Helpful keywords for everyday speaking
-              </p>
-            </button>
-          </Link>
+        <div className="flex gap-4 pb-6 overflow-x-scroll">
+          <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
+            <Gamepad2
+              size={200}
+              color="#fbd8c1"
+              strokeWidth={2}
+              className="absolute -z-0 -right-10 top-6"
+            />
+            <span className="flex justify-between z-10">
+              <span className="text-lg font-semibold">Keywords</span>
+              <Link className={buttonVariants()} href="/games/keywords">
+                Start
+              </Link>
+            </span>
+            <span className="text-sm font-light z-10">
+              Helpful keywords for everyday speaking
+            </span>
+            <span className="mt-auto flex gap-2 z-10">
+              <Badge variant="outline" className="bg-white">
+                Multi-choice
+              </Badge>
+              <Badge variant="outline" className="bg-white">
+                Word Input
+              </Badge>
+            </span>
+          </Card>
+
+          <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
+            <Gamepad2
+              size={200}
+              color="#fbd8c1"
+              strokeWidth={2}
+              className="absolute -z-0 -right-10 top-6"
+            />
+            <span className="flex justify-between z-10">
+              <span className="text-lg font-semibold">Date/Time</span>
+              <Link className={buttonVariants()} href="/games/date-time">
+                Start
+              </Link>
+            </span>
+            <span className="text-sm font-light z-10">
+              Date and time related spanish words
+            </span>
+            <span className="mt-auto flex gap-2 z-10">
+              <Badge variant="outline" className="bg-white">
+                Multi-choice
+              </Badge>
+              <Badge variant="outline" className="bg-white">
+                Word Input
+              </Badge>
+            </span>
+          </Card>
+
+          <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
+            <Gamepad2
+              size={200}
+              color="#fbd8c1"
+              strokeWidth={2}
+              className="absolute -z-0 -right-10 top-6"
+            />
+            <span className="flex justify-between z-10">
+              <span className="text-lg font-semibold">Verbs</span>
+              <Link className={buttonVariants()} href="/games/verbs">
+                Start
+              </Link>
+            </span>
+            <span className="text-sm font-light z-10">
+              Helpful keywords for everyday speaking
+            </span>
+            <span className="mt-auto flex gap-2 z-10">
+              <Badge variant="outline" className="bg-white">
+                Multi-choice
+              </Badge>
+              <Badge variant="outline" className="bg-white">
+                Word Input
+              </Badge>
+            </span>
+          </Card>
         </div>
       </div>
 
       {/* learning container */}
 
-      <div className="mt-32">
-        <div className="flex gap-6 items-center">
+      <div className="width-inner my-20 sm:my-32">
+        <div className="mb-5 flex gap-4">
           <h2 className="text-2xl font-semibold">Learning</h2>
-          <Link href="/learning" className="underline text-sm">
-            See All
-          </Link>
+          <Badge variant="outline" className="text-green-600">
+            New Material
+          </Badge>
         </div>
-        <hr className="w-full h-[2px] bg-orange-200 mt-2 mb-4" />
-        <div className="flex gap-4">
-          <Link href={"/learning"}>
-            <button className="bg-orange-200 py-6 px-4 text-left rounded-md max-w-[200px] drop-shadow-sm transition-transform hover:scale-[1.02]">
-              <h3 className="font-semibold text-xl mb-6">Learning</h3>
-              <p className="text-gray-500">
-                Get to grips with new words with helpful infographics
-              </p>
-            </button>
-          </Link>
+
+        <div className="flex gap-4 pb-6 overflow-x-scroll">
+          <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
+            <GraduationCap
+              size={180}
+              color="#fbd8c1"
+              strokeWidth={2}
+              className="absolute -z-0 -right-10 top-4"
+            />
+            <span className="flex justify-between z-10">
+              <span className="text-lg font-semibold">Cheat Sheets</span>
+              <Link className={buttonVariants()} href="/learning/cheat-sheets">
+                Start
+              </Link>
+            </span>
+            <span className="text-sm font-light z-10">
+              Helpful keywords for everyday speaking
+            </span>
+            <span className="mt-auto flex gap-2 z-10">
+              <Badge variant="outline" className="bg-white">
+                Multi-choice
+              </Badge>
+              <Badge variant="outline" className="bg-white">
+                Word Input
+              </Badge>
+            </span>
+          </Card>
+
+          <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
+            <GraduationCap
+              size={180}
+              color="#fbd8c1"
+              strokeWidth={2}
+              className="absolute -z-0 -right-10 top-4"
+            />
+            <span className="flex justify-between z-10">
+              <span className="text-lg font-semibold">Top 100</span>
+              <Link className={buttonVariants()} href="/learning/top-100">
+                Start
+              </Link>
+            </span>
+            <span className="text-sm font-light z-10">
+              Helpful keywords for everyday speaking
+            </span>
+            <span className="mt-auto flex gap-2 z-10">
+              <Badge variant="outline" className="bg-white">
+                Multi-choice
+              </Badge>
+              <Badge variant="outline" className="bg-white">
+                Word Input
+              </Badge>
+            </span>
+          </Card>
+
+          <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
+            <GraduationCap
+              size={180}
+              color="#fbd8c1"
+              strokeWidth={2}
+              className="absolute -z-0 -right-10 top-4"
+            />
+            <span className="flex justify-between z-10">
+              <span className="text-lg font-semibold">Verb Conjugations</span>
+              <Link
+                className={buttonVariants()}
+                href="/learing/verb-conjugations">
+                Start
+              </Link>
+            </span>
+            <span className="text-sm font-light z-10">
+              Date and time related spanish words
+            </span>
+            <span className="mt-auto flex gap-2 z-10">
+              <Badge variant="outline" className="bg-white">
+                Multi-choice
+              </Badge>
+              <Badge variant="outline" className="bg-white">
+                Word Input
+              </Badge>
+            </span>
+          </Card>
         </div>
       </div>
-    </>
+    </div>
   );
 }

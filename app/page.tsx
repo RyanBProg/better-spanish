@@ -16,6 +16,8 @@ import {
   ClockArrowUp,
   Dock,
   Gamepad2,
+  GraduationCap,
+  School,
   ShieldCheck,
   Sparkles,
   UserRoundPen,
@@ -28,16 +30,24 @@ export default function page() {
     <>
       <LandingHeader />
       <main>
-        <section className="width-container min-h-screen flex items-center">
+        <section className="width-container relative min-h-screen flex items-center">
+          <Brain
+            size={700}
+            strokeWidth={0.75}
+            color="#fdceaf"
+            className="absolute -z-10 top-20 -right-[300px]"
+          />
+          <div className="absolute bottom-20 right-4 rounded-lg overflow-clip">
+            <Image
+              src="/icons/spain-flag-96x96.png"
+              height={66}
+              width={66}
+              alt="spain flag"
+            />
+          </div>
           <div className="width-inner w-full">
-            <div className="relative flex flex-col gap-10">
-              <Brain
-                size={700}
-                strokeWidth={0.75}
-                color="#fdceaf"
-                className="absolute -z-10 -top-64 -right-[300px]"
-              />
-              <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-6 relative w-fit">
                 <h1 className="text-7xl sm:text-8xl font-bold tracking-tight">
                   Better
                   <br />
@@ -46,18 +56,15 @@ export default function page() {
                 <p className="text-lg font-medium max-w-prose text-neutral-600">
                   Become Fluent Faster with the Power of High-Frequency Words
                 </p>
+                <Badge
+                  variant="outline"
+                  className="text-green-600 absolute -top-8 left-0">
+                  New Features
+                </Badge>
               </div>
               <LoginLink className={cn(buttonVariants(), "w-fit")}>
                 Get Started
               </LoginLink>
-            </div>
-            <div className="absolute bottom-0 right-4 rounded-lg overflow-clip">
-              <Image
-                src="/icons/spain-flag-96x96.png"
-                height={66}
-                width={66}
-                alt="spain flag"
-              />
             </div>
           </div>
         </section>
@@ -123,21 +130,33 @@ export default function page() {
           </div>
         </section>
 
-        <section className="width-container my-44 md:my-64">
+        <section className="width-container relative my-44 md:my-64">
+          <School
+            size={500}
+            color="#fff6f0"
+            strokeWidth={0.75}
+            className="hidden lg:block absolute -z-10 -top-44 -right-[150px]"
+          />
+          <GraduationCap
+            size={500}
+            color="#fff6f0"
+            strokeWidth={0.75}
+            className="hidden lg:block absolute -z-10 -bottom-64 -left-[150px]"
+          />
           <div className="width-inner flex flex-col gap-44">
             <div className="flex flex-col gap-20 lg:flex-row items-center lg:gap-32">
               <div className="relative">
-                <Dock size={300} strokeWidth={1} />
+                <Dock size={300} strokeWidth={0.75} />
                 <Dock
                   size={300}
                   color="#fdceaf"
-                  strokeWidth={1}
+                  strokeWidth={0.75}
                   className="absolute top-3 left-3 -z-10"
                 />
               </div>
               <div>
                 <h2 className="font-bold text-4xl tracking-tight max-w-prose mb-5">
-                  Practical Conversations
+                  Reach Fluency Faster
                 </h2>
                 <p className="font-normal text-lg text-neutral-600 max-w-prose">
                   Our app focuses on real-world situations, not just vocabulary.
@@ -161,11 +180,11 @@ export default function page() {
                 </p>
               </div>
               <div className="relative">
-                <ClockArrowUp size={300} strokeWidth={1} />
+                <ClockArrowUp size={300} strokeWidth={0.75} />
                 <ClockArrowUp
                   size={300}
                   color="#fdceaf"
-                  strokeWidth={1}
+                  strokeWidth={0.75}
                   className="absolute top-3 left-3 -z-10"
                 />
               </div>

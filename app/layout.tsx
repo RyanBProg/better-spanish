@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-dvh flex flex-col">{children}</body>
+      <body className="min-h-dvh w-screen flex flex-col relative overflow-x-hidden">
+        {children}
+      </body>
     </html>
   );
 }

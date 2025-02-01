@@ -13,7 +13,9 @@ import {
 // Stores user information
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
-  name: text("name").notNull(),
+  kindeId: text("kinde_id").unique().notNull(),
+  family_name: text("family_name").notNull(),
+  given_name: text("given_name").notNull(),
   email: text("email").unique().notNull(),
   createdAt: timestamp("created_at").defaultNow(),
 });

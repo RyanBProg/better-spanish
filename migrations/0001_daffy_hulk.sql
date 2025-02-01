@@ -1,0 +1,1 @@
+ALTER TABLE "words" ALTER COLUMN "category" SET NOT NULL;

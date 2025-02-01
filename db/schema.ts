@@ -27,7 +27,7 @@ export const words = pgTable(
     id: serial("id").primaryKey(),
     spanish: text("spanish").notNull(),
     english: text("english").notNull(),
-    category: text("category"),
+    category: text("category").notNull(),
   },
   (table) => [index("word_category").on(table.category)]
 );

@@ -1,65 +1,85 @@
-"use client";
+"use server";
 
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { useState } from "react";
+import { db } from "@/db/drizzle";
+import { userFlashcards, words } from "@/db/schema";
+import { eq, and, lt, sql, notInArray, inArray } from "drizzle-orm";
+import Flashcard from "@/components/flashcards/Flashcard";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
+import { getOrCreateUser } from "@/lib/getOrCreateUser";
+import { upsertUserFlashcard } from "@/app/actions/flashcards";
 
-const MOCK_DATA = [
-  {
-    eng: "hello",
-    span: "hola",
-  },
-  {
-    eng: "gato",
-    span: "cat",
-  },
-  {
-    eng: "hello",
-    span: "uno",
-  },
-  {
-    eng: "to be",
-    span: "ser",
-  },
-];
+const getFlashcards = async (userId: number) => {
+  // Get all due flashcards
+  const dueFlashcards = await db
+    .select({
+      wordId: userFlashcards.wordId,
+    })
+    .from(userFlashcards)
+    .where(
+      and(
+        eq(userFlashcards.userId, userId),
+        lt(userFlashcards.nextReview, new Date())
+      )
+    )
+    .limit(20); // limit to 20 results
 
-export default function page() {
-  const [isFlipped, setIsFlipped] = useState(false);
+  // Get the words for due flashcards
+  const dueWords = await db
+    .select()
+    .from(words)
+    .where(
+      inArray(
+        words.id,
+        dueFlashcards.map((f) => f.wordId)
+      )
+    );
+
+  // Calculate how many more words we need
+  const extraQty = 20 - dueWords.length;
+
+  if (extraQty > 0) {
+    // Get additional new words
+    const extraWords = await db
+      .select()
+      .from(words)
+      .where(
+        notInArray(
+          words.id,
+          db
+            .select({ wordId: userFlashcards.wordId })
+            .from(userFlashcards)
+            .where(eq(userFlashcards.userId, userId))
+        )
+      )
+      .orderBy(sql`RANDOM()`)
+      .limit(extraQty);
+
+    return [...dueWords, ...extraWords];
+  }
+
+  return dueWords;
+};
+
+export default async function page() {
+  const { getUser, isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+  !isUserAuthenticated && redirect("/api/auth/login");
+  const kindeUser = await getUser();
+
+  // use kinde user id to lookup user in db
+  const dbUser = await getOrCreateUser(kindeUser);
+
+  const flashcardDeck = await getFlashcards(dbUser.id);
 
   return (
     <div className="my-20">
       <h1 className="text-center mb-10 font-bold text-4xl">Flashcards</h1>
-      <Card className="mx-auto h-[450px] w-[350px] p-4 flex flex-col gap-10 items-center">
-        {!isFlipped && (
-          <span className="mt-20 text-2xl capitalize">{MOCK_DATA[0].span}</span>
-        )}
-        {isFlipped && (
-          <span className="mt-20 text-2xl capitalize">{MOCK_DATA[0].eng}</span>
-        )}
-        <Button
-          className="mt-auto"
-          variant="outline"
-          onClick={() => setIsFlipped((prev) => !prev)}>
-          Flip
-        </Button>
-        <div className="flex justify-center gap-4">
-          <Button
-            className="bg-green-500 hover:bg-green-600"
-            onClick={() => setIsFlipped((prev) => !prev)}>
-            Easy
-          </Button>
-          <Button
-            className="bg-yellow-500 hover:bg-yellow-600"
-            onClick={() => setIsFlipped((prev) => !prev)}>
-            Medium
-          </Button>
-          <Button
-            className="bg-red-500 hover:bg-red-600"
-            onClick={() => setIsFlipped((prev) => !prev)}>
-            Hard
-          </Button>
-        </div>
-      </Card>
+      <Flashcard
+        flashcardDeck={flashcardDeck}
+        upsertUserFlashcard={upsertUserFlashcard}
+        userId={dbUser.id}
+      />
     </div>
   );
 }

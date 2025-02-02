@@ -8,6 +8,15 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
 import { upsertUserFlashcard } from "@/app/actions/flashcards";
+import { Suspense } from "react";
+import LoadingCard from "@/components/flashcards/LoadingCard";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const getFlashcards = async (userId: number) => {
   // Get all due flashcards
@@ -61,6 +70,8 @@ const getFlashcards = async (userId: number) => {
   return dueWords;
 };
 
+const categories = ["time", "adjectives", "family", "household items", "verbs"];
+
 export default async function page() {
   const { getUser, isAuthenticated } = getKindeServerSession();
   const isUserAuthenticated = await isAuthenticated();
@@ -71,15 +82,33 @@ export default async function page() {
   const dbUser = await getOrCreateUser(kindeUser);
 
   const flashcardDeck = await getFlashcards(dbUser.id);
+  console.log(flashcardDeck);
 
   return (
     <div className="my-20">
       <h1 className="text-center mb-10 font-bold text-4xl">Flashcards</h1>
-      <Flashcard
-        flashcardDeck={flashcardDeck}
-        upsertUserFlashcard={upsertUserFlashcard}
-        userId={dbUser.id}
-      />
+      <div className="mx-auto w-fit my-4">
+        <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Category" />
+          </SelectTrigger>
+          <SelectContent>
+            {categories.map((category) => (
+              <SelectItem value={category} key={category}>
+                {category}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      <Suspense fallback={<LoadingCard />}>
+        <Flashcard
+          flashcardDeck={flashcardDeck}
+          upsertUserFlashcard={upsertUserFlashcard}
+          userId={dbUser.id}
+        />
+      </Suspense>
     </div>
   );
 }

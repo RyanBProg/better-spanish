@@ -2,73 +2,104 @@
 
 import { db } from "@/db/drizzle";
 import { userFlashcards } from "@/db/schema";
-import { eq, and } from "drizzle-orm";
-import { UserFlashcard } from "@/lib/types";
+import { eq, and, inArray, sql } from "drizzle-orm";
+import { UserFlashcardAnswer } from "@/lib/types";
 
-export const upsertUserFlashcard = async (
-  wordId: number,
-  userId: number,
-  rating: number
+const getMatchingUserFlashcards = async (
+  answers: UserFlashcardAnswer[],
+  userId: number
 ) => {
-  // check for userFlashcard that matches the wordId and userId
-  const existingUserFlashcard = await db
+  return await db
     .select()
     .from(userFlashcards)
     .where(
-      and(eq(userFlashcards.userId, userId), eq(userFlashcards.wordId, wordId))
-    )
-    .then((results) => results[0] as UserFlashcard | undefined);
+      and(
+        eq(userFlashcards.userId, userId),
+        inArray(
+          userFlashcards.wordId,
+          answers.map((a) => a.wordId)
+        )
+      )
+    );
+};
 
-  // Get existing values or use defaults
-  let easeFactor = existingUserFlashcard?.easeFactor ?? 2.5;
-  let interval = existingUserFlashcard?.interval ?? 1;
-  let streak = existingUserFlashcard?.streak ?? 0;
-  const now = new Date();
-  let nextReview = new Date();
+const getUserUpdates = async (
+  answers: UserFlashcardAnswer[],
+  userId: number
+) => {
+  const matchingUserFlashcards = await getMatchingUserFlashcards(
+    answers,
+    userId
+  );
 
-  // Apply spaced repetition logic based on 4-point rating
-  if (rating < 3) {
-    // Hard (2) or Again (1)
-    easeFactor = Math.max(1.3, easeFactor - 0.15);
-    streak = 0;
-    interval = rating === 1 ? 1 : Math.max(1, Math.round(interval * 0.5));
-    nextReview.setDate(now.getDate() + interval);
-  } else {
-    // Good (3) or Easy (4)
-    easeFactor = rating === 4 ? Math.min(2.5, easeFactor + 0.15) : easeFactor;
+  return answers.map((answer) => {
+    // is there an existing entry in the userFlashcard table?
+    const match = matchingUserFlashcards.find(
+      (index) => index.wordId === answer.wordId
+    );
 
-    streak += 1;
+    let easeFactor = match?.easeFactor ?? 2.5;
+    let interval = match?.interval ?? 1;
+    let streak = match?.streak ?? 0;
+    const now = new Date();
+    let nextReview = new Date();
 
-    if (streak === 1) interval = 1;
-    else if (streak === 2) interval = 3;
-    else interval = Math.round(interval * easeFactor);
+    // Apply spaced repetition logic based on 4-point rating
+    if (answer.rating < 3) {
+      // Hard (2) or Again (1)
+      easeFactor = Math.max(1.3, easeFactor - 0.15);
+      streak = 0;
+      interval =
+        answer.rating === 1 ? 1 : Math.max(1, Math.round(interval * 0.5));
+      nextReview.setDate(now.getDate() + interval);
+    } else {
+      // Good (3) or Easy (4)
+      easeFactor =
+        answer.rating === 4 ? Math.min(2.5, easeFactor + 0.15) : easeFactor;
 
-    if (rating === 4) interval = Math.round(interval * 1.3); // Bonus interval for "Easy"
-    nextReview.setDate(now.getDate() + interval);
-  }
+      streak += 1;
 
-  // Ensure interval stays reasonable
-  interval = Math.min(interval, 365); // Cap at 1 year
+      if (streak === 1) interval = 1;
+      else if (streak === 2) interval = 3;
+      else interval = Math.round(interval * easeFactor);
 
-  await db
-    .insert(userFlashcards)
-    .values({
+      if (answer.rating === 4) interval = Math.round(interval * 1.3); // Bonus interval for "Easy"
+      nextReview.setDate(now.getDate() + interval);
+    }
+
+    // Ensure interval stays reasonable
+    interval = Math.min(interval, 365); // Cap at 1 year
+
+    return {
       userId,
-      wordId,
+      wordId: answer.wordId,
       easeFactor,
       interval,
       streak,
       lastReviewed: now,
       nextReview: nextReview,
-    })
+    };
+  });
+};
+
+export const batchUpsertUserFlashcards = async (
+  answers: UserFlashcardAnswer[],
+  userId: number
+) => {
+  const userUpdates = await getUserUpdates(answers, userId);
+
+  // Single batch upsert
+  await db
+    .insert(userFlashcards)
+    .values(userUpdates)
     .onConflictDoUpdate({
       target: [userFlashcards.userId, userFlashcards.wordId],
       set: {
-        easeFactor,
-        interval,
-        streak,
-        lastReviewed: now,
-        nextReview: nextReview,
+        easeFactor: sql`EXCLUDED.ease_factor`,
+        interval: sql`EXCLUDED.interval`,
+        streak: sql`EXCLUDED.streak`,
+        lastReviewed: sql`EXCLUDED.last_reviewed`,
+        nextReview: sql`EXCLUDED.next_review`,
       },
     });
 };

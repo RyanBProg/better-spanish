@@ -23,3 +23,10 @@ export type User = {
   email: string;
   createdAt: Date;
 };
+
+export type UserFlashcardAnswer = {
+  wordId: number;
+  word: string;
+  translation: string;
+  rating: number;
+};

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
-import { Word } from "@/lib/types";
+import { UserFlashcardAnswer, Word } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import {
   Dialog,
@@ -15,34 +15,20 @@ import {
 import LoadingSpinner from "../common/LoadingSpinner";
 import Image from "next/image";
 import { Brain } from "lucide-react";
-
-type Answer = {
-  word: string;
-  translation: string;
-  rating: number;
-};
+import { batchUpsertUserFlashcards } from "@/app/actions/flashcards";
 
 type Props = {
   flashcardDeck: Word[];
-  upsertUserFlashcard: (
-    wordId: number,
-    userId: number,
-    rating: number
-  ) => Promise<void>;
   userId: number;
 };
 
-export default function Flashcard({
-  flashcardDeck,
-  upsertUserFlashcard,
-  userId,
-}: Props) {
+export default function Flashcard({ flashcardDeck, userId }: Props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [deckIndex, setDeckIndex] = useState(0);
   const [deckCompleted, setDeckCompleted] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
-  const [answers, setAnswers] = useState<Answer[]>([]);
+  const [answers, setAnswers] = useState<UserFlashcardAnswer[]>([]);
   const router = useRouter();
 
   const handleAnswer = async (rating: number) => {
@@ -56,37 +42,31 @@ export default function Flashcard({
 
     setIsUpdating(true);
 
+    // Create new answer
+    const newAnswer = {
+      wordId: flashcardDeck[deckIndex].id,
+      word: flashcardDeck[deckIndex].spanish,
+      translation: flashcardDeck[deckIndex].english,
+      rating,
+    };
+
+    // Update answers state
+    setAnswers((prev) => [...prev, newAnswer]);
+
     if (deckIndex + 1 === 20) {
       setDeckCompleted(true);
       setDialogOpen(true);
+
+      try {
+        await batchUpsertUserFlashcards([...answers, newAnswer], userId);
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       setDeckIndex((prev) => prev + 1);
-      setIsFlipped(false);
     }
 
-    // Update user answers
-    setAnswers((prev) => [
-      ...prev,
-      {
-        word: flashcardDeck[deckIndex].spanish,
-        translation: flashcardDeck[deckIndex].english,
-        rating,
-      },
-    ]);
-
-    try {
-      // Update database in background
-      await upsertUserFlashcard(flashcardDeck[deckIndex].id, userId, rating);
-    } catch (error) {
-      console.error("Failed to update flashcard:", error);
-
-      setAnswers((prev) => prev.slice(0, -1)); // Remove last answer on error
-
-      // Revert optimistic update on error
-      setDeckIndex(deckIndex);
-      setIsFlipped(false);
-    }
-
+    setIsFlipped(false);
     setIsUpdating(false);
   };
 
@@ -96,6 +76,7 @@ export default function Flashcard({
     setIsFlipped(false);
     setDeckCompleted(false);
     setDialogOpen(false);
+    setAnswers([]);
   };
 
   const getRatingColor = (rating: number) => {

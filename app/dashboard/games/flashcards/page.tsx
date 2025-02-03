@@ -7,7 +7,6 @@ import Flashcard from "@/components/flashcards/Flashcard";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
-import { upsertUserFlashcard } from "@/app/actions/flashcards";
 
 import {
   Select,
@@ -97,11 +96,7 @@ export default async function page() {
         </Select>
       </div>
 
-      <Flashcard
-        flashcardDeck={flashcardDeck}
-        upsertUserFlashcard={upsertUserFlashcard}
-        userId={dbUser.id}
-      />
+      <Flashcard flashcardDeck={flashcardDeck} userId={dbUser.id} />
     </div>
   );
 }

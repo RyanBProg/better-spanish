@@ -70,7 +70,7 @@ export default async function page() {
 
   return (
     <div className="my-10 sm:my-20">
-      <h1 className="text-center mb-10 font-bold text-4xl">Flashcards</h1>
+      <h1 className="text-center mb-20 font-bold text-4xl">Flashcards</h1>
 
       <FlashcardGame flashcardDeck={flashcardDeck} userId={dbUser.id} />
     </div>

@@ -10,7 +10,7 @@ import clothingItemsImage from "@/public/images/cheat-sheets/items/clothing-item
 import householdItemsImage from "@/public/images/cheat-sheets/items/household-items.jpg";
 import kitchenItemsImage from "@/public/images/cheat-sheets/items/kitchen-items.jpg";
 
-import Dropdown from "../../components/dropdown/Dropdown";
+import Dropdown from "../../../components/dropdown/Dropdown";
 
 export default function Home() {
   return (

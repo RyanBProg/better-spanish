@@ -95,8 +95,8 @@ export default async function Home() {
               className="absolute -z-0 -right-10 top-6"
             />
             <span className="flex justify-between z-10">
-              <span className="text-lg font-semibold">Keywords</span>
-              <Link className={buttonVariants()} href="/games/keywords">
+              <span className="text-lg font-semibold">Flashcards</span>
+              <Link className={buttonVariants()} href="/games/flashcards">
                 Start
               </Link>
             </span>
@@ -121,7 +121,7 @@ export default async function Home() {
               className="absolute -z-0 -right-10 top-6"
             />
             <span className="flex justify-between z-10">
-              <span className="text-lg font-semibold">Date/Time</span>
+              <span className="text-lg font-semibold">Word Guess</span>
               <Link className={buttonVariants()} href="/games/date-time">
                 Start
               </Link>

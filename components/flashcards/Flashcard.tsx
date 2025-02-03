@@ -14,6 +14,7 @@ import {
 } from "../ui/dialog";
 import LoadingSpinner from "../common/LoadingSpinner";
 import Image from "next/image";
+import { Brain } from "lucide-react";
 
 type Answer = {
   word: string;
@@ -94,6 +95,7 @@ export default function Flashcard({
     setDeckIndex(0);
     setIsFlipped(false);
     setDeckCompleted(false);
+    setDialogOpen(false);
   };
 
   const getRatingColor = (rating: number) => {
@@ -119,11 +121,11 @@ export default function Flashcard({
             isFlipped ? "container__flashcard--flipped" : ""
           }`}>
           {/* Front card */}
-          <div className="flashcard border-8 border-orange-500">
+          <div className="flashcard overflow-clip">
             {isUpdating ? (
               <LoadingSpinner size="sm" />
             ) : (
-              <span className="text-2xl capitalize border-b">
+              <span className="font-medium text-3xl capitalize border-b">
                 {flashcardDeck[deckIndex].spanish}
               </span>
             )}
@@ -135,7 +137,7 @@ export default function Flashcard({
               onClick={() => setIsFlipped((prev) => !prev)}>
               Flip
             </Button>
-            <div className="absolute top-0 right-2">
+            <div className="absolute top-1 right-2">
               <Image
                 src="/icons/spain-flag-96x96.png"
                 height={38}
@@ -143,15 +145,22 @@ export default function Flashcard({
                 alt="spain flag"
               />
             </div>
+            <Brain
+              size={300}
+              strokeWidth={0.75}
+              color="#fff3eb"
+              className="absolute -z-10 -bottom-20 sm:-bottom-10 -left-[80px]"
+            />
           </div>
 
           {/* Back card */}
-          <div className="flashcard flashcard--back border-8 border-orange-500">
+          <div className="flashcard flashcard--back">
             {isUpdating ? (
               <LoadingSpinner size="sm" />
             ) : (
-              <span className="text-2xl capitalize border-b">
+              <span className="font-medium text-3xl capitalize border-b">
                 {flashcardDeck[deckIndex].english}
+                <hr />
               </span>
             )}
             <Button
@@ -170,6 +179,12 @@ export default function Flashcard({
                 alt="england flag"
               />
             </div>
+            <Brain
+              size={300}
+              strokeWidth={0.75}
+              color="#fff3eb"
+              className="absolute -z-10 -bottom-20 sm:-bottom-10 -left-[80px]"
+            />
           </div>
         </div>
       </div>
@@ -180,13 +195,13 @@ export default function Flashcard({
             Correct
           </span>
           <Button
-            className="text-xl bg-green-500 hover:bg-green-600"
+            className="text-lg bg-green-500 hover:bg-green-600"
             disabled={isUpdating || deckCompleted}
             onClick={() => handleAnswer(4)}>
             Easy
           </Button>
           <Button
-            className="text-xl bg-yellow-500 hover:bg-yellow-600"
+            className="text-lg bg-yellow-500 hover:bg-yellow-600"
             disabled={isUpdating || deckCompleted}
             onClick={() => handleAnswer(3)}>
             Medium
@@ -200,13 +215,13 @@ export default function Flashcard({
             Incorrect
           </span>
           <Button
-            className="text-xl bg-orange-500 hover:bg-orange-600"
+            className="text-lg bg-orange-500 hover:bg-orange-600"
             disabled={isUpdating || deckCompleted}
             onClick={() => handleAnswer(2)}>
             Hard
           </Button>
           <Button
-            className="text-xl bg-red-500 hover:bg-red-600"
+            className="text-lg bg-red-500 hover:bg-red-600"
             disabled={isUpdating || deckCompleted}
             onClick={() => handleAnswer(1)}>
             No Idea

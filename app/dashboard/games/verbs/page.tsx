@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import verbData from "../../data/verbs.json";
+import verbData from "../../../data/verbs.json";
 import { useState } from "react";
 import GameControls from "./_components/GameControls";
 import Confetti from "react-confetti";

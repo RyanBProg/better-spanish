@@ -96,7 +96,9 @@ export default async function Home() {
             />
             <span className="flex justify-between z-10">
               <span className="text-lg font-semibold">Flashcards</span>
-              <Link className={buttonVariants()} href="/games/flashcards">
+              <Link
+                className={buttonVariants()}
+                href="/dashboard/games/flashcards">
                 Start
               </Link>
             </span>
@@ -122,7 +124,9 @@ export default async function Home() {
             />
             <span className="flex justify-between z-10">
               <span className="text-lg font-semibold">Word Guess</span>
-              <Link className={buttonVariants()} href="/games/date-time">
+              <Link
+                className={buttonVariants()}
+                href="/dashboard/games/date-time">
                 Start
               </Link>
             </span>
@@ -148,7 +152,7 @@ export default async function Home() {
             />
             <span className="flex justify-between z-10">
               <span className="text-lg font-semibold">Verbs</span>
-              <Link className={buttonVariants()} href="/games/verbs">
+              <Link className={buttonVariants()} href="/dashboard/games/verbs">
                 Start
               </Link>
             </span>
@@ -187,7 +191,9 @@ export default async function Home() {
             />
             <span className="flex justify-between z-10">
               <span className="text-lg font-semibold">Cheat Sheets</span>
-              <Link className={buttonVariants()} href="/learning/cheat-sheets">
+              <Link
+                className={buttonVariants()}
+                href="/dashboard/learning/cheat-sheets">
                 Start
               </Link>
             </span>
@@ -213,7 +219,9 @@ export default async function Home() {
             />
             <span className="flex justify-between z-10">
               <span className="text-lg font-semibold">Top 100</span>
-              <Link className={buttonVariants()} href="/learning/top-100">
+              <Link
+                className={buttonVariants()}
+                href="/dashboard/learning/top-100">
                 Start
               </Link>
             </span>
@@ -241,7 +249,7 @@ export default async function Home() {
               <span className="text-lg font-semibold">Verb Conjugations</span>
               <Link
                 className={buttonVariants()}
-                href="/learing/verb-conjugations">
+                href="/dashboard/learing/verb-conjugations">
                 Start
               </Link>
             </span>

@@ -1,13 +1,13 @@
 "use client";
 
-import keywordsData from "../../data/keywords.json";
-import Settings from "../../components/settings/Settings";
-import SettingsContextProvider from "../../context/SettingsContextProvider";
+import keywordsData from "../../../data/keywords.json";
+import Settings from "../../../components/settings/Settings";
+import SettingsContextProvider from "../../../context/SettingsContextProvider";
 import { useEffect, useState } from "react";
-import WordCard from "../../components/word-cards/WordCard";
-import WordCardSkeleton from "../../components/word-cards/WordCardSkeleton";
-import { DataType } from "../../types/types";
-import { generateOptions } from "../../utils/generateOptions";
+import WordCard from "../../../components/word-cards/WordCard";
+import WordCardSkeleton from "../../../components/word-cards/WordCardSkeleton";
+import { DataType } from "../../../types/types";
+import { generateOptions } from "../../../utils/generateOptions";
 
 export default function Home() {
   return (

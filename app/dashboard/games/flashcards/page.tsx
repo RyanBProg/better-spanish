@@ -8,8 +8,7 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
 import { upsertUserFlashcard } from "@/app/actions/flashcards";
-import { Suspense } from "react";
-import LoadingCard from "@/components/flashcards/LoadingCard";
+
 import {
   Select,
   SelectContent,
@@ -98,13 +97,11 @@ export default async function page() {
         </Select>
       </div>
 
-      <Suspense fallback={<LoadingCard />}>
-        <Flashcard
-          flashcardDeck={flashcardDeck}
-          upsertUserFlashcard={upsertUserFlashcard}
-          userId={dbUser.id}
-        />
-      </Suspense>
+      <Flashcard
+        flashcardDeck={flashcardDeck}
+        upsertUserFlashcard={upsertUserFlashcard}
+        userId={dbUser.id}
+      />
     </div>
   );
 }

@@ -1,13 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { UserFlashcardAnswer, Word } from "@/lib/types";
 import { useRouter } from "next/navigation";
 import { batchUpsertUserFlashcards } from "@/app/actions/flashcards";
 import FlashcardControls from "./FlashcardControls";
 import Flashcard from "./Flashcard";
 import GameReviewDialog from "./GameReviewDialog";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 type Props = {
   flashcardDeck: Word[];
@@ -21,6 +22,7 @@ export default function FlashcardGame({ flashcardDeck, userId }: Props) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
   const [answers, setAnswers] = useState<UserFlashcardAnswer[]>([]);
+  const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
   const handleAnswer = async (rating: number) => {
@@ -63,13 +65,23 @@ export default function FlashcardGame({ flashcardDeck, userId }: Props) {
   };
 
   const handleNewDeck = () => {
-    router.refresh();
-    setDeckIndex(0);
-    setIsFlipped(false);
-    setDeckCompleted(false);
-    setDialogOpen(false);
-    setAnswers([]);
+    startTransition(() => {
+      router.refresh();
+      setDeckIndex(0);
+      setIsFlipped(false);
+      setDeckCompleted(false);
+      setDialogOpen(false);
+      setAnswers([]);
+    });
   };
+
+  if (isPending) {
+    return (
+      <div className="mx-auto h-[450px] w-[350px] p-4 flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
 
   return (
     <>

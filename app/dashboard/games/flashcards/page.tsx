@@ -3,18 +3,10 @@
 import { db } from "@/db/drizzle";
 import { userFlashcards, words } from "@/db/schema";
 import { eq, and, lt, sql, notInArray, inArray } from "drizzle-orm";
-import Flashcard from "@/components/flashcards/Flashcard";
+import FlashcardGame from "@/components/flashcards/FlashcardGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
-
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 const getFlashcards = async (userId: number) => {
   // Get all due flashcards
@@ -65,8 +57,6 @@ const getFlashcards = async (userId: number) => {
   return dueWords;
 };
 
-const categories = ["time", "adjectives", "family", "household items", "verbs"];
-
 export default async function page() {
   const { getUser, isAuthenticated } = getKindeServerSession();
   const isUserAuthenticated = await isAuthenticated();
@@ -81,22 +71,8 @@ export default async function page() {
   return (
     <div className="my-10 sm:my-20">
       <h1 className="text-center mb-10 font-bold text-4xl">Flashcards</h1>
-      <div className="mx-auto w-fit mb-12 sm:mb-20">
-        <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Category" />
-          </SelectTrigger>
-          <SelectContent>
-            {categories.map((category) => (
-              <SelectItem value={category} key={category}>
-                {category}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
 
-      <Flashcard flashcardDeck={flashcardDeck} userId={dbUser.id} />
+      <FlashcardGame flashcardDeck={flashcardDeck} userId={dbUser.id} />
     </div>
   );
 }

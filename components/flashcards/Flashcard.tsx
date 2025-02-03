@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { Word } from "@/lib/types";
@@ -14,6 +13,7 @@ import {
   DialogTitle,
 } from "../ui/dialog";
 import LoadingSpinner from "../common/LoadingSpinner";
+import Image from "next/image";
 
 type Answer = {
   word: string;
@@ -113,27 +113,69 @@ export default function Flashcard({
 
   return (
     <>
-      <Card className="relative mx-auto h-[400px] w-[300px] sm:h-[450px] sm:w-[350px] flex items-center justify-center">
-        {isUpdating ? (
-          <LoadingSpinner size="sm" />
-        ) : (
-          <span className="text-2xl capitalize">
-            {!isFlipped
-              ? flashcardDeck[deckIndex].spanish
-              : flashcardDeck[deckIndex].english}
-          </span>
-        )}
-        <Button
-          className="absolute mx-auto bottom-4"
-          variant="outline"
-          disabled={isUpdating}
-          onClick={() => setIsFlipped((prev) => !prev)}>
-          Flip
-        </Button>
-      </Card>
+      <div className="mx-auto h-[230px] w-[300px] sm:h-[300px] sm:w-[400px] z-10 perspective-[1000px]">
+        <div
+          className={`relative w-full h-full container__flashcard ${
+            isFlipped ? "container__flashcard--flipped" : ""
+          }`}>
+          {/* Front card */}
+          <div className="flashcard border-8 border-orange-500">
+            {isUpdating ? (
+              <LoadingSpinner size="sm" />
+            ) : (
+              <span className="text-2xl capitalize border-b">
+                {flashcardDeck[deckIndex].spanish}
+              </span>
+            )}
+            <Button
+              className="absolute mx-auto bottom-3"
+              variant="outline"
+              disabled={isUpdating}
+              tabIndex={!isFlipped ? 0 : -1}
+              onClick={() => setIsFlipped((prev) => !prev)}>
+              Flip
+            </Button>
+            <div className="absolute top-0 right-2">
+              <Image
+                src="/icons/spain-flag-96x96.png"
+                height={38}
+                width={38}
+                alt="spain flag"
+              />
+            </div>
+          </div>
 
-      <div className="w-fit mx-auto my-10 flex gap-8">
-        <div className="grid grid-cols-1 grid-rows-3 gap-4">
+          {/* Back card */}
+          <div className="flashcard flashcard--back border-8 border-orange-500">
+            {isUpdating ? (
+              <LoadingSpinner size="sm" />
+            ) : (
+              <span className="text-2xl capitalize border-b">
+                {flashcardDeck[deckIndex].english}
+              </span>
+            )}
+            <Button
+              className="absolute mx-auto bottom-3"
+              variant="outline"
+              disabled={isUpdating}
+              tabIndex={isFlipped ? 0 : -1}
+              onClick={() => setIsFlipped((prev) => !prev)}>
+              Flip
+            </Button>
+            <div className="absolute top-0 right-2">
+              <Image
+                src="/icons/england-flag-96x96.png"
+                height={38}
+                width={38}
+                alt="england flag"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-fit mx-auto mt-12 sm:mt-20 mb-10 flex gap-8">
+        <div className="grid grid-cols-1 grid-rows-3 gap-5">
           <span className="text-sm text-neutral-500 text-center self-end">
             Correct
           </span>
@@ -153,7 +195,7 @@ export default function Flashcard({
         <div>
           <Separator orientation="vertical" />
         </div>
-        <div className="grid grid-cols-1 grid-rows-3 gap-4">
+        <div className="grid grid-cols-1 grid-rows-3 gap-5">
           <span className="text-sm text-neutral-500 text-center self-end">
             Incorrect
           </span>

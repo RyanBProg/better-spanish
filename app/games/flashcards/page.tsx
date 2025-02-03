@@ -81,9 +81,9 @@ export default async function page() {
   const flashcardDeck = await getFlashcards(dbUser.id);
 
   return (
-    <div className="my-20">
+    <div className="my-10 sm:my-20">
       <h1 className="text-center mb-10 font-bold text-4xl">Flashcards</h1>
-      <div className="mx-auto w-fit my-4">
+      <div className="mx-auto w-fit mb-12 sm:mb-20">
         <Select>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Category" />

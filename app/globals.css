@@ -43,6 +43,37 @@
     grid-template-columns: min-content 1fr;
     grid-template-rows: repeat(7, 1fr);
   }
+
+  /* flashcards */
+
+  .container__flashcard {
+    transition: transform 400ms;
+    transform-style: preserve-3d;
+  }
+
+  .container__flashcard--flipped {
+    transform: rotateY(180deg);
+  }
+
+  .flashcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px 1px #00000055;
+    position: absolute;
+    color: #232323;
+    text-align: center;
+    padding: 20px;
+    backface-visibility: hidden;
+  }
+
+  .flashcard--back {
+    transform: rotateY(180deg);
+  }
 }
 
 @keyframes scroll {

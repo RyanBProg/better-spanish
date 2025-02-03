@@ -55,10 +55,7 @@ const getFlashcards = async (userId: number) => {
       .where(
         notInArray(
           words.id,
-          db
-            .select({ wordId: userFlashcards.wordId })
-            .from(userFlashcards)
-            .where(eq(userFlashcards.userId, userId))
+          dueWords.map((word) => word.id)
         )
       )
       .orderBy(sql`RANDOM()`)
@@ -82,7 +79,6 @@ export default async function page() {
   const dbUser = await getOrCreateUser(kindeUser);
 
   const flashcardDeck = await getFlashcards(dbUser.id);
-  console.log(flashcardDeck);
 
   return (
     <div className="my-20">

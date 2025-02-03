@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { ArrowUp, Brain, House, LogOut, UserRound } from "lucide-react";
 import Link from "next/link";
@@ -40,14 +41,15 @@ export default function DashboardNav() {
   return (
     <div
       ref={menuRef}
-      className={`fixed mx-auto inset-x-0 w-fit z-50 bottom-0 translate-y-full transition-transform  ${
-        isMenuOpen && "-translate-y-3"
-      }`}>
+      className={cn(
+        "fixed mx-auto inset-x-0 w-fit z-50 bottom-0 transition-all duration-300 ease-in-out",
+        isMenuOpen ? "translate-y-0" : "translate-y-full"
+      )}>
       <div className="p-1 bg-white border rounded-full flex justify-center items-center gap-4">
         <button
           ref={menuButtonRef}
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="absolute -top-12 bg-white flex items-center gap-4 border border-b-0 rounded-t-2xl px-4 py-1 hover:cursor-pointer">
+          className="absolute top-0 -translate-y-full bg-white flex items-center gap-4 border border-b-0 rounded-t-2xl px-4 pt-1 pb-3 hover:cursor-pointer">
           <ArrowUp
             size={24}
             color="#fdceaf"

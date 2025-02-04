@@ -54,3 +54,36 @@ export const userFlashcards = pgTable(
     index("next_review").on(table.nextReview),
   ]
 );
+
+// Base verbs table
+export const verbs = pgTable(
+  "verbs",
+  {
+    id: serial("id").primaryKey(),
+    spanish: text("spanish").notNull(),
+    english: text("english").notNull(),
+    gerundSpanish: text("gerund_spanish").notNull(),
+    gerundEnglish: text("gerund_english").notNull(),
+  },
+  (table) => [uniqueIndex("verb_spanish_unique").on(table.spanish)]
+);
+
+// Verb tenses
+export const verbTenses = pgTable(
+  "verb_tenses",
+  {
+    id: serial("id").primaryKey(),
+    verbId: integer("verb_id")
+      .notNull()
+      .references(() => verbs.id, { onDelete: "cascade" }),
+    tense: text("tense").notNull(), // 'present', 'past', 'future'
+    type: text("type").notNull(), // 'first-person singular', etc.
+    prefix: text("prefix").notNull(), // 'yo', 'tú', etc.
+    spanish: text("spanish").notNull(),
+    english: text("english").notNull(),
+  },
+  (table) => [
+    index("verb_tense_idx").on(table.verbId, table.tense),
+    uniqueIndex("verb_tense_unique").on(table.verbId, table.tense, table.type),
+  ]
+);

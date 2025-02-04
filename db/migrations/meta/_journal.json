@@ -15,6 +15,13 @@
       "when": 1738404641788,
       "tag": "0001_daffy_hulk",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738639252545,
+      "tag": "0002_luxuriant_sunspot",
+      "breakpoints": true
     }
   ]
 }

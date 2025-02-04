@@ -30,3 +30,26 @@ export type UserFlashcardAnswer = {
   translation: string;
   rating: number;
 };
+
+export type BaseVerb = {
+  id: number;
+  spanish: string;
+  english: string;
+  gerundSpanish: string;
+  gerundEnglish: string;
+};
+
+export type VerbConjugation = {
+  verbId: number;
+  verbData: VerbConjugationData[];
+};
+
+export type VerbConjugationData = {
+  id: number;
+  verbId: number;
+  tense: string;
+  type: string;
+  prefix: string;
+  spanish: string;
+  english: string;
+};

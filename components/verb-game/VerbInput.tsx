@@ -1,4 +1,4 @@
-import { TVerb } from "@/app/types/types";
+import { VerbConjugationData } from "@/lib/types";
 import {
   FieldErrors,
   FieldValues,
@@ -9,7 +9,7 @@ import {
 type Props = {
   id: string;
   className?: string;
-  verb: TVerb;
+  verb: VerbConjugationData;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
   clearErrors: UseFormClearErrors<FieldValues>;

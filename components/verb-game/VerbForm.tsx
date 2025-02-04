@@ -5,12 +5,11 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 import VerbInnerGrid from "./VerbInnerGrid";
-import VerbInput from "./VerbInput";
-import { Verb } from "@/app/types/types";
+import { VerbConjugation } from "@/lib/types";
 
 type Props = {
   onSubmit: (e?: React.BaseSyntheticEvent) => Promise<void>;
-  verb: Verb;
+  verb: VerbConjugation;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors<FieldValues>;
   clearErrors: UseFormClearErrors<FieldValues>;
@@ -25,6 +24,10 @@ export default function VerbForm({
   clearErrors,
   showAnswers,
 }: Props) {
+  const presentTense = verb.verbData.filter((word) => word.tense === "present");
+  const pastTense = verb.verbData.filter((word) => word.tense === "past");
+  const futureTense = verb.verbData.filter((word) => word.tense === "future");
+
   return (
     <form
       noValidate
@@ -32,7 +35,7 @@ export default function VerbForm({
       onSubmit={onSubmit}
       className="my-10 flex flex-col gap-4">
       <VerbInnerGrid
-        verbTense={verb.present}
+        verbTense={presentTense}
         title="present"
         register={register}
         errors={errors}
@@ -40,7 +43,7 @@ export default function VerbForm({
         showAnswers={showAnswers}
       />
       <VerbInnerGrid
-        verbTense={verb.past}
+        verbTense={pastTense}
         title="past"
         register={register}
         errors={errors}
@@ -48,29 +51,13 @@ export default function VerbForm({
         showAnswers={showAnswers}
       />
       <VerbInnerGrid
-        verbTense={verb.future}
+        verbTense={futureTense}
         title="future"
         register={register}
         errors={errors}
         clearErrors={clearErrors}
         showAnswers={showAnswers}
       />
-
-      {/* Gerund */}
-      <div className="grid grid-cols-[min-content_1fr] gap-x-4 my-10">
-        <span className="font-semibold text-gray-800 flex items-center sm:text-nowrap text-xs sm:text-base">
-          Gerund
-        </span>
-        <VerbInput
-          id={`${verb.gerund.spanish}`}
-          className={""}
-          verb={verb.gerund}
-          register={register}
-          errors={errors}
-          clearErrors={clearErrors}
-          showAnswers={showAnswers}
-        />
-      </div>
 
       {/* Submit button */}
       <button

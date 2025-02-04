@@ -1,4 +1,3 @@
-import { TVerb } from "@/app/types/types";
 import {
   FieldErrors,
   FieldValues,
@@ -6,9 +5,10 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 import VerbInput from "./VerbInput";
+import { VerbConjugationData } from "@/lib/types";
 
 type Props = {
-  verbTense: Array<TVerb>;
+  verbTense: VerbConjugationData[];
   title: string;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors<FieldValues>;

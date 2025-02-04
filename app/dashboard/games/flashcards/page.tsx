@@ -5,7 +5,6 @@ import { userFlashcards, words } from "@/db/schema";
 import { eq, and, lt, sql, notInArray, inArray } from "drizzle-orm";
 import FlashcardGame from "@/components/flashcards/FlashcardGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { redirect } from "next/navigation";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
 
 const getFlashcards = async (userId: number) => {
@@ -58,12 +57,10 @@ const getFlashcards = async (userId: number) => {
 };
 
 export default async function page() {
-  const { getUser, isAuthenticated } = getKindeServerSession();
-  const isUserAuthenticated = await isAuthenticated();
-  !isUserAuthenticated && redirect("/api/auth/login");
+  const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
 
-  // use kinde user id to lookup user in db
+  // use kinde user id to lookup user in db or create one if it doesn't exist
   const dbUser = await getOrCreateUser(kindeUser);
 
   const flashcardDeck = await getFlashcards(dbUser.id);

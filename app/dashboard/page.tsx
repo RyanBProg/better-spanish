@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { redirect } from "next/navigation";
 import {
   ArrowUpNarrowWide,
   Brain,
@@ -12,12 +10,15 @@ import {
 import { Card } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { getOrCreateUser } from "@/lib/getOrCreateUser";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 export default async function Home() {
-  const { isAuthenticated } = getKindeServerSession();
-  const isUserAuthenticated = await isAuthenticated();
+  const { getUser } = getKindeServerSession();
+  const kindeUser = await getUser();
 
-  !isUserAuthenticated && redirect("/api/auth/login");
+  // use kinde user id to lookup user in db or create one if it doesn't exist
+  await getOrCreateUser(kindeUser);
 
   return (
     <div className="width-container mb-36">

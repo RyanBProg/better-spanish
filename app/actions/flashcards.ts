@@ -4,6 +4,8 @@ import { db } from "@/db/drizzle";
 import { userFlashcards } from "@/db/schema";
 import { eq, and, inArray, sql } from "drizzle-orm";
 import { UserFlashcardAnswer } from "@/lib/types";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 
 const getMatchingUserFlashcards = async (
   answers: UserFlashcardAnswer[],
@@ -86,6 +88,10 @@ export const batchUpsertUserFlashcards = async (
   answers: UserFlashcardAnswer[],
   userId: number
 ) => {
+  const { isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+  !isUserAuthenticated && redirect("/api/auth/login");
+
   const userUpdates = await getUserUpdates(answers, userId);
 
   // Single batch upsert

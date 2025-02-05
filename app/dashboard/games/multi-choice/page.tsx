@@ -8,7 +8,10 @@ export default async function Home() {
     <>
       <div className="width-container my-10 sm:my-20">
         <div className="width-inner flex flex-col h-full">
-          <GameHeading title="Multiple Choice" tip="top tip" />
+          <GameHeading
+            title="Multiple Choice"
+            tip="Choose the correct English translation for each Spanish word. A great way to test your vocabulary recognition and improve word recall"
+          />
 
           {/* card */}
           <div className="relative mx-auto flex flex-col items-center gap-20 py-28">

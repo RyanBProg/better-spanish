@@ -26,7 +26,12 @@ export default function GameHeading({ title, tip }: Props) {
             <TooltipTrigger>
               <Info size={20} />
             </TooltipTrigger>
-            <TooltipContent side="bottom" sideOffset={10} align="end">
+            <TooltipContent
+              className="max-w-[280px] text-sm whitespace-normal"
+              avoidCollisions={true}
+              side="bottom"
+              sideOffset={10}
+              align="end">
               <p className="first-letter:capitalize">{tip}</p>
             </TooltipContent>
           </Tooltip>

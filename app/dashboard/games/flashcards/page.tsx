@@ -27,7 +27,10 @@ export default async function page() {
   return (
     <div className="width-container my-10 sm:my-20">
       <div className="width-inner">
-        <GameHeading title="Flashcards" tip="top tip" />
+        <GameHeading
+          title="Flashcards"
+          tip="Rate how well you know each word. Words you find difficult will appear more frequently, helping you learn faster through spaced repetition"
+        />
 
         {/* spacer */}
         <div className="h-28"></div>

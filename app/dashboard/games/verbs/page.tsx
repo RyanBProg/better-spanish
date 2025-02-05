@@ -2,6 +2,7 @@
 
 import VerbGame from "@/components/verb-game/VerbGame";
 import { getVerbs, getVerbConjugations } from "@/app/actions/verbs";
+import GameHeading from "@/components/common/GameHeading";
 
 export default async function Home() {
   const verbList = await getVerbs();
@@ -28,13 +29,16 @@ export default async function Home() {
 
   return (
     <>
-      <div className="width-container my-20">
+      <div className="width-container my-10 sm:my-20">
         <div className="width-inner flex flex-col h-full relative">
-          <h1 className="mb-2 font-bold text-4xl">Verb Conjugations</h1>
-          <p className="mb-20">
-            Answer all 6 verb conjugations for all 3 tenses correctly to move
-            onto the next verb.
-          </p>
+          <GameHeading
+            title="Verb Conjugations"
+            tip="Answer all 6 verb conjugations for all 3 tenses correctly to move
+            onto the next verb"
+          />
+
+          {/* spacer */}
+          <div className="h-28"></div>
           <VerbGame
             verbList={verbList.data}
             initialBaseVerb={baseVerb}

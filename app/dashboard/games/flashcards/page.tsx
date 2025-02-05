@@ -4,6 +4,7 @@ import FlashcardGame from "@/components/flashcards/FlashcardGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
 import { getFlashcards } from "@/app/actions/flashcards";
+import GameHeading from "@/components/common/GameHeading";
 
 export default async function page() {
   const { getUser } = getKindeServerSession();
@@ -24,10 +25,15 @@ export default async function page() {
   }
 
   return (
-    <div className="my-10 sm:my-20">
-      <h1 className="text-center mb-20 font-bold text-4xl">Flashcards</h1>
+    <div className="width-container my-10 sm:my-20">
+      <div className="width-inner">
+        <GameHeading title="Flashcards" tip="top tip" />
 
-      <FlashcardGame flashcardDeck={flashcardDeck.data} userId={dbUser.id} />
+        {/* spacer */}
+        <div className="h-28"></div>
+
+        <FlashcardGame flashcardDeck={flashcardDeck.data} userId={dbUser.id} />
+      </div>
     </div>
   );
 }

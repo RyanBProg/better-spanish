@@ -127,7 +127,7 @@ export default async function Home() {
               <span className="text-lg font-semibold">Word Guess</span>
               <Link
                 className={buttonVariants()}
-                href="/dashboard/games/date-time">
+                href="/dashboard/games/multi-choice">
                 Start
               </Link>
             </span>

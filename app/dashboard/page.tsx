@@ -108,10 +108,10 @@ export default async function Home() {
             </span>
             <span className="mt-auto flex gap-2 z-10">
               <Badge variant="outline" className="bg-white">
-                Multi-choice
+                Flashcards
               </Badge>
               <Badge variant="outline" className="bg-white">
-                Word Input
+                Spaced Repatition
               </Badge>
             </span>
           </Card>
@@ -138,9 +138,6 @@ export default async function Home() {
               <Badge variant="outline" className="bg-white">
                 Multi-choice
               </Badge>
-              <Badge variant="outline" className="bg-white">
-                Word Input
-              </Badge>
             </span>
           </Card>
 
@@ -152,7 +149,7 @@ export default async function Home() {
               className="absolute -z-0 -right-10 top-6"
             />
             <span className="flex justify-between z-10">
-              <span className="text-lg font-semibold">Verbs</span>
+              <span className="text-lg font-semibold">Verb Conjugations</span>
               <Link className={buttonVariants()} href="/dashboard/games/verbs">
                 Start
               </Link>
@@ -162,7 +159,7 @@ export default async function Home() {
             </span>
             <span className="mt-auto flex gap-2 z-10">
               <Badge variant="outline" className="bg-white">
-                Multi-choice
+                Verbs
               </Badge>
               <Badge variant="outline" className="bg-white">
                 Word Input

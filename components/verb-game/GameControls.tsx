@@ -1,6 +1,7 @@
 import { BaseVerb } from "@/lib/types";
 import { Dispatch, SetStateAction } from "react";
 import { GameState } from "./VerbGame";
+import { toast } from "@/hooks/use-toast";
 
 type Props = {
   gameState: GameState;
@@ -17,6 +18,15 @@ export default function GameControls({
   verbList,
   handleVerbChange,
 }: Props) {
+  if (!verbList || !gameState.baseVerb) {
+    toast({
+      variant: "destructive",
+      title: "Error",
+      description: "An unexpected error occurred",
+    });
+    return null;
+  }
+
   return (
     <div className="bg-white grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 gap-2">
       <select

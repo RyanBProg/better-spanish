@@ -1,60 +1,9 @@
 "use server";
 
-import { db } from "@/db/drizzle";
-import { userFlashcards, words } from "@/db/schema";
-import { eq, and, lt, sql, notInArray, inArray } from "drizzle-orm";
 import FlashcardGame from "@/components/flashcards/FlashcardGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
-
-const getFlashcards = async (userId: number) => {
-  // Get all due flashcards
-  const dueFlashcards = await db
-    .select({
-      wordId: userFlashcards.wordId,
-    })
-    .from(userFlashcards)
-    .where(
-      and(
-        eq(userFlashcards.userId, userId),
-        lt(userFlashcards.nextReview, new Date())
-      )
-    )
-    .limit(20); // limit to 20 results
-
-  // Get the words for due flashcards
-  const dueWords = await db
-    .select()
-    .from(words)
-    .where(
-      inArray(
-        words.id,
-        dueFlashcards.map((f) => f.wordId)
-      )
-    );
-
-  // Calculate how many more words we need
-  const extraQty = 20 - dueWords.length;
-
-  if (extraQty > 0) {
-    // Get additional new words
-    const extraWords = await db
-      .select()
-      .from(words)
-      .where(
-        notInArray(
-          words.id,
-          dueWords.map((word) => word.id)
-        )
-      )
-      .orderBy(sql`RANDOM()`)
-      .limit(extraQty);
-
-    return [...dueWords, ...extraWords];
-  }
-
-  return dueWords;
-};
+import { getFlashcards } from "@/app/actions/flashcards";
 
 export default async function page() {
   const { getUser } = getKindeServerSession();

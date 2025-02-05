@@ -1,8 +1,8 @@
 "use server";
 
 import { db } from "@/db/drizzle";
-import { userFlashcards } from "@/db/schema";
-import { eq, and, inArray, sql } from "drizzle-orm";
+import { userFlashcards, words } from "@/db/schema";
+import { eq, and, inArray, sql, lt, notInArray } from "drizzle-orm";
 import { UserFlashcardAnswer } from "@/lib/types";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
@@ -108,4 +108,57 @@ export const batchUpsertUserFlashcards = async (
         nextReview: sql`EXCLUDED.next_review`,
       },
     });
+};
+
+export const getFlashcards = async (userId: number) => {
+  const { isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+  !isUserAuthenticated && redirect("/api/auth/login");
+
+  // Get all due flashcards
+  const dueFlashcards = await db
+    .select({
+      wordId: userFlashcards.wordId,
+    })
+    .from(userFlashcards)
+    .where(
+      and(
+        eq(userFlashcards.userId, userId),
+        lt(userFlashcards.nextReview, new Date())
+      )
+    )
+    .limit(20); // limit to 20 results
+
+  // Get the words for due flashcards
+  const dueWords = await db
+    .select()
+    .from(words)
+    .where(
+      inArray(
+        words.id,
+        dueFlashcards.map((f) => f.wordId)
+      )
+    );
+
+  // Calculate how many more words we need
+  const extraQty = 20 - dueWords.length;
+
+  if (extraQty > 0) {
+    // Get additional new words
+    const extraWords = await db
+      .select()
+      .from(words)
+      .where(
+        notInArray(
+          words.id,
+          dueWords.map((word) => word.id)
+        )
+      )
+      .orderBy(sql`RANDOM()`)
+      .limit(extraQty);
+
+    return [...dueWords, ...extraWords];
+  }
+
+  return dueWords;
 };

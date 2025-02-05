@@ -19,20 +19,22 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 type Props = {
-  verbList: BaseVerb[];
-  initialBaseVerb: BaseVerb;
-  initialVerbConj: VerbConjugation;
+  error?: string;
+  verbList?: BaseVerb[];
+  initialBaseVerb?: BaseVerb;
+  initialVerbConj?: VerbConjugation;
 };
 
 export type GameState = {
-  baseVerb: BaseVerb;
-  conjugations: VerbConjugation;
+  baseVerb: BaseVerb | undefined;
+  conjugations: VerbConjugation | undefined;
   isLoading: boolean;
   showAnswers: boolean;
   gameStatus: "playing" | "submitted";
 };
 
 export default function VerbGame({
+  error,
   verbList,
   initialBaseVerb,
   initialVerbConj,
@@ -55,6 +57,24 @@ export default function VerbGame({
     gameStatus: "playing",
   });
 
+  if (error) {
+    toast({
+      variant: "destructive",
+      title: "Error",
+      description: error,
+    });
+    return null;
+  }
+
+  if (!verbList || !gameState.baseVerb || !gameState.conjugations) {
+    toast({
+      variant: "destructive",
+      title: "Error",
+      description: "An unexpected error occurred",
+    });
+    return null;
+  }
+
   const router = useRouter();
 
   const onSubmit = handleSubmit((data) => {
@@ -70,9 +90,18 @@ export default function VerbGame({
     const randomIndex = Math.floor(Math.random() * verbList.length);
     const verbConjugation = await getVerbConjugations(verbList[randomIndex].id);
 
+    if (!verbConjugation.data) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "An unexpected error occurred",
+      });
+      return null;
+    }
+
     setGameState({
       baseVerb: verbList[randomIndex],
-      conjugations: verbConjugation,
+      conjugations: verbConjugation.data,
       isLoading: false,
       showAnswers: false,
       gameStatus: "playing",
@@ -97,7 +126,7 @@ export default function VerbGame({
 
     setGameState({
       baseVerb,
-      conjugations: verbConjugation,
+      conjugations: verbConjugation.data,
       isLoading: false,
       showAnswers: false,
       gameStatus: "playing",

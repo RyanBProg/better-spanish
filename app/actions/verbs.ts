@@ -5,8 +5,22 @@ import { eq } from "drizzle-orm";
 import { verbs, verbTenses } from "@/db/schema";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import { BaseVerb, VerbConjugationData } from "@/lib/types";
 
-export const getVerbConjugations = async (lookupId?: number) => {
+type GetVerbConjugationsResponse = {
+  verbId: number;
+  verbData: VerbConjugationData[];
+};
+
+type ActionResponse<T = void> = {
+  success: boolean;
+  data?: T;
+  error?: string;
+};
+
+export const getVerbConjugations = async (
+  lookupId?: number
+): Promise<ActionResponse<GetVerbConjugationsResponse>> => {
   const { isAuthenticated } = getKindeServerSession();
   const isUserAuthenticated = await isAuthenticated();
   !isUserAuthenticated && redirect("/api/auth/login");
@@ -18,7 +32,12 @@ export const getVerbConjugations = async (lookupId?: number) => {
       .select()
       .from(verbTenses)
       .where(eq(verbTenses.verbId, verbId));
-    return { verbId, verbData };
+
+    if (!verbData) {
+      return { success: false, error: "Database operation failed" };
+    }
+
+    return { success: true, data: { verbId, verbData } };
   } else {
     // get a random verb from the db
     const dbVerbs = await db.select().from(verbs);
@@ -28,14 +47,24 @@ export const getVerbConjugations = async (lookupId?: number) => {
       .select()
       .from(verbTenses)
       .where(eq(verbTenses.verbId, verbId));
-    return { verbId, verbData };
+
+    if (!verbData) {
+      return { success: false, error: "Database operation failed" };
+    }
+
+    return { success: true, data: { verbId, verbData } };
   }
 };
 
-export const getVerbs = async () => {
+export const getVerbs = async (): Promise<ActionResponse<BaseVerb[]>> => {
   const { isAuthenticated } = getKindeServerSession();
   const isUserAuthenticated = await isAuthenticated();
   !isUserAuthenticated && redirect("/api/auth/login");
 
-  return await db.select().from(verbs);
+  try {
+    const verbList = await db.select().from(verbs);
+    return { success: true, data: verbList };
+  } catch (error) {
+    return { success: false, error: "Database operation failed" };
+  }
 };

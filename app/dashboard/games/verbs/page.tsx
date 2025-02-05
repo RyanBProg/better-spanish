@@ -5,9 +5,26 @@ import { getVerbs, getVerbConjugations } from "@/app/actions/verbs";
 
 export default async function Home() {
   const verbList = await getVerbs();
-  const verbConjugation = await getVerbConjugations(verbList[0].id);
+  if (!verbList.data) {
+    console.error(verbList.error || "An unexpected error occurred");
+    return (
+      <VerbGame error={verbList.error || "An unexpected error occurred"} />
+    );
+  }
+
+  const verbConjugation = await getVerbConjugations(verbList.data[0].id);
+  if (!verbConjugation.data) {
+    console.error(verbConjugation.error || "An unexpected error occurred");
+    return (
+      <VerbGame
+        error={verbConjugation.error || "An unexpected error occurred"}
+      />
+    );
+  }
+
   const baseVerb =
-    verbList.find((verb) => verb.id === verbConjugation.verbId) || verbList[0];
+    verbList.data.find((verb) => verb.id === verbConjugation.data?.verbId) ||
+    verbList.data[0];
 
   return (
     <>
@@ -19,9 +36,9 @@ export default async function Home() {
             onto the next verb.
           </p>
           <VerbGame
-            verbList={verbList}
+            verbList={verbList.data}
             initialBaseVerb={baseVerb}
-            initialVerbConj={verbConjugation}
+            initialVerbConj={verbConjugation.data}
           />
         </div>
       </div>

@@ -9,13 +9,16 @@ import FlashcardControls from "./FlashcardControls";
 import Flashcard from "./Flashcard";
 import GameReviewDialog from "./GameReviewDialog";
 import LoadingSpinner from "../common/LoadingSpinner";
+import { toast } from "@/hooks/use-toast";
+import { Toaster } from "../ui/toaster";
 
 type Props = {
-  flashcardDeck: Word[];
-  userId: number;
+  error?: string;
+  flashcardDeck?: Word[];
+  userId?: number;
 };
 
-export default function FlashcardGame({ flashcardDeck, userId }: Props) {
+export default function FlashcardGame({ error, flashcardDeck, userId }: Props) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [deckIndex, setDeckIndex] = useState(0);
   const [deckCompleted, setDeckCompleted] = useState(false);
@@ -24,6 +27,24 @@ export default function FlashcardGame({ flashcardDeck, userId }: Props) {
   const [answers, setAnswers] = useState<UserFlashcardAnswer[]>([]);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+
+  if (error) {
+    toast({
+      variant: "destructive",
+      title: "Error",
+      description: error,
+    });
+    return null;
+  }
+
+  if (!flashcardDeck || !userId) {
+    toast({
+      variant: "destructive",
+      title: "Error",
+      description: "An unexpected error occurred",
+    });
+    return null;
+  }
 
   const handleAnswer = async (rating: number) => {
     if (isUpdating) return; // Prevent double clicks
@@ -55,6 +76,10 @@ export default function FlashcardGame({ flashcardDeck, userId }: Props) {
         await batchUpsertUserFlashcards([...answers, newAnswer], userId);
       } catch (error) {
         console.log(error);
+        toast({
+          variant: "destructive",
+          title: "Error saving progress",
+        });
       }
     } else {
       setDeckIndex((prev) => prev + 1);
@@ -111,6 +136,7 @@ export default function FlashcardGame({ flashcardDeck, userId }: Props) {
         answers={answers}
         handleNewDeck={handleNewDeck}
       />
+      <Toaster />
     </>
   );
 }

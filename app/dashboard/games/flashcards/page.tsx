@@ -14,11 +14,20 @@ export default async function page() {
 
   const flashcardDeck = await getFlashcards(dbUser.id);
 
+  if (!flashcardDeck.data) {
+    console.error(flashcardDeck.error || "An unexpected error occurred");
+    return (
+      <FlashcardGame
+        error={flashcardDeck.error || "An unexpected error occurred"}
+      />
+    );
+  }
+
   return (
     <div className="my-10 sm:my-20">
       <h1 className="text-center mb-20 font-bold text-4xl">Flashcards</h1>
 
-      <FlashcardGame flashcardDeck={flashcardDeck} userId={dbUser.id} />
+      <FlashcardGame flashcardDeck={flashcardDeck.data} userId={dbUser.id} />
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default async function Home() {
         <Brain
           size={500}
           strokeWidth={0.75}
-          color="#fdceaf"
+          color="#fff3eb"
           className="absolute -z-10 -top-20 -right-[100px]"
         />
         <h1 className="text-5xl sm:text-6xl tracking-tight font-semibold max-w-[700px]">
@@ -91,7 +91,7 @@ export default async function Home() {
           <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
             <Gamepad2
               size={200}
-              color="#fbd8c1"
+              color="#fff3eb"
               strokeWidth={2}
               className="absolute -z-0 -right-10 top-6"
             />
@@ -119,7 +119,7 @@ export default async function Home() {
           <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
             <Gamepad2
               size={200}
-              color="#fbd8c1"
+              color="#fff3eb"
               strokeWidth={2}
               className="absolute -z-0 -right-10 top-6"
             />
@@ -144,7 +144,7 @@ export default async function Home() {
           <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
             <Gamepad2
               size={200}
-              color="#fbd8c1"
+              color="#fff3eb"
               strokeWidth={2}
               className="absolute -z-0 -right-10 top-6"
             />
@@ -183,7 +183,7 @@ export default async function Home() {
           <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
             <GraduationCap
               size={180}
-              color="#fbd8c1"
+              color="#fff3eb"
               strokeWidth={2}
               className="absolute -z-0 -right-10 top-4"
             />
@@ -211,7 +211,7 @@ export default async function Home() {
           <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
             <GraduationCap
               size={180}
-              color="#fbd8c1"
+              color="#fff3eb"
               strokeWidth={2}
               className="absolute -z-0 -right-10 top-4"
             />
@@ -239,7 +239,7 @@ export default async function Home() {
           <Card className="relative overflow-clip min-w-[230px] w-[350px] p-4 flex flex-col gap-4">
             <GraduationCap
               size={180}
-              color="#fbd8c1"
+              color="#fff3eb"
               strokeWidth={2}
               className="absolute -z-0 -right-10 top-4"
             />

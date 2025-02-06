@@ -1,99 +1,49 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import { ArrowUp, Brain, House, LogOut, UserRound } from "lucide-react";
+import { Brain, House, LogOut, UserRound } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
 
 export default function DashboardNav() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        menuButtonRef.current &&
-        !menuButtonRef.current.contains(event.target as Node)
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
-    const handleEscKeyPress = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && isMenuOpen) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleEscKeyPress);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleEscKeyPress);
-    };
-  }, [isMenuOpen]);
-
   return (
-    <div
-      ref={menuRef}
-      className={cn(
-        "fixed mx-auto inset-x-0 w-fit z-50 bottom-0 transition-all duration-300 ease-in-out",
-        isMenuOpen ? "translate-y-0" : "translate-y-full"
-      )}>
-      <div className="p-1 bg-white border rounded-full flex justify-center items-center gap-4">
-        <button
-          ref={menuButtonRef}
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="absolute top-0 -translate-y-full bg-white flex items-center gap-4 border border-b-0 rounded-t-2xl px-4 pt-1 pb-3 hover:cursor-pointer">
-          <ArrowUp
-            size={24}
-            color="#fdceaf"
-            className={`transition-transform ${isMenuOpen && "rotate-180"}`}
-            strokeWidth={2}
-          />
-          <span>Menu</span>
-        </button>
-
-        <div className="rounded-full p-3 -mr-3">
-          <Brain size={32} strokeWidth={1} />
-        </div>
-
-        {/* Separator */}
-        <div className="h-[30px] w-[2px] bg-neutral-300"></div>
-
-        <Link
-          href="/dashboard"
-          className="relative group p-3 rounded-full bg-[#fdceaf]">
-          <House size={32} strokeWidth={1} />
-          <span className="absolute hidden group-hover:block left-1/2 -translate-x-1/2 -top-10 bg-white px-2 rounded-lg drop-shadow">
-            Home
-          </span>
+    <header className="width-container">
+      <nav className="width-inner py-2 border-b flex justify-between items-center">
+        <Link href="/" aria-label="navigate home">
+          <Brain size={44} strokeWidth={0.75} />
         </Link>
-
-        <Link
-          href="/dashboard/account"
-          className="relative group p-3 rounded-full bg-[#fdceaf]">
-          <UserRound size={32} strokeWidth={1} />
-          <span className="absolute hidden group-hover:block left-1/2 -translate-x-1/2 -top-10 bg-white px-2 rounded-lg drop-shadow">
-            Account
-          </span>
-        </Link>
-
-        {/* Separator */}
-        <div className="h-[30px] w-[2px] bg-neutral-300"></div>
-
-        <LogoutLink className="relative group p-3 rounded-full bg-[#fdceaf]">
-          <LogOut size={32} strokeWidth={1} />
-          <span className="absolute hidden group-hover:block min-w-fit left-1/2 -translate-x-1/2 -top-10 bg-white px-2 rounded-lg drop-shadow">
-            Logout
-          </span>
-        </LogoutLink>
-      </div>
-    </div>
+        <ul className="flex items-center gap-5">
+          <li className="relative group">
+            <Link
+              href="/dashboard"
+              className="bg-white/50 shadow border backdrop-blur-sm flex p-[6px] rounded-full">
+              <House size={28} strokeWidth={1} className="block" />
+            </Link>
+            <span className="absolute hidden group-hover:block left-1/2 -translate-x-1/2 -bottom-12 bg-white px-2 rounded-lg drop-shadow">
+              Dashboard
+            </span>
+          </li>
+          <li className="relative group">
+            <Link
+              href="/dashboard/account"
+              className="bg-white/50 shadow border backdrop-blur-sm flex p-[6px] rounded-full">
+              <UserRound size={28} strokeWidth={1} className="block" />
+            </Link>
+            <span className="absolute hidden group-hover:block left-1/2 -translate-x-1/2 -bottom-12 bg-white px-2 rounded-lg drop-shadow">
+              Account
+            </span>
+          </li>
+          {/* Separator */}
+          <div className="h-[30px] w-[2px] bg-neutral-300"></div>
+          <li className="relative group">
+            <LogoutLink className="bg-white/50 shadow border backdrop-blur-sm flex p-[6px] rounded-full">
+              <LogOut size={28} strokeWidth={1} className="block" />
+            </LogoutLink>
+            <span className="absolute hidden group-hover:block left-1/2 -translate-x-1/2 -bottom-12 bg-white px-2 rounded-lg drop-shadow">
+              Logout
+            </span>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }

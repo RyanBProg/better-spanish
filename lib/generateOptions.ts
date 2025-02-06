@@ -1,4 +1,7 @@
-import { DataType } from "../types/types";
+type DataType = {
+  word: string;
+  correctAnswer: string;
+};
 
 export const generateOptions = (
   current: DataType,

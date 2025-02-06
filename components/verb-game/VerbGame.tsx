@@ -137,7 +137,7 @@ export default function VerbGame({
 
   return (
     <>
-      <div className="overflow-y-scroll flex-1">
+      <div className="overflow-y-scroll flex-1 max-w-screen-lg">
         <h2 className="text-3xl font-semibold capitalize mb-10">
           {gameState.baseVerb.spanish}
           <span className="text-base ml-2">

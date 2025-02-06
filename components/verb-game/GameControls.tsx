@@ -28,7 +28,7 @@ export default function GameControls({
   }
 
   return (
-    <div className="bg-white grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 gap-2">
+    <div className="bg-white grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 gap-2  max-w-screen-lg">
       <select
         value={gameState.baseVerb.id}
         onChange={(e) => handleVerbChange(parseInt(e.currentTarget.value))}

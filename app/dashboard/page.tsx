@@ -33,7 +33,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="width-container mb-36">
+    <div className="width-container overflow-x-clip mb-36">
       <div className="width-inner py-20">
         <Brain
           size={500}

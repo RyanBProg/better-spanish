@@ -129,7 +129,7 @@ export default function MultiChoiceGame({ error, questionData }: Props) {
         <span className="mx-auto text-center font-medium text-7xl capitalize border-b">
           {questionData[deckIndex].spanish}
         </span>
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-wrap gap-4 justify-center">
           {answerOptions.map((option) => (
             <Button
               key={option.id}

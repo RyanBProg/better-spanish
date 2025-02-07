@@ -32,7 +32,7 @@ export default async function page() {
     <>
       <LandingHeader />
       <main>
-        <section className="width-container relative min-h-screen flex items-center">
+        <section className="width-container overflow-x-clip relative min-h-screen flex items-center">
           <Brain
             size={700}
             strokeWidth={0.75}

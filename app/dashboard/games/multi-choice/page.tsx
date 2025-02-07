@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import { getQuestion } from "@/app/actions/multi-choice-game";
+import { getQuestions } from "@/app/actions/multi-choice-game";
 import GameHeading from "@/components/common/GameHeading";
 import MultiChoiceGame from "@/components/multi-choice-game/MultiChoiceGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
@@ -11,7 +11,7 @@ export default async function page() {
   const isUserAuthenticated = await isAuthenticated();
   !isUserAuthenticated && redirect("/api/auth/login");
 
-  const questionData = await getQuestion();
+  const questionData = await getQuestions();
   if (!questionData.data) {
     console.error(questionData.error || "An unexpected error occurred");
     return (
@@ -20,6 +20,7 @@ export default async function page() {
       />
     );
   }
+
   return (
     <>
       <div className="width-container my-10 sm:my-20">

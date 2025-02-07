@@ -1,17 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useState, useTransition } from "react";
-import { Word } from "@/lib/types";
+import { useEffect, useState, useTransition } from "react";
+import { MultiChoiceUserAnswer, Word } from "@/lib/types";
 import { toast } from "@/hooks/use-toast";
 import { Toaster } from "../ui/toaster";
-import { getQuestion } from "@/app/actions/multi-choice-game";
-
-const initalGameState = {
-  score: 0,
-  answeredQty: 0,
-  selectedAnswer: null as string | null,
-};
+import { getQuestions } from "@/app/actions/multi-choice-game";
+import LoadingSpinner from "../common/LoadingSpinner";
+import { useRouter } from "next/navigation";
+import GameReviewDialog from "./GameReviewDialog";
 
 type Props = {
   error?: string;
@@ -19,8 +16,14 @@ type Props = {
 };
 
 export default function MultiChoiceGame({ error, questionData }: Props) {
-  const [currentQuestion, setCurrentQuestion] = useState(questionData);
-  const [gameState, setGameState] = useState(initalGameState);
+  const [answerOptions, setAnswerOptions] = useState<Word[]>([]);
+  const [deckIndex, setDeckIndex] = useState(0);
+  const [deckCompleted, setDeckCompleted] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [answers, setAnswers] = useState<MultiChoiceUserAnswer[]>([]);
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   if (error) {
     toast({
@@ -31,7 +34,7 @@ export default function MultiChoiceGame({ error, questionData }: Props) {
     return null;
   }
 
-  if (!questionData || !currentQuestion) {
+  if (!questionData) {
     toast({
       variant: "destructive",
       title: "Error",
@@ -40,75 +43,92 @@ export default function MultiChoiceGame({ error, questionData }: Props) {
     return null;
   }
 
-  const answerOptions = questionData.sort(() => Math.random() - 0.5);
+  useEffect(() => {
+    if (!questionData) return;
+
+    // Create copy of array excluding current question
+    const availableOptions = [...questionData].filter(
+      (_, i) => i !== deckIndex
+    );
+    const options = [];
+
+    // Get 2 random wrong answers
+    for (let i = 0; i < 2; i++) {
+      const randomIndex = Math.floor(Math.random() * availableOptions.length);
+      options.push(availableOptions.splice(randomIndex, 1)[0]);
+    }
+
+    // Add correct answer and shuffle
+    options.push(questionData[deckIndex]);
+    options.sort(() => Math.random() - 0.5);
+    console.log("options: ", options);
+
+    setAnswerOptions(options);
+  }, [questionData, deckIndex]);
 
   const handleAnswer = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+    if (isUpdating) return; // Prevent double click
+
+    // Prevent answering when game is complete
+    if (deckCompleted) {
+      setDialogOpen(true);
+      return;
+    }
+
+    setIsUpdating(true);
     const userAnswer = e.currentTarget.value;
-    if (gameState.selectedAnswer) return;
+    const isCorrect = questionData[deckIndex].spanish === userAnswer;
+    console.log("questionData: ", questionData[deckIndex]);
+    console.log("userAnswer: ", userAnswer);
+    console.log("isCorrect: ", isCorrect);
+    const newAnswer = {
+      word: questionData[deckIndex],
+      isCorrect,
+      userAnswer,
+    };
+    setAnswers((prev) => [...prev, newAnswer]);
 
-    const isCorrect = questionData[0].spanish === userAnswer;
-    if (isCorrect) {
-      setGameState((prev) => ({
-        ...prev,
-        selectedAnswer: userAnswer,
-        answeredQty: prev.answeredQty + 1,
-        score: prev.score + 1,
-      }));
-      toast({
-        variant: "default",
-        title: "Correct!",
-        description: "Good Job",
-      });
+    if (deckIndex + 1 === 20) {
+      setDeckCompleted(true);
+      setDialogOpen(true);
     } else {
-      setGameState((prev) => ({
-        ...prev,
-        selectedAnswer: userAnswer,
-        answeredQty: prev.answeredQty + 1,
-      }));
-
-      toast({
-        variant: "destructive",
-        title: "Incorrect!",
-        description: `The correct answer was ${currentQuestion[0].english}`,
-      });
+      setDeckIndex((prev) => prev + 1);
     }
 
-    try {
-      const questionData = await getQuestion();
-      if (!questionData.data) {
-        console.error(questionData.error || "An unexpected error occurred");
-        toast({
-          variant: "destructive",
-          title: "Error",
-          description: "An unexpected error occurred",
-        });
-        return null;
-      }
-      setCurrentQuestion(questionData.data);
-      setGameState((prev) => ({
-        ...prev,
-        selectedAnswer: null,
-      }));
-    } catch (error) {
-      return null;
-    }
+    setIsUpdating(false);
   };
+
+  const handleNewDeck = () => {
+    startTransition(() => {
+      router.refresh();
+      setDeckIndex(0);
+      setDeckCompleted(false);
+      setDialogOpen(false);
+      setAnswers([]);
+    });
+  };
+
+  if (isPending) {
+    return (
+      <div className="mx-auto h-[450px] w-[350px] p-4 flex items-center justify-center">
+        <LoadingSpinner size="lg" />
+      </div>
+    );
+  }
 
   return (
     <>
       <div className="relative mx-auto flex flex-col items-center gap-20 py-28">
         <div className="mx-auto">
-          <span className="mr-2">Score:</span>
           <span className="relative text-2xl">
-            {gameState.score}
+            {deckIndex + 1}
             <span className="absolute -bottom-1 right-0 translate-x-full text-sm font-light">
-              /{gameState.answeredQty}
+              /{questionData.length}
             </span>
           </span>
         </div>
         <span className="mx-auto text-center font-medium text-7xl capitalize border-b">
-          {questionData[0].spanish}
+          {questionData[deckIndex].spanish}
         </span>
         <div className="flex gap-4 justify-center">
           {answerOptions.map((option) => (
@@ -116,6 +136,7 @@ export default function MultiChoiceGame({ error, questionData }: Props) {
               key={option.id}
               value={option.spanish}
               onClick={handleAnswer}
+              disabled={deckCompleted}
               variant="outline"
               className="w-full p-4 text-lg">
               {option.english}
@@ -123,6 +144,19 @@ export default function MultiChoiceGame({ error, questionData }: Props) {
           ))}
         </div>
       </div>
+
+      {deckCompleted && (
+        <div className="mx-auto w-fit">
+          <Button onClick={() => setDialogOpen(true)}>See Game Review</Button>
+        </div>
+      )}
+
+      <GameReviewDialog
+        dialogOpen={dialogOpen}
+        setDialogOpen={setDialogOpen}
+        answers={answers}
+        handleNewDeck={handleNewDeck}
+      />
       <Toaster />
     </>
   );

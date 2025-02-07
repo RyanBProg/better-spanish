@@ -14,7 +14,7 @@ type ActionResponse<T = void> = {
   message?: string;
 };
 
-export const getQuestion = async (): Promise<ActionResponse<Word[]>> => {
+export const getQuestions = async (): Promise<ActionResponse<Word[]>> => {
   const { isAuthenticated } = getKindeServerSession();
   const isUserAuthenticated = await isAuthenticated();
   !isUserAuthenticated && redirect("/api/auth/login");
@@ -24,7 +24,7 @@ export const getQuestion = async (): Promise<ActionResponse<Word[]>> => {
       .select()
       .from(words)
       .orderBy(sql`RANDOM()`)
-      .limit(3);
+      .limit(20);
 
     if (!newWords) {
       return { success: false, error: "Database operation failed" };

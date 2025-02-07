@@ -53,3 +53,9 @@ export type VerbConjugationData = {
   spanish: string;
   english: string;
 };
+
+export type MultiChoiceUserAnswer = {
+  word: Word;
+  isCorrect: boolean;
+  userAnswer: string;
+};

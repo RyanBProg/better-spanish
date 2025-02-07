@@ -8,8 +8,8 @@ import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
 export async function getOrCreateUser(
   kindeUser: KindeUser<Record<string, any>>
 ) {
-  if (!kindeUser?.id) {
-    throw new Error("Missing required user data");
+  if (!kindeUser || !kindeUser.id) {
+    return null; // Return null instead of throwing error
   }
 
   // Try to find existing user

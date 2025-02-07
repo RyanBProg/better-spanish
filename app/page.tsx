@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+"use server";
 
 import Footer from "@/components/layout/Footer";
 import LandingHeader from "@/components/layout/LandingHeader";
@@ -12,7 +12,6 @@ import { Badge, badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import {
   Brain,
   ChartColumnDecreasing,
@@ -27,13 +26,8 @@ import {
   WalletCards,
 } from "lucide-react";
 import Image from "next/image";
-import { redirect } from "next/navigation";
 
 export default async function page() {
-  const { isAuthenticated } = getKindeServerSession();
-  const isUserAuthenticated = await isAuthenticated();
-  !isUserAuthenticated && redirect("/api/auth/login");
-
   return (
     <>
       <LandingHeader />

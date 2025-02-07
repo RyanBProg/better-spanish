@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+"use server";
 
 import FlashcardGame from "@/components/flashcards/FlashcardGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
@@ -8,15 +8,14 @@ import GameHeading from "@/components/common/GameHeading";
 import { redirect } from "next/navigation";
 
 export default async function page() {
-  const { isAuthenticated } = getKindeServerSession();
-  const isUserAuthenticated = await isAuthenticated();
-  !isUserAuthenticated && redirect("/api/auth/login");
-
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
 
   // use kinde user id to lookup user in db or create one if it doesn't exist
   const dbUser = await getOrCreateUser(kindeUser);
+  if (!dbUser) {
+    redirect("/api/auth/login");
+  }
 
   const flashcardDeck = await getFlashcards(dbUser.id);
 

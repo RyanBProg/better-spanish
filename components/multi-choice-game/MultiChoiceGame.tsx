@@ -5,7 +5,6 @@ import { useEffect, useState, useTransition } from "react";
 import { MultiChoiceUserAnswer, Word } from "@/lib/types";
 import { toast } from "@/hooks/use-toast";
 import { Toaster } from "../ui/toaster";
-import { getQuestions } from "@/app/actions/multi-choice-game";
 import LoadingSpinner from "../common/LoadingSpinner";
 import { useRouter } from "next/navigation";
 import GameReviewDialog from "./GameReviewDialog";

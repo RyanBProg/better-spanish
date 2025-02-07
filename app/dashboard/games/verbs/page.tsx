@@ -3,8 +3,14 @@ export const dynamic = "force-dynamic";
 import VerbGame from "@/components/verb-game/VerbGame";
 import { getVerbs, getVerbConjugations } from "@/app/actions/verbs";
 import GameHeading from "@/components/common/GameHeading";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 
-export default async function Home() {
+export default async function page() {
+  const { isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+  !isUserAuthenticated && redirect("/api/auth/login");
+
   const verbList = await getVerbs();
   if (!verbList.data) {
     console.error(verbList.error || "An unexpected error occurred");

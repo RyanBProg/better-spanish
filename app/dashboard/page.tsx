@@ -33,7 +33,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="width-container overflow-x-clip mb-36">
+    <div className="width-container relative overflow-x-clip mb-36">
       <Brain
         size={500}
         strokeWidth={0.75}

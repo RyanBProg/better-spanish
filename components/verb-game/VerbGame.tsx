@@ -159,10 +159,12 @@ export default function VerbGame({
         onOpenChange={() =>
           setGameState((prev) => ({ ...prev, gameStatus: "playing" }))
         }>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-xl">
           <DialogHeader>
-            <DialogTitle>Deck Complete! 🎉</DialogTitle>
-            <DialogDescription>Review your progress:</DialogDescription>
+            <DialogTitle>Grid Complete! 🎉</DialogTitle>
+            <DialogDescription>
+              Great work, you'll be fluent in no time.
+            </DialogDescription>
           </DialogHeader>
 
           <div className="flex justify-end gap-4 mt-4">

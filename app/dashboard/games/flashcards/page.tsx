@@ -2,7 +2,7 @@
 
 import FlashcardGame from "@/components/flashcards/FlashcardGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { getOrCreateUser } from "@/lib/getOrCreateUser";
+import { getOrCreateUser } from "@/app/actions/getOrCreateUser";
 import { getFlashcards } from "@/app/actions/flashcards";
 import GameHeading from "@/components/common/GameHeading";
 import { redirect } from "next/navigation";

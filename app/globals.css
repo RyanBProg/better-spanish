@@ -23,7 +23,7 @@
 
 @layer components {
   .width-container {
-    @apply w-screen px-4 md:px-10;
+    @apply w-screen overflow-x-hidden px-4 md:px-10;
   }
 
   .width-inner {

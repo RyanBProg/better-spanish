@@ -1,4 +1,4 @@
-"use server";
+export const dynamic = "force-dynamic";
 
 import VerbGame from "@/components/verb-game/VerbGame";
 import { getVerbs, getVerbConjugations } from "@/app/actions/verbs";

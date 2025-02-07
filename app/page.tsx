@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Footer from "@/components/layout/Footer";
 import LandingHeader from "@/components/layout/LandingHeader";
 import {

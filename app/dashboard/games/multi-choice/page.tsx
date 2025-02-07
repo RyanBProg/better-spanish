@@ -1,4 +1,4 @@
-"use server";
+export const dynamic = "force-dynamic";
 
 import { getQuestion } from "@/app/actions/multi-choice-game";
 import GameHeading from "@/components/common/GameHeading";

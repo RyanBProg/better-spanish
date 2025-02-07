@@ -110,6 +110,14 @@ export default function FlashcardGame({ error, flashcardDeck, userId }: Props) {
 
   return (
     <>
+      <div className="mx-auto w-fit my-10">
+        <span className="relative text-2xl">
+          {deckIndex + 1}
+          <span className="absolute -bottom-1 right-0 translate-x-full text-sm font-light">
+            /{flashcardDeck.length}
+          </span>
+        </span>
+      </div>
       <Flashcard
         isUpdating={isUpdating}
         isFlipped={isFlipped}

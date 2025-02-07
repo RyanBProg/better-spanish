@@ -36,9 +36,6 @@ export default async function page() {
           tip="Rate how well you know each word. Words you find difficult will appear more frequently, helping you learn faster through spaced repetition"
         />
 
-        {/* spacer */}
-        <div className="h-28"></div>
-
         <FlashcardGame flashcardDeck={flashcardDeck.data} userId={dbUser.id} />
       </div>
     </div>

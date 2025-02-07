@@ -2,10 +2,14 @@
 
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import AccountCard from "@/components/account/accountCard";
+import { redirect } from "next/navigation";
 
 export default async function page() {
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
+  if (!kindeUser) {
+    redirect("/api/auth/login");
+  }
 
   return (
     <div className="width-container my-10 sm:my-20">

@@ -5,8 +5,13 @@ import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
 import { getFlashcards } from "@/app/actions/flashcards";
 import GameHeading from "@/components/common/GameHeading";
+import { redirect } from "next/navigation";
 
 export default async function page() {
+  const { isAuthenticated } = getKindeServerSession();
+  const isUserAuthenticated = await isAuthenticated();
+  !isUserAuthenticated && redirect("/api/auth/login");
+
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
 

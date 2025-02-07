@@ -1,4 +1,4 @@
-"use server";
+export const dynamic = "force-dynamic";
 
 import FlashcardGame from "@/components/flashcards/FlashcardGame";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";

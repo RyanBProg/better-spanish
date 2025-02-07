@@ -14,13 +14,23 @@ import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { getOrCreateUser } from "@/lib/getOrCreateUser";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
+import { getUserStats } from "../actions/userStats";
 
 export default async function Home() {
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
 
   // use kinde user id to lookup user in db or create one if it doesn't exist
-  await getOrCreateUser(kindeUser);
+  const dbUser = await getOrCreateUser(kindeUser);
+  if (!dbUser) {
+    redirect("/api/auth/login");
+  }
+
+  const userStats = await getUserStats(dbUser.id);
+  if (!userStats) {
+    redirect("/api/auth/login");
+  }
 
   return (
     <div className="width-container mb-36">
@@ -42,7 +52,7 @@ export default async function Home() {
         <Card className="w-[350px] p-2 sm:p-4 flex flex-col gap-1">
           <span className="flex justify-between">
             <span className="text-sm sm:text-base">
-              <span className="hidden sm:inline">Weekly </span>Score
+              <span className="hidden sm:inline">Flashcards </span>Due
             </span>
             <ArrowUpNarrowWide
               size={22}
@@ -50,31 +60,39 @@ export default async function Home() {
               className="hidden sm:block"
             />
           </span>
-          <span className="text-3xl sm:text-5xl font-semibold">203</span>
+          <span className="text-3xl sm:text-5xl font-semibold">
+            {userStats.dueFlashcards}
+          </span>
           <span className="text-sm font-light mt-auto hidden sm:block">
-            +12.5% from last week
+            Flashcards due today
           </span>
         </Card>
         <Card className="w-[350px] p-2 sm:p-4 flex flex-col gap-1">
           <span className="flex justify-between">
             <span className="text-sm sm:text-base">
-              <span className="hidden sm:inline">Daily </span>Streak
+              <span className="hidden sm:inline">Words </span>Reviewed
             </span>
             <TrendingUp size={22} strokeWidth={1} className="hidden sm:block" />
           </span>
-          <span className="text-3xl sm:text-5xl font-semibold">4</span>
+          <span className="text-3xl sm:text-5xl font-semibold">
+            {userStats.wordsReviewed}
+          </span>
           <span className="text-sm font-light mt-auto hidden sm:block">
-            Days
+            Total words reviewed
           </span>
         </Card>
         <Card className="w-[350px] p-2 sm:p-4 flex flex-col gap-1">
           <span className="flex justify-between">
-            <span className="text-sm sm:text-base">Finished</span>
+            <span className="text-sm sm:text-base">
+              <span className="hidden sm:inline">Average </span>Streak
+            </span>
             <Swords size={22} strokeWidth={1} className="hidden sm:block" />
           </span>
-          <span className="text-3xl sm:text-5xl font-semibold">88</span>
+          <span className="text-3xl sm:text-5xl font-semibold">
+            {userStats.averageWordStreak?.toFixed(2)}
+          </span>
           <span className="text-sm font-light mt-auto hidden sm:block">
-            Games
+            Average word streak
           </span>
         </Card>
       </div>

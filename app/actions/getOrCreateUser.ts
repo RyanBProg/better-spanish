@@ -12,25 +12,30 @@ export async function getOrCreateUser(
     return null; // Return null instead of throwing error
   }
 
-  // Try to find existing user
-  const existingUser = await db
-    .select()
-    .from(users)
-    .where(eq(users.kindeId, kindeUser.id))
-    .then((res) => res[0]);
+  try {
+    // Try to find existing user
+    const existingUser = await db
+      .select()
+      .from(users)
+      .where(eq(users.kindeId, kindeUser.id))
+      .then((res) => res[0]);
 
-  if (existingUser) return existingUser;
+    if (existingUser) return existingUser;
 
-  // Create new user if not found
-  const [newUser] = await db
-    .insert(users)
-    .values({
-      kindeId: kindeUser.id,
-      email: kindeUser.email ?? "",
-      family_name: kindeUser.family_name ?? "",
-      given_name: kindeUser.given_name ?? "",
-    })
-    .returning();
+    // Create new user if not found
+    const [newUser] = await db
+      .insert(users)
+      .values({
+        kindeId: kindeUser.id,
+        email: kindeUser.email ?? "",
+        family_name: kindeUser.family_name ?? "",
+        given_name: kindeUser.given_name ?? "",
+      })
+      .returning();
 
-  return newUser;
+    return newUser;
+  } catch (error) {
+    console.log("An unexpected error occurred");
+    return;
+  }
 }
